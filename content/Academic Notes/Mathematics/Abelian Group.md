@@ -1,0 +1,1 @@
+In mathematics, an *abelian group*, also called a *commutative group*, is a [[Group]] in which the result of applying the group operation to two group elements does not depend on the order in which they are written. That is, **the group operation is commutative**.
