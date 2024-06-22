@@ -256,25 +256,15 @@ blockquote {
   transition: border-color 0.2s ease;
 }
 
-h1 {
-  font-family: var(--headerFont);
-    color: var(--dark);
-    font-weight: revert;
-    margin-bottom: 0;
-  
-    article>&>a[role="anchor"] {
-      color: var(--dark);
-      background-color: transparent;
-    }
-}
 
+h1,
 h2,
 h3,
 h4,
 h5,
 h6,
 thead {
-  font-family: var(--bodyFont);
+  font-family: var(--headerFont);
   color: var(--dark);
   font-weight: revert;
   margin-bottom: 0;
@@ -534,6 +524,3 @@ ol.overflow {
   overflow-y: hidden;
 }
 
-span.mord.cjk_fallback {
-  font-family: var(--bodyFont);
-}
