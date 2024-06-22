@@ -1,7 +1,7 @@
 @use "./base.scss";
 
 // put your custom CSS here!
-
+h1,
 h2,
 h3,
 h4,
@@ -17,6 +17,14 @@ thead {
         color: var(--dark);
         background-color: transparent;
     }
+}
+
+.article-title {
+    font-family: var(--headerFont);
+}
+
+.page-title {
+    font-family: var(--headerFont);
 }
 
 span.mord.cjk_fallback {
