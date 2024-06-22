@@ -22,8 +22,8 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Playwrite Norge",
-        body: "Noto Serif Simplified Chinese",
+        header: "Playwrite NO",
+        body: "Noto Serif SC",
         code: "Fira Code",
       },
       colors: {
