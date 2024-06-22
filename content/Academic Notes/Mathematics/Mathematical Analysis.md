@@ -28,8 +28,8 @@
 [[Bessel Inequality]]
 [[Analytical Geometry in Space]]
 [[Differential of Mappings]]
-# Exercises Class Notes
-[[Mathematical Analysis Exercises Class]]
+# Tutorial Notes
+[[Mathematical Analysis Tutorial Notes]]
 [[MA-Rev-List]]
 
 # Mind Map

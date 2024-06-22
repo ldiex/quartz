@@ -1,6 +1,9 @@
 ---
-title: Welcome to Quartz
+title: Welcome to Lin's Notes
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Here are some course notes 
+
+# Notes
+[[Physics]]
+[[Mathematics]]

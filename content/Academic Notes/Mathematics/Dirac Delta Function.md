@@ -10,7 +10,7 @@ and
 $$
 \int_{-\infty}^{+\infty}\delta(x)\mathrm{d} x = 1
 $$
-
+Do not confuse this with [[Kronecker Delta]]
 # Physical Background
 Many physical phenomena occur over very short durations in time with great intensity, and one is frequently concerned with the consequent response of some system to such stimuli. 
 

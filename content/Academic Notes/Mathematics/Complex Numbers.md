@@ -1,9 +1,15 @@
+# $\mathbb{C}$的定义
 $$
 \mathbb{C} = \left\{ x + y \sqrt{-1} \mid x,y \in \mathbb{R} \right\}
 $$
 矩阵表示
 $$
 x + y \sqrt{-1} \sim \begin{pmatrix} x & y \\ -y & x\end{pmatrix}
+$$
+# 共轭
+如果$c = a + b \mathrm{i},\;(a,b\in \mathbb{R})$，则$c$的共轭复数（记为$c^*$或$\bar{c}$）为
+$$
+c^* = a-b\mathrm{i}
 $$
 # Euler 公式
 $$
