@@ -29,8 +29,9 @@ $$
 体积功的实质是有规则的宏观运动（机械能）与无规则热运动（内能）之间的能量转换
 > [!tip] 固体的体积功
 > 一般地，在数学上我们有
-> $$\mathrm{d}V = \left( \frac{ \partial V }{ \partial T }  \right)_p \mathrm{d} T + \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p  $$且在恒温条件下$$
-> \mathrm{d}V = \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p = -\kappa_TV \mathrm{d}p$$
+> $$\mathrm{d}V = \left( \frac{ \partial V }{ \partial T }  \right)_p \mathrm{d} T + \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p $$
+> 且在恒温条件下
+> $$\mathrm{d}V = \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p = -\kappa_TV \mathrm{d}p$$
 > 故
 > $$W = -\int_1^2 p \mathrm{d}V = \int_{p_1}^{p_2} V \kappa_T p \mathrm{d}p$$
 > 又因为[[Response Function#等温压缩系数|固体的等温压缩系数]]特别小，所以过程中的体积可以近似为$V_1$，于是就有
