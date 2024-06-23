@@ -41,3 +41,6 @@ $$
 3. 视在功率 $=S=\left|{\boldsymbol S}\right|$
 4. 功率因数$=\dfrac{P}{S}$
 
+# 拓展
+[[Resonant Circuit and Quality Factor Q|谐振电路和品质因子]]
+[[Three-phase Circuit#三相电]]

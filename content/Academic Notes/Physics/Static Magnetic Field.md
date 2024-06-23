@@ -38,3 +38,6 @@ $$
 \boldsymbol F = q\boldsymbol v \times \boldsymbol B
 $$
 
+# 拓展
+[[Magnetic Circuit|磁路]]
+[[Magnetic Fields in Matter|磁介质]]

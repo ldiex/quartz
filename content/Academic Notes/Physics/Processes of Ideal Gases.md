@@ -35,6 +35,10 @@ TV^{\gamma - 1} =\text{const} \quad T^{\gamma}p^{1 - \gamma} = \text{const}
 $$
 **绝热线比等温线更加陡峭，也就是说，膨胀相同的体积，压强在绝热过程中下降得更快**
 
+其中*绝热指数*
+$$
+\gamma = \dfrac{C_p}{C_V}
+$$
 # 多方过程
 过程方程
 $$

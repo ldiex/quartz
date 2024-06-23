@@ -1,4 +1,5 @@
 # 响应函数
+引入如下参数的原因是这些参量是容易测量的，且**可以帮助描述除了理想气体之外的一般气体甚至是固体和液体的性质，并可由此得到对应的物态方程**
 ## 体膨胀系数
 $$
 \alpha = \frac{1}{V} \left(\dfrac{\partial {V}}{\partial {T}}\right)_p
@@ -8,6 +9,7 @@ $$
 \beta = \frac{1}{p} \left( \dfrac{\partial {p}}{\partial {T}} \right)_V
 $$
 ## 等温压缩系数
+表示在等温条件下，单位受到的压力变化能够造成多少体积比例的变化
 $$
 \kappa_T = - \frac{1}{V}\left( \dfrac{\partial {V}}{\partial {p}} \right)_T
 $$

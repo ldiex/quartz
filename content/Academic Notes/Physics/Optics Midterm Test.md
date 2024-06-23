@@ -46,7 +46,9 @@ $$
 ### 偏振
 可以表示任意偏振光的方程
 $$
-\cases{E_x = A\cos \omega t \\ E_y = A\cos (\omega t +\phi)}
+\begin{cases}
+E_x = A\cos \omega t \\ E_y = A\cos (\omega t +\phi)
+\end{cases}
 $$
 1. 自然光（部分偏振光）入射 - 反射和折射是部分偏振光
 2. 圆偏振光（椭圆偏振光）入射 - 反射和折射是椭圆偏振光

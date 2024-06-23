@@ -14,11 +14,15 @@ $$
 ## 经验模型的进一步简化
 ### 钢球模型
 $$
-E_p = \cases{\infty, & $r \le d$ \\ 0, & $r > d$}
+E_p = \begin{cases}
+\infty, & r \le d \\ 0, & r > d
+\end{cases}
 $$
 ### Sutherland 模型
 $$
-E_p = \cases{\infty, &$r \le d$ \\ -\dfrac{\beta}{r^{t - 1}}, & $r>d$}
+E_p = \begin{cases}
+\infty, &r \le d \\ -\dfrac{\beta}{r^{t - 1}}, & r>d
+\end{cases}
 $$
 # Van der Waals 方程
 对理想气体状态方程作出两个修正

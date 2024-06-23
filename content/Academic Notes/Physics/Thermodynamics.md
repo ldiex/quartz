@@ -1,10 +1,3 @@
-23Spring, Mon. & Wed. 5 - 6
-周森 (zhousen@itp.ac.cn)
-林宇涵 (linyuhan@itp.ac.cn)
-傅瑞庆 (furuiqing@itp.ac.cn)
-
-考核方式
-30% + 30％ + 40% 
 # Contents
 [[Introduction to Thermodynamics]]
 [[Temperature and Equilibrium State]]

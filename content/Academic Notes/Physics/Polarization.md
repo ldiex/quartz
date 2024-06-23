@@ -44,7 +44,9 @@ $$
 
 两个振幅相等、方向垂直，相位差$\pm \pi / 2$的振动的合成振动，这就是圆偏振光
 $$
-\cases{E_x = A\cos \omega t \\ E_y = A\cos (\omega t \pm \pi/2)}
+\begin{cases}
+E_x = A\cos \omega t \\ E_y = A\cos (\omega t \pm \pi/2)
+\end{cases}
 $$
 $\pi/2$对应于右旋，$-\pi/2$对应于左旋
 
