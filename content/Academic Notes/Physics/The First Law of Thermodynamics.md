@@ -28,7 +28,13 @@ $$
 
 体积功的实质是有规则的宏观运动（机械能）与无规则热运动（内能）之间的能量转换
 > [!tip] 固体的体积功
-> 一般地，在数学上我们有$$\mathrm{d}V = \left( \frac{ \partial V }{ \partial T }  \right)_p \mathrm{d} T + \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p  $$且在恒温条件下$$\mathrm{d}V = \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p = -\kappa_TV \mathrm{d}p$$故$$W = -\int_1^2 p \mathrm{d}V = \int_{p_1}^{p_2} V \kappa_T p \mathrm{d}p$$又因为[[Response Function#等温压缩系数|固体的等温压缩系数]]特别小，所以过程中的体积可以近似为$V_1$，于是就有$$W = \int_{p_1}^{p_2} V_1 \kappa_T p \mathrm{d}p = \dfrac{1}{2} V_1 \kappa_T(p_2^{2}-p_1^{2})$$
+> 一般地，在数学上我们有
+> $$\mathrm{d}V = \left( \frac{ \partial V }{ \partial T }  \right)_p \mathrm{d} T + \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p  $$且在恒温条件下$$
+> \mathrm{d}V = \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p = -\kappa_TV \mathrm{d}p$$
+> 故
+> $$W = -\int_1^2 p \mathrm{d}V = \int_{p_1}^{p_2} V \kappa_T p \mathrm{d}p$$
+> 又因为[[Response Function#等温压缩系数|固体的等温压缩系数]]特别小，所以过程中的体积可以近似为$V_1$，于是就有
+> $$W = \int_{p_1}^{p_2} V_1 \kappa_T p \mathrm{d}p = \dfrac{1}{2} V_1 \kappa_T(p_2^{2}-p_1^{2})$$
 ### 其他形式的功
 #### [[Liquid#表面性质|表面张力]]功
 $$
@@ -112,7 +118,7 @@ $$
 ## 理想气体的内能、焓和热容
 由[[Equipartition Theorem#多原子分子理想气体的内能和热容|能量均分定理]]，我们知道理想气体内能为$U = \dfrac{t + r + 2s}{2} \nu RT = U(T)$，由此可以推出理想气体焓：$H = U + pV = U(T) + \nu RT = H(T)$
 
-> [! Tip] 焦耳定律
+> [!Tip] 焦耳定律
 > 理想气体的内能和焓都是状态函数，它们仅与温度有关，与体积、压强无关
 
 理想气体的热容：
