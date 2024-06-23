@@ -54,7 +54,7 @@ W = \nu RT \ln\dfrac{V_2-\nu b}{V_1-\nu b} + a\left( \dfrac{
 \nu^2
 }{V_{1m}}-\dfrac{\nu^2}{V_{2m}} \right)
 $$
-对于绝热过程，对外做功就是负的内能改变量，由[[The Second Law of Thermodynamics#内能公式|Van der Waals气体的内能公式]]就有
+对于绝热过程，对外做功就是负的内能改变量，由[[The First Law of Thermodynamics#内能公式|内能公式]]就有
 $$
 W = -\Delta U = -\nu C_{Vm} \Delta T
 $$

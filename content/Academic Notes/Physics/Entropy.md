@@ -33,7 +33,7 @@ $$
 \int_i^t \dfrac{\mathrm{d} Q}{T} = S_t - S_i
 $$
 # 熵变计算
-上式可计算**可逆过程中**任意两个状态间给定路径的*熵变*，利用[[The First Law of Thermodynamics|热力学第一定律]]和[[The Second Law of Thermodynamics#内能公式|内能公式]]，可得
+上式可计算**可逆过程中**任意两个状态间给定路径的*熵变*，利用[[The First Law of Thermodynamics|热力学第一定律]]和[[The First Law of Thermodynamics#内能公式|内能公式]]，可得
 $$
 \begin{aligned}
 \mathrm{d} S = \dfrac{\mathrm{d} Q}{T} = \dfrac{\mathrm{d} U + p \mathrm{d} V}{T}  & =\dfrac{C_V\mathrm{d} T +\left( \dfrac{\partial {U}}{\partial {V}} \right)_T\mathrm{d} V + p\mathrm{d} V }{T}  \\
