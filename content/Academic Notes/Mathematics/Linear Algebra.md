@@ -28,6 +28,7 @@
 [[Euclidean Space]]
 [[Normal Operator and Normal Matrix]]
 [[Orthogonal Canonical Forms]]
+[[Least Squares Method]]
 # 23 Fall
 [[Determinant]]
 [[Matrix Minor]]

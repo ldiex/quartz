@@ -67,7 +67,9 @@ $$
 ### 一般式方程
 直线可视为两平面交线，故其一般式方程
 $$
-\cases{A_1 x + B_1 y + C_1 z + D_1 = 0 \\ A_2 x + B_2 y + C_2 z + D_2 = 0}
+\begin{cases}
+A_1 x + B_1 y + C_1 z + D_1 = 0 \\ A_2 x + B_2 y + C_2 z + D_2 = 0
+\end{cases}
 $$
 对于某一直线，**其一般式方程不唯一**
 ### 对称式方程
@@ -80,7 +82,9 @@ $$
 ### 参数式方程
 由*对称式方程*可直接得到
 $$
-\cases{x = x_0 + mt \\ y = y _0 + nt \\ z = z_0 + pt}
+\begin{cases}
+x = x_0 + mt \\ y = y _0 + nt \\ z = z_0 + pt
+\end{cases}
 $$
 ## 线面间位置关系
 ### 两直线夹角
@@ -121,29 +125,41 @@ $$
 ### 一般方程
 空间曲线可视为两曲面的交线, 其一般方程为方程组
 $$
-\cases{F(x, y, z) = 0 \\ G(x, y, z) = 0}
+\begin{cases}
+F(x, y, z) = 0 \\ G(x, y, z) = 0
+\end{cases}
 $$
 ### 参数方程
 $$
-\cases{x =x (t) \\ y = y(t) \\  z = z(t)}
+\begin{cases}
+x =x (t) \\ y = y(t) \\  z = z(t)
+\end{cases}
 $$
 ## 空间曲线在坐标面上的投影
 设一般方程为
 $$
-\cases{F(x, y, z) = 0 \\ G(x, y, z) = 0}
+\begin{cases}
+F(x, y, z) = 0 \\ G(x, y, z) = 0
+\end{cases}
 $$
 消去$z$得到投影柱面$H(x, y) = 0$
 则$C$在$xOy$面上的*投影曲线*$C'$为
 $$
-\cases{H(x, y) = 0\\ z = 0}
+\begin{cases}
+H(x, y) = 0\\ z = 0
+\end{cases}
 $$
 消去$x$得$C$在$yOz$面上的投影曲线方程
 $$
-\cases{R(y, z) = 0 \\ x = 0}
+\begin{cases}
+R(y, z) = 0 \\ x = 0
+\end{cases}
 $$
 消去$y$得$C$在$xOz$面上的投影曲线方程
 $$
-\cases{T(x, z) = 0 \\ y = 0}
+\begin{cases}
+T(x, z) = 0 \\ y = 0
+\end{cases}
 $$
 # 曲面所围区域
 ## 确定空间区域在$xy$平面上的投影区域

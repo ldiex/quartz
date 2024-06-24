@@ -30,7 +30,7 @@ N(\alpha,\beta) = \begin{pmatrix}
 $$
 也就是说，存在如上这样一个标准型$B$使得$A$[[Euclidean Space#正交等价|正交等价]]于$B$，即$A \sim_o B$，弱化这个结论就是有$A$[[Linear Operator#矩阵相似|相似]]于$B$，即$A \sim_s B$
 
-设$\mathcal A\in \mathcal{L}(V)$正规，$\lambda_1,\lambda_1\in \mathrm{spec}_{\mathbb{R}}(\mathcal A)$，且$\lambda_1 \neq \lambda_2$，则$V^{\lambda_1} {\perp} V^{\lambda_2}$。也就是说，一个正规算子的不同[[Eigenvectors and Characteristic Polynomial#特征值|特征值]]对于的[[Eigenvectors and Characteristic Polynomial#特征子空间|特征子空间]]两两[[Euclidean Space#正交投影和正交补|正交]]，这是在正规算子情况下，对命题[[Eigenvectors and Characteristic Polynomial#特征子空间的和|特征子空间的和是直和]]的一个加强
+设$\mathcal A\in \mathcal{L}(V)$正规，$\lambda_1,\lambda_1\in \mathrm{spec}_{\mathbb{R}}(\mathcal A)$，且$\lambda_1 \neq \lambda_2$，则$V^{\lambda_1} {\perp} V^{\lambda_2}$。也就是说，一个正规算子的不同[[Eigenvectors and Characteristic Polynomial#特征值|特征值]]对于的[[Eigenvectors and Characteristic Polynomial#特征子空间|特征子空间]]两两[[Euclidean Space#正交子空间和正交投影|正交]]，这是在正规算子情况下，对命题[[Eigenvectors and Characteristic Polynomial#特征子空间的和|特征子空间的和是直和]]的一个加强
 
 # 实对称矩阵的正交标准型
 ## 实对称矩阵可正交化
@@ -77,7 +77,7 @@ V^{\lambda_1} = \left< \begin{pmatrix}
 1 \\ 0 \\ 0 \\ -1
 \end{pmatrix} \right> 
 $$
-再计算$V^{\lambda_2}$，因为$V^{\lambda_1} {\perp} V^{\lambda_2}$且$\mathbb{R}^4 = V^{\lambda_1} \oplus V^{\lambda_2}$，所以$V^{\lambda_2}$为$V^{\lambda_1}$的[[Euclidean Space#正交投影和正交补|正交补]]，由于上述方程已经给出了
+再计算$V^{\lambda_2}$，因为$V^{\lambda_1} {\perp} V^{\lambda_2}$且$\mathbb{R}^4 = V^{\lambda_1} \oplus V^{\lambda_2}$，所以$V^{\lambda_2}$为$V^{\lambda_1}$的[[Euclidean Space#正交补|正交补]]，由于上述方程已经给出了
 $$
 (1,-1,-1,1)\cdot(x_1,x_2,x_3,x_4) = 0
 $$
@@ -154,7 +154,7 @@ $$
 $$
 \det{(E+A) \geq 1}
 $$
-这里用到了[[Determinant#对角分块矩阵|对角分块矩阵的行列式]]
+这里用到了[[Determinant#对角分块矩阵的行列式|对角分块矩阵的行列式]]
 # 正交算子和正交矩阵
 设$\mathcal A\in \mathcal{L}(V)$正交，则存在$\theta_1, \ldots ,\theta_s\in(0,\pi) \cup (\pi,2\pi)$和$\lambda_{2s+1}, \ldots ,\lambda_n\in \left\{ -1,1 \right\}$使得$\mathcal A$在$V$的某组单位正交基下的矩阵为
 $$
@@ -172,6 +172,3 @@ $$
 正交矩阵和正交算子的（复）特征根的模长都等于$1$
 
 设$P\in \mathrm{O}_n(\mathbb{R})$满足$\det{(P)} = -1$，则$\det{(E+P)} = 0$，这是因为存在正交矩阵$Q$使得$Q^{-1}PQ=M$，而$\det{(P)} = -1 \implies \det{(M)} = -1$，于是存在$j\in \left\{ 2s+1, \ldots ,n \right\}$使得$\lambda_j = -1$，故$-1$是$M$的特征根，其必然也是$P$的特征根，故我们有$\det{(E+P)} = 0$
-
-
-

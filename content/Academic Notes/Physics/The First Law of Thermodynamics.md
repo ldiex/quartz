@@ -142,7 +142,7 @@ $$
 $$
 \left(\dfrac{\partial U}{\partial V}\right)_T = T \left(\dfrac{\partial p}{\partial T}\right)_V - p
 $$
-由此可计算[[Van der Waals Equation of State|Van der Waals气体]]的内能
+也就是说可以直接从状态方程$f(p,V,T)$的形式在推导出$\left( \frac{ \partial U }{ \partial V } \right)_T$，由此可计算[[Van der Waals Equation of State|Van der Waals气体]]的内能
 $$
 \left( \dfrac{\partial {U}}{\partial {V}} \right) = \dfrac{a\nu^2}{V}  \implies \mathrm{d} U = \left( \dfrac{\partial {U}}{\partial {T}} \right) \mathrm{d} T + \left( \dfrac{\partial {U}}{\partial {V}} \right) \mathrm{d} V = C_V\mathrm{d} T + \dfrac{a\nu^2}{V^2} \mathrm{d} V 
 $$

@@ -177,6 +177,7 @@ $$
 (\boldsymbol x \vert \boldsymbol y)_V = (\phi(\boldsymbol x) \vert \phi(\boldsymbol y))_W
 $$
 # 正交投影和正交补
+## 投影
 设$\boldsymbol v\in V \backslash \left\{ \boldsymbol 0 \right\},\;\boldsymbol x\in V$,称
 $$
 \left( \boldsymbol x \vert \dfrac{\boldsymbol v}{\Vert \boldsymbol v \Vert } \right) \dfrac{\boldsymbol v}{\Vert \boldsymbol v \Vert }
@@ -185,10 +186,16 @@ $$
 
 设$\boldsymbol v\in V \backslash \left\{ \boldsymbol 0 \right\},\;\boldsymbol x\in V$，$\boldsymbol y$是$\boldsymbol x$在$\boldsymbol v$上的投影，则$(\boldsymbol v - \boldsymbol y)\perp \boldsymbol y$
 
+## 正交子空间和正交投影
 设$X,Y \subset V$. 如果对任意的$\boldsymbol x\in X$和$\boldsymbol y\in Y$都有$\boldsymbol x \perp \boldsymbol y$，则称$X$和$Y$*正交*，记为$X \perp Y$. 特别地，当$X = \left\{ \boldsymbol x \right\}$时，则$X \perp Y$也记为$\boldsymbol x \perp Y$
 
 设$U \subset V$是[[Linear Space#子空间|子空间]]，$\boldsymbol x\in V$，则存在唯一的$\boldsymbol u\in U$使得$(\boldsymbol x - \boldsymbol u)\perp U$，称这里的$\boldsymbol u$是$\boldsymbol x$在子空间$U$上的*正交投影*. 特别地，向量$\boldsymbol x$在$\boldsymbol v\in V \backslash \left\{ \boldsymbol 0 \right\}$上的投影就是$\boldsymbol x$在$\left< \boldsymbol v \right>$上的正交投影
 
+我们记$\boldsymbol x$在子空间$U$上的正交投影为$\pi_U(\boldsymbol x)$
+### 距离
+在上面的例子中$\boldsymbol u = \pi_U(\boldsymbol x)$，此时考虑$\forall \boldsymbol y\in U$，容易证明$\Vert \boldsymbol x - \boldsymbol u \Vert \leq \Vert \boldsymbol x - \boldsymbol y \Vert$，故我们称$\Vert \boldsymbol x - \pi_U(\boldsymbol x) \Vert$成为$\boldsymbol x$到$W$的*距离*，记为$d(\boldsymbol x, W)$
+
+## 正交补
 设$U \subset V$是子空间，令$U^{\perp} \coloneqq \left\{ \boldsymbol x \in V \mid \boldsymbol x\perp U \right\}$，则
 1. $U^{\perp}$是子空间且$U \perp U^{\perp}$
 2. $V = U \oplus U^{\perp}$，故称$U^{\perp}$是$U$的*正交补*
