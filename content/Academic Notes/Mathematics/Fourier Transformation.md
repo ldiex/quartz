@@ -64,3 +64,6 @@ f(x)=\frac1{2\pi}\int_{-\infty}^{+\infty}F(\omega)\cdot e^{i2\pi\omega x}\mathrm
 $$
 则被称为*Fourier逆变换*
 
+# Fourier变换的应用
+[[Fourier Transformation in Optics|Fourier变换在光学中的应用]]
+[[Fourier Optics|Fourier光学]]
