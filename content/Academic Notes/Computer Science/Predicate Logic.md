@@ -1,7 +1,7 @@
 # Definition
 *First-order logic*—also called *predicate logic*, *quantificational logic*—is a collection of formal systems used in mathematics, philosophy, linguistics, and computer science. 
 
-First-order logic uses **quantified variables** over non-logical objects, and allows the use of sentences that contain variables, so that rather than propositions such as "Socrates is a man", one can have expressions in the form "there exists x such that x is Socrates and x is a man", where "there exists" is a quantifier, while x is a variable. This distinguishes it from *propositional logic* (see [[Boolean Logic|Boolean logic]]), which does not use quantifiers or relations; in this sense, propositional logic is the foundation of first-order logic.
+First-order logic uses **quantified variables** over non-logical objects, and allows the use of sentences that contain variables, so that rather than propositions such as "Socrates is a man", one can have expressions in the form "there exists x such that x is Socrates and x is a man", where "there exists" is a quantifier, while x is a variable. This distinguishes it from [[Propositional Logic|propositional logic]], which does not use quantifiers or relations; in this sense, propositional logic is the foundation of first-order logic.
 
 # Quantifier
 - $\forall$ for universal quantification

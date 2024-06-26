@@ -10,4 +10,4 @@ The classical examples for Lie groups are
 - [[Special Orthogonal Group|Special orthogonal]] $\mathrm{SO}(n)$
 - [[Unitary Group|Unitary]] $\mathrm{U}(n)$
 - [[Special Unitary Group|Special Unitary]] $\mathrm{SU}(n)$
-- [[Symplectic Group|Symplectic]] $\mathrm{Sp(n)}$
+- [[Symplectic Group|Symplectic]] $\mathrm{Sp(n)}$\
