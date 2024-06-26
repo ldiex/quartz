@@ -7,3 +7,4 @@ Here are some course notes
 # Notes
 [[Physics]]
 [[Mathematics]]
+[[Computer Science]]
