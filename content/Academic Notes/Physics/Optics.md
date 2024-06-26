@@ -1,3 +1,8 @@
+---
+tags:
+  - CoursePage
+---
+
 # 24 Spring Course Content
 [[Introduction to Optics]]
 ## Geometrical Optics

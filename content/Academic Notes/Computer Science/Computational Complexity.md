@@ -1,0 +1,1 @@
+The smart methods for computing, called [[Algorithms|algorithms]], have [[Time Complexity|time complexity]] and [[Space Complexity|space complexity]] when executed on a computer.

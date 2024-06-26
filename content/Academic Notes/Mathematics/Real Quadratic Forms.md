@@ -106,7 +106,17 @@ O & O
 \end{pmatrix}
 $$
 若$A$是正定矩阵，那么$\det(A) > 0$且$A^{-1}$也正定
+> [!tip] 算子的情况
+> 利用[[Spectral Decomposition|谱分解定理]]，我们知道若$\mathcal A\in \mathcal{L}(V)$是半正定算子，则存在唯一的半正定算子$\mathcal B$使得$\mathcal B^{2} = \mathcal A$且$\mathcal B\in \mathbb{R}[\mathcal A]$
 
+事实上，如果$\mathcal A$的谱分解有如下形式
+$$
+\mathcal A = \lambda_1\pi_1+ \cdots +\lambda_k\pi_k
+$$
+则对应的$\mathcal B$为
+$$
+\mathcal B = \sqrt{ \lambda_1 }\pi_1+ \cdots +\sqrt{ \lambda_k } \pi_k
+$$
 # Jacobi公式
 设$A \in \mathrm{SM}_n(F)$. 设$\Delta_0 = 1,\; \Delta_i$是$A$中第$1 \sim i$行和$1\sim i$列构成的对称矩阵的行列式（也就是[[Matrix Minor#Leading Principal Minor | 顺序主子式]]），则
 $$

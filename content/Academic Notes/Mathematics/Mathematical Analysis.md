@@ -1,3 +1,8 @@
+---
+tags:
+  - CoursePage
+---
+
 [[Mathematical Analysis 23 Fall Final]]
 [[Analysis Notes]]
 [[Improper Integrals]]
@@ -21,6 +26,7 @@
 [[Euler Integral]]
 [[Curve Integral]]
 [[Multiple Integral]]
+[[Surface Integral]]
 # Additional Notes
 [[Nested Interval Theorem]]
 [[Continuous Function]]

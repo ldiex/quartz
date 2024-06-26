@@ -1,0 +1,3 @@
+Connectivity refers to the structure of a [[Computer Network|network]]. Only when an entity is connected, i.e., having become a node of a network, can it be accessed. Connectivity studies problems related to *naming* and *topology*, such as the following:
+- How to name the nodes of a network? How to find a specific node? How to refer to a specific node?
+- How are the nodes interconnected? Does the network structure change over time? Is the network static, dynamic, or evolutionary?

@@ -1,3 +1,8 @@
+---
+tags:
+  - CoursePage
+---
+
 # Course & Final Review
 [[Linear Algebra 23 Fall Final]]
 [[Linear Algebra 24 Spring Midterm Review]]
@@ -29,6 +34,7 @@
 [[Normal Operator and Normal Matrix]]
 [[Orthogonal Canonical Forms]]
 [[Least Squares Method]]
+[[Spectral Decomposition]]
 # 23 Fall
 [[Determinant]]
 [[Matrix Minor]]

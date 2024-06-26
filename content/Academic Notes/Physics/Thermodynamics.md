@@ -1,3 +1,8 @@
+---
+tags:
+  - "#CoursePage"
+---
+
 # Contents
 [[Introduction to Thermodynamics]]
 [[Temperature and Equilibrium State]]
