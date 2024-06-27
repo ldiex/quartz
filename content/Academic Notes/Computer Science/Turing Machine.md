@@ -40,4 +40,4 @@ If at any moment the Turing machine transitions to state $q_\text{accept}$ accor
 A Turing machine cannot solve problems involving second-order logic.
 
 # See Also
-[[Computability]]
+[[Church–Turing Thesis]]

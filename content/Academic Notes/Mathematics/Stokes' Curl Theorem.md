@@ -9,7 +9,10 @@ $$where the '$\cdot$' operation stands for the [[Euclidean Space#$V$上的内积
 
 More explicitly, the equality says that
 $$
-\iint_\Sigma \left[ \left( \frac{ \partial F_z }{ \partial y } - \frac{ \partial F_y }{ \partial z }  \right) \mathrm{d}y \mathrm{d}z + \left( \frac{ \partial F_x }{ \partial z } -\frac{ \partial F_z }{ \partial x }  \right) \mathrm{d}z \mathrm{d}x + \left( \frac{ \partial F_y }{ \partial x } - \frac{ \partial F_x }{ \partial y }   \right) \mathrm{d}x \mathrm{d}y  \right]  = \int_{\delta \Sigma} F_x \mathrm{d}x + F_y \mathrm{d}y + F_z \mathrm{d}z
+\begin{aligned}
+&\iint_\Sigma \left[ \left( \frac{ \partial F_z }{ \partial y } - \frac{ \partial F_y }{ \partial z }  \right) \mathrm{d}y \mathrm{d}z + \left( \frac{ \partial F_x }{ \partial z } -\frac{ \partial F_z }{ \partial x }  \right) \mathrm{d}z \mathrm{d}x + \left( \frac{ \partial F_y }{ \partial x } - \frac{ \partial F_x }{ \partial y }   \right) \mathrm{d}x \mathrm{d}y  \right] \\  
+= &\int_{\delta \Sigma} F_x \mathrm{d}x + F_y \mathrm{d}y + F_z \mathrm{d}z
+\end{aligned}
 $$
 
 This is actually an extension of [[Multiple Integral#Green公式|Green's theorem]], and similarly if $\Omega$ is a [[Multiple Integral#单联通区域|simply connected]] space in $\mathbb{R}^{3}$, and $\boldsymbol F(x,y,z) = (P(x,y,z),Q(x,y,z),R(x,y,z))$ is a vector field with continuous first order partial derivatives, the following four statements are identical

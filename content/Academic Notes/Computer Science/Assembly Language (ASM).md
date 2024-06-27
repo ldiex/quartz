@@ -51,7 +51,7 @@ Here, the `operand` can be:
 ## CMP(Compare)
 The **CMP (Compare)** instruction in Assembly language is a fundamental tool for making decisions within your program. It performs a comparison between two operands but doesn't modify the operands themselves.
 
-```
+``` asm
 CMP operand1, operand2
 ```
 
