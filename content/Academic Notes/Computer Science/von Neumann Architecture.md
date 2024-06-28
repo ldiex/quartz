@@ -2,7 +2,7 @@ The *von Neumann architecture* is a computer architecture based on a 1945 descri
 
 - A processing unit with both an *arithmetic logic* unit and *processor registers*
 - A *control unit* that includes an instruction register and a program counter
-- *Memory* that stores data and instructions
+- [[Computer Memory|Memory]] that stores data and instructions
 - External mass storage
 - Input and output mechanisms
 

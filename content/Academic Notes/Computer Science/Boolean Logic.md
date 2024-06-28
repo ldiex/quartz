@@ -23,7 +23,7 @@ $x \oplus y = (x \vee y) \land (\neg x \vee \neg y)$
 
 # Normal forms
 **Any complex proposition can be represented by propositions that only include AND, OR as well as NOTs.**
-Given a [[Boolean function]] $f:\{0,1\}^n \to \{0, 1\};\; (x_1, \cdots, x_n) \to y$
+Given a [[Boolean Function]] $f:\{0,1\}^n \to \{0, 1\};\; (x_1, \cdots, x_n) \to y$
 For each line in its truth table
 $$
 y = f(x_1, \cdots, x_n), \quad \text{where } y = \beta_i;x_{k} = \alpha_{ik}, k \in [n]

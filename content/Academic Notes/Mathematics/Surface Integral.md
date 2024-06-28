@@ -13,7 +13,11 @@ $$
 $$
 \iint_S f(x,y,z) \mathrm{d}S = \iint_D f(x,y,z(x,y)) \sqrt{ 1+z_x^{2}+z_y^{2} } \mathrm{d} x \mathrm{d}y
 $$
-
+更一般地，我们设$S$上的每一个点$\boldsymbol r$都可以通过两个参数来决定，即我们有$\boldsymbol r(s,t)$，其中$(s,t)$在 某个区域$D$内，那么
+$$
+\iint_S f \mathrm{d}S = \iint_D f(\boldsymbol r(s,t)) \left\Vert \frac{ \partial \boldsymbol r }{ \partial s } \times \frac{ \partial \boldsymbol r }{ \partial t } \right \Vert \mathrm{d}s \mathrm{d}t
+$$
+其中$\Vert\cdot \Vert$表示[[Euclidean Space|欧式空间]]中的[[Euclidean Space#长度和距离|长度]]
 # 第二型曲面积分
 ## 曲面的侧
 设连通曲面$S$上到处都有连续变动的切平面（或法线），$M$为曲面$S$上的一点，曲面在$M$处的法线有两个方向：当取定其中的一个方向为正方向时，另一个就是负方向。设$M_0$为$S$上任一点，$L$是$S$上任一经过点$M_0$，且不超出$S$边界的闭曲线。又设$M$为动点，它在$M_0$处与$M_0$有相同的法线方向，且有如下特性：当$M$从$M_0$出发沿$L$连续移动，这时作为曲面上的点$M$，它的法线方向也连续地变动。最后当$M$沿$L$回到$M_0$时，若这时$M$的法线方向仍然和$M_0$的法线方向一致，则说该曲面$S$时*双侧曲面*，若和$M_0$的法线方向相反，则说$S$是*单侧曲面*

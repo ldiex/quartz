@@ -14,7 +14,7 @@
 [[Multiplication Algorithm]]
 
 # Theories
-[[Knuth’s Definition of Algorithm]]
+[[Knuth's Definition of Algorithm]]
 [[Time Complexity]]
 [[P Versus NP Problem]]
 

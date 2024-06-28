@@ -1,3 +1,6 @@
+# Idea
+The general idea of *mathematics* is [[Abstraction|abstraction]]
+# Subjects
 [[Mathematical Analysis]]
 [[Linear Algebra]]
 [[Probability Theory]]

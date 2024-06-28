@@ -5,5 +5,8 @@
 [[Golang]]
 [[C Programing Language]]
 [[Assembly Language (ASM)]]
+
+# Algorithm
+[[Algorithms]]
 # OS and Tools
 [[Linux References]]
