@@ -2,14 +2,14 @@ Computational processes smoothly execute on computing systems, seamlessly transi
 
 The three key questions on this topic are:
 - How to identify the first instruction?
-- How to ensure a single instruction’s correct execution?
+- How to ensure a single instruction's correct execution?
 - How to find the next instruction and transition to it?
 
 Computer systems capable of solving the above three problems are said to have
 the capability of *seamless transition*. It turns out that computer science has
 established four principles to support seamless transition
 
-# Yang’s Cycle Principle
+# Yang's Cycle Principle
 A system executes a computational process in a sequence of *cycles*. The system finishes one cycle and automatically returns to the beginning (of the next cycle), so that different computational processes preserve their respective kinds.
 
 How can it be done to automatically return to the beginning of the next cycle? Because, at the basic level, a computing system is a sequential circuit. It uses the current state $\mathrm{Q}$ to generate the next state $\mathrm{Q_{next}}$
@@ -47,8 +47,8 @@ Note that instructions in the above quote are not only binary instructions of pr
 For example, when the power is turned on in a computer with an x86 processor, the first instruction to execute is at memory address `0xFFFFFFF0`, and it contains a jump instruction such as `JUMP 000F0000`. Address `000F0000` contains the entry instruction for the BIOS code.
 
 # Amdahl's Law
-Amdahl’s law was originally proposed by Gene Amdahl, a designer of the famous IBM S/360 general-purpose computer. The modern form of this law can be stated succinctly as follows: **After enhancing a portion of a system, the speedup obtained is upper bounded by the reciprocal of the other portion’s time.**
+Amdahl's law was originally proposed by Gene Amdahl, a designer of the famous IBM S/360 general-purpose computer. The modern form of this law can be stated succinctly as follows: **After enhancing a portion of a system, the speedup obtained is upper bounded by the reciprocal of the other portion's time.**
 
-More precisely, suppose a system’s execution time is broken into two portions $1-f$ and $f$, such that $1-f > f$. Enhancement on the $1-f$ portion can lead to a *speedup* no more than $1/f$.
+More precisely, suppose a system's execution time is broken into two portions $1-f$ and $f$, such that $1-f > f$. Enhancement on the $1-f$ portion can lead to a *speedup* no more than $1/f$.
 
 Here, *speedup* is (time before enhancement) / (time after enhancement).
