@@ -3,7 +3,7 @@
 # 衍射系统和屏函数
 凡是能使波前复振幅发生改变的物，统称为衍射屏
 ![[光学-Fourier衍射系统.png#invert_B]]
-定义*屏函数*
+定义*屏函数*为衍射屏前后表面对应的[[Representation of Electromagnetic Waves#复振幅描述|复振幅]]之比
 $$
 \tilde t (x, y) = \dfrac{\widetilde U_2(x,y)}{\widetilde U_1(x, y)}
 $$
@@ -16,14 +16,18 @@ $$
 $$
 由于衍射屏函数的作用，改变了波前，从而改变了后场的分布，于是发生的衍射
 ## 屏函数的分类
-振幅型：$\tilde t (x,y) = t(x, y)$，特别地对孔或者遮光屏而言
+**振幅型**：$\tilde t (x,y) = t(x, y)$，特别地对孔或者遮光屏而言
 $$
 t(x,y) = \begin{cases}
 1 & \text{透光部分} \\
 0 & \text{遮光部分}
 \end{cases}
 $$
-位相型：$\tilde t(x,y) = e^{\mathrm{i}\varphi(x, y)}$
+对于一个理想无限小半径的圆孔屏，它的屏函数可以通过[[Dirac Delta Function#delta函数]]表示
+$$
+t(x,y) = \delta(x,y)
+$$
+**位相型**：$\tilde t(x,y) = e^{\mathrm{i}\varphi(x, y)}$
 ## 相因子判断法
 通过相位的表达式$e^{\mathrm{i}\varphi(x,y)}$，判断一束波的类型
 ### 平面波

@@ -7,14 +7,14 @@
 $$
 n = A + \dfrac{B}{\lambda^2} + \dfrac{C}{\lambda^4}
 $$
-当$\lambda$变化范围不打时，可以只取前两项
+当$\lambda$变化范围不大时，可以只取前两项
 $$
 n = A + \dfrac{B}{\lambda^{2}}
 $$
 ## 反常色散
 实验表明，在强烈[[Light Absorption|吸收]]的波段，色散曲线与正常色散曲线有很大的不同. Wood在观察钠蒸汽的色散的时候，发现在钠的吸收线附近，水平光谱段被严重的扭曲和割断，这种现象叫做*反常色散*
 ![[光学-反常色散.png]]
-反常色散的名称时历史上沿用下来的，其实任何物质在吸收线附近都有反常色散的现象。
+反常色散的名称时历史上沿用下来的，其实任何物质在吸收线附近都有反常色散的现象，所以这种现象严格意义上不能算作“反常”
 # 一种物质的全部色散曲线
 ![[光学-一种物质的全部色散曲线.png]]
 在相邻的两个吸收带之间$n$随着$\lambda$单调下降，每次经过一个吸收带，$n$急剧增大。总的趋势是曲线随着$\lambda$的增加而抬高
@@ -38,7 +38,7 @@ $$
 $$
 定义*折射率*$n = \dfrac{c}{v_p}$，*群速折射率*$n_g = \dfrac{c}{v_g}$，则有
 $$
-n_g = n - \lambda \frac{ \mathrm{d} n }{ \mathrm{d} \lambda } 
+\boxed{n_g = n - \lambda \frac{ \mathrm{d} n }{ \mathrm{d} \lambda } }
 $$
 上式也说明了没有色散（$\displaystyle \frac{ \mathrm{d} n }{ \mathrm{d} \lambda } = 0$）时，群速和相速没有区别.
 
@@ -47,14 +47,4 @@ $$
 有些时候，相速度$v_p$是可以超过光速$c$的，但是波的信号速度总是小于$c$. 在正常色散区，波的信号速度就是其群速度，它总是小于$c$的；但是在反常色散区，群速度可以大于$c$，也可以是负值，但是这个时候群速度显然就不能代表信号速度了，实验证明，光传播信号的速度确无法大于光速$c$
 
 # 色散本领
-回忆[[Grating#色分辨原理|光栅的色分别原理]]：
-### 角色散本领
-$$
-D_\theta = \dfrac{\delta \theta}{\delta \lambda} = \dfrac{k}{d\cos\theta_k}
-$$
-其中$d$为光栅常数，且$\cos^2 \theta_k + \sin^2\theta_k = 1$满足 $\sin \theta_k$为$k$级光谱的角位置，可由[[Fraunhofer Diffraction#主极大|多缝衍射的主极大公式]]给出
-### 线色散本领
-$$
-D_l = \dfrac{\delta l}{\delta\lambda} = fD_\theta = \dfrac{kf}{d\cos\theta_k}
-$$
-这里$D_l(k)$也被称为第$k$级光谱的*线色散*，其中$f$是聚光镜的焦距
+回忆[[Grating#色分辨原理|光栅的色分辨原理]]

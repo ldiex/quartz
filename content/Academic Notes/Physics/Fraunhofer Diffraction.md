@@ -221,7 +221,7 @@ $$
 
 类似于多缝干涉，多缝衍射的图样存在*主极大*（所以$\Delta L=k\lambda$的时候对应得是干涉的极大，而不是衍射的极小）
 $$
-d\sin \theta = k \lambda \implies \sin \theta = k \dfrac{\lambda}{a},\quad k = 0, \pm1, \pm2, \ldots 
+d\sin \theta = k \lambda \implies \sin \theta = k \dfrac{\lambda}{d},\quad k = 0, \pm1, \pm2, \ldots 
 $$
 考虑图样的暗点，也就是缝间衍射因子的零点，我们可以解得
 $$
@@ -232,6 +232,15 @@ $$
 \sin \theta = \left( k + \dfrac{m}{N} \right)  \dfrac{\lambda}{d},\quad k = 0,\pm1,\pm2, \ldots ;m = 1,2, \ldots ,N-1
 $$
 其中$m=N$的情况恰好对应于主极大，每两个主极大之间有$N-1$个暗点，而每两个相邻的暗线之间都有一个*次极大*，也就是说每两个主极大之间都有$N-2$个次极大
+
+因为每一个主极大不是两两紧挨的，所以我们不能采用单缝衍射中的方法来计算主极大的半角宽，而需要通过
+$$
+\sin \theta_k = k  \dfrac{\lambda}{d} ,\quad \sin (\theta_k + \Delta \theta_k) = \left( k + \dfrac{1}{N} \right) \dfrac{\lambda}{d}
+$$
+来给出
+$$
+\Delta \theta_k \cos \theta_k = \sin (\theta_k + \Delta \theta_k) - \sin \theta_k = \dfrac{\lambda}{Nd} \implies \Delta \theta_k = \dfrac{\lambda}{Nd \cos \theta_k}
+$$
 
 当某一个主极大恰好被单缝衍射因子调制为$0$的时候，我们称这种情况为*缺级*，它满足
 $$

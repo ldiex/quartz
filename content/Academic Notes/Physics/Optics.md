@@ -40,6 +40,7 @@ tags:
 [[Scattering of Light]]
 ## Quantization of Light
 [[Blackbody Radiation]]
+[[Laser]]
 # Technical Terms
 [[Numerical Aperture]]
 [[Angular Magnification]]

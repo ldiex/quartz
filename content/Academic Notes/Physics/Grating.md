@@ -4,7 +4,7 @@
 多缝衍射是最简单的光栅
 ## 光栅公式
 $$
-a (\sin \alpha \pm \sin \beta) = k\lambda
+d (\sin \alpha \pm \sin \beta) = k\lambda
 $$
 其中
 - $d$ 为*光栅常数*，即缝和缝之间的间距
@@ -13,29 +13,38 @@ $$
 - $k$为衍射级数
 
 ## 色分辨原理
-### 角色散本领
+### 色散本领
+取最简单形式的光栅方程
+$$
+d\sin \theta_k = k \lambda
+$$
+有
+$$
+d \cos \theta_k \dfrac{\delta \theta}{\delta \lambda} = k
+$$
+于是有*角色散本领*
 $$
 D_\theta = \dfrac{\delta \theta}{\delta \lambda} = \dfrac{k}{d\cos\theta_k}
 $$
-其中$d$为光栅常数，且$\cos^2 \theta_k + \sin^2\theta_k = 1$满足 $\sin \theta_k$为$k$级光谱的角位置，可由[[Fraunhofer Diffraction#主极大|多缝衍射的主极大公式]]给出
-### 线色散本领
+由此我们可以定义*线色散本领*
 $$
 D_l = \dfrac{\delta l}{\delta\lambda} = fD_\theta = \dfrac{kf}{d\cos\theta_k}
 $$
 这里$D_l(k)$也被称为第$k$级光谱的*线色散*，其中$f$是聚光镜的焦距
 ### 色分辨本领
-某一种颜色的角宽度
+多缝衍射中给出了主极大的半角宽
 $$
-\Delta \theta = \dfrac{\lambda}{Nd\cos\theta_k}
+\Delta \theta = \dfrac{\lambda}{Nd\cos \theta_k}
 $$
-于是*最小分辨波长*
+又因为$D_\theta = \dfrac{\delta \theta}{\delta \lambda}$，故我们可以定义*最小分辨波长*
 $$
-\Delta \lambda = \dfrac{\Delta \theta}{D_\theta} = \dfrac{\lambda}{kN}
+\delta \lambda = \dfrac{\delta \theta}{D_\theta} = \dfrac{\lambda}{kN}
 $$
 和*分辨本领*
 $$
-R = \dfrac{\lambda}{\Delta \lambda} = kN
+R = \dfrac{\lambda}{\delta \lambda} = kN
 $$
+也就是说，光栅缝数越多，其色分辨本领越强
 # 光栅光谱仪
 ## 透射光栅
 多缝衍射配置被称为*透射振幅光栅*
