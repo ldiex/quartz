@@ -45,7 +45,5 @@ tags:
 [[Angular Magnification]]
 
 # Course Review
-[[Optics Review]]
 [[Optics Midterm Review]]
-[[Optics Midterm Test]]
 [[Optics Final Review]]
