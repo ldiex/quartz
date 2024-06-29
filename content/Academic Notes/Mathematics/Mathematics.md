@@ -7,5 +7,7 @@ The general idea of *mathematics* is [[Abstraction|abstraction]]
 
 [[Number Theory]]
 
+[[Discrete Mathematics]]
+
 [[Group Theory]]
 [[Lie Algebra]]

@@ -12,7 +12,7 @@ $$
 \widetilde U(p) = \underset{(\Sigma)}{{\iint\hspace{-28px}{\subset\!\supset}}} \mathrm{d} {\widetilde U}(p)
 $$
 ![[光学-Fresnel衍射.png]]
-# Babinet 原理
+# Babinet原理
 互补屏衍射场的复振幅之和等于自由传播波场
 ![[光学-Babinet原理.png]]
 # 衍射的分类

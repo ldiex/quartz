@@ -2,7 +2,6 @@
 tags:
   - CoursePage
 ---
-
 # 24 Spring Course Content
 [[Introduction to Optics]]
 ## Geometrical Optics
@@ -49,5 +48,4 @@ tags:
 [[Optics Review]]
 [[Optics Midterm Review]]
 [[Optics Midterm Test]]
-
-
+[[Optics Final Review]]
