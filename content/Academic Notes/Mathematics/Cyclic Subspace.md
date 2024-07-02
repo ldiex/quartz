@@ -186,4 +186,3 @@ $$
 $$
 f(\mathcal A)(V) = f(\mathcal A)(U_1) \oplus \cdots \oplus f(\mathcal A)(U_\ell)
 $$
-

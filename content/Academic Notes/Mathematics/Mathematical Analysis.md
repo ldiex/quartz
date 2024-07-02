@@ -38,9 +38,6 @@ tags:
 [[Mathematical Analysis Tutorial Notes]]
 [[MA-Rev-List]]
 
-# Mind Map
-[[Series]]
-
 
 
 

@@ -17,6 +17,14 @@ The one's complement of a positive number is the number itself. For a negative n
 ## Two's Complement
 The two's complement of a positive number is the number itself. For a negative number, it's the one's complement plus 1.
 
+Particularly, the 8-bit two's complement `1000 0000` stands for the number $-128$
+
+## Overflow
+The range of numbers an 8-bit unsigned integer variable could represent is $[0,255]$
+
+The range of numbers an 8-bit signed integer variable could represent is $[-128, 127]$
+
+if we add two 8-bit unsigned integers $62$ and $195$ together, the sum we get should be $62+195-256 = 1$. Similarly, $1-62$ will get $1-62+256 = 195$
 # IEEE 754 Floating-Point Representation
 A single-precision floating-point number has 32 bits.
 For example:

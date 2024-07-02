@@ -119,7 +119,7 @@ $$
 $$
 f(v_x,v_y,v_z) =\left(\dfrac{1}{2\pi\sigma^2}\right)^{3/2} \exp \left[- \dfrac{v_x^2 + v_y^2 + v_z^2}{2\sigma^2}\right]
 $$
-这是一个*Gauss 函数*，也是*正态分布*，其中$\sigma$是标准差
+这是一个*Gauss 函数*，也是*正态分布*，其中$\sigma$是*标准差*
 
 ## Maxwell 速度分布函数
 由气体分子的平均动能$\bar \varepsilon = \dfrac{3}{2}k_BT$和$\bar\varepsilon = \dfrac{1}{2}m_0(v_x^2 + v_y^2 + v_z^2) = \dfrac{3}{2}m_0\sigma^2$

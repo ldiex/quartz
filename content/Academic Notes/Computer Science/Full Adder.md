@@ -7,3 +7,4 @@ $$
 \mathrm{Sum = A \oplus  B \oplus  C_{in}, \quad C_{out} = (A \land B) \vee (B \land C_{in}) \vee (A \land C_{in})}
 $$
 
+See also [[Ripple-carry Adder]]

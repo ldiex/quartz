@@ -41,6 +41,7 @@ $$
 > - 膨胀过程中系统对外界所做的功大于它所吸收的热量，一部分功是靠减少内能（降低系统温度）来实现的；
 > - 压缩过程中外界对系统所做的功大于气体放出的热量，一部分能量存储在系统中（系统温度升高）。
 # Van der Waals气体的情况
+## 等温过程
 对于单位摩尔[[Van der Waals Equation of State|Van der Waals]]气体，其等温过程
 $$
 \begin{aligned}
@@ -48,16 +49,21 @@ W_m = \int_{V_{1m}}^{V_{2m}} p\mathrm{d} V   & = \int_{V_{1m}}^{V_{2m}} \left( \
  & = RT \ln \left( \dfrac{V_{2m}-b}{V_{1m}-b} \right)  + a\left( \dfrac{1}{V_{1m}}-\dfrac{1}{V_{2m}} \right) 
 \end{aligned}
 $$
-$\nu$摩尔的情况就是
+而对于$\nu$摩尔的情况，由量纲分析可以得出
 $$
 W = \nu RT \ln\dfrac{V_2-\nu b}{V_1-\nu b} + a\left( \dfrac{
 \nu^2
 }{V_{1m}}-\dfrac{\nu^2}{V_{2m}} \right)
 $$
-对于绝热过程，对外做功就是负的内能改变量，由[[The First Law of Thermodynamics#内能公式|内能公式]]就有
+回忆[[The First Law of Thermodynamics#Van der Waals气体的内能|Van der Waals气体的内能]]
 $$
-W = -\Delta U = -\nu C_{Vm} \Delta T
+U = \int_{T_0}^T C_V\mathrm{d} T + U_0 - \dfrac{a\nu^2}{V}
 $$
+我们可以发现
+$$
+W_T = \nu RT \ln \dfrac{V_2'}{V_1'} + \left( \Delta U \right)_T
+$$
+也就是说Van der Waals气体在等温过程中对外做的功包含两个部分：修正气体体积后看作为理想气体对外做的功，和等温过程中其内能的改变量
 # 绝热节流过程
 ## Joule-Thomson 实验
 *多孔塞*：由多孔物质（如棉絮）做成的装置，对气流有较大的阻滞作用，使气体不容易很快通过它，从而能在两边维持一定的压强差

@@ -12,3 +12,6 @@ von Neumann architecture has the following characteristics
 - It's a *stored program computer*, which can store in memory a set of instructions (a program) that details the computation.
 - It's [[Instruction Pipeline|instruction]] driven, and a *instruction set* is designed to define what the processor can do
 - Sequential execution. The instructions are executed one by one, and only one can be tackled in the meantime
+
+See also:
+[[Software Stack on a von Neumann Computer]]

@@ -23,7 +23,7 @@ A *Turing machine* is a seven-tuple $(Q, \Sigma, \Gamma, \delta, q_0, q_\text{ac
 1. $Q$ is a non-empty finite set of states.
 2. $Σ$ is a non-empty finite input alphabet that does not contain the special blank symbol $\square$.
 3. $Γ$ is a non-empty finite tape alphabet with $Σ \subset Γ$; $\square \in Γ - Σ$ is the *blank symbol* and is the only symbol allowed to appear infinitely.
-4. $δ: (Q - \{q_\text{accept}, q_\text{reject}\}) \times Γ \to Q \times Γ \times \{L, R, -\}$ is the transition function where $L, R$ indicate whether the read-write head moves left or right, and $-$ indicates no movement.
+4. $δ: (Q - \{q_\text{accept}, q_\text{reject}\}) \times \Sigma \to Q \times Γ \times \{L, R, -\}$ is the transition function where $L, R$ indicate whether the read-write head moves left or right, and $-$ indicates no movement.
 5. $q_0 \in Q$ is the initial state.
 6. $q_\text{accept}$ is the accepting state.
 7. $q_\text{reject}$ is the rejecting state, and $q_\text{reject} \neq q_\text{accept}$.

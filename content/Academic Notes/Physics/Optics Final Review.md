@@ -42,8 +42,11 @@ $$
 
 ![[光学-Michelson-等倾条纹.png]]
 等倾条纹：厚度越大级数越多，条纹越多、越密
+其中中心条纹对应$\theta =  0$且级数最高，最边缘为$\theta=\theta_m$即视场角，级数最低
 ![[光学-Michelson-等厚条纹.png]]
 等厚条纹：厚度越小反衬度越高，厚度大了条纹过密反而看不清
+> [!Tip] 注意
+> 需要注意的是$M1$的移动距离对光程的影响是双倍的，也就是说，$M1$每移动$\dfrac{\lambda}{2}$距离，视场中心吞或吐一个亮环
 ## 光源非单色性对干涉条纹的影响
 以双线结构为例子
 $$
@@ -52,6 +55,9 @@ $$
 其中$\Delta L$为光程差，$\Delta k$为波数差
 
 条纹的反衬度随光程差作周期振动，振动的角频率为$\dfrac{\Delta k}{2}$
+
+具体而言$\Delta k = \left( \dfrac{2\pi}{\lambda_1} - \dfrac{2\pi}{\lambda_2}\right) = 2\pi \dfrac{\lambda_2-\lambda_1}{\lambda_1\lambda_2} = 2\pi\dfrac{\Delta \lambda}{\lambda^{2}} = \dfrac{2\pi}{l_0}$
+其中$l_0 = \dfrac{\lambda^{2}}{\Delta \lambda}$为该光线结构光源的*相干长度*
 ## 光场的相干性
 ### 产生原因
 空间相干性来源于扩展光源不同部分发光的独立性
@@ -104,7 +110,7 @@ $$
 $$
 2nh = k\lambda_k
 $$
-对于$\lambda_k$附近波长光线的分辨能力，设光波长为$\lambda$的$k$级可分辨的最小波长间隔为$\Delta \lambda$，则有
+对于$\lambda_k$附近波长光线的*分辨能力*，设光波长为$\lambda$的$k$级可分辨的最小波长间隔为$\Delta \lambda$，则有
 $$
 \Delta \lambda_k = \Delta \left( \dfrac{2nh}{k} \right) = -\dfrac{1}{k} \lambda_k 
 $$

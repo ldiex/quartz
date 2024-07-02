@@ -1,6 +1,6 @@
 ---
 tags:
-  - "#CoursePage"
+  - "CoursePage"
 ---
 [[Computational Thinking]]
 [[Data Representation]]

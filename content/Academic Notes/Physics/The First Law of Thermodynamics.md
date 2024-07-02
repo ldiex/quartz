@@ -7,10 +7,10 @@
 
 在理想条件下，处理准静态过程时可始终采用平衡态的理论，**并忽略时间效应**
 
-当过程变化的*特征时间*远大于系统的[[Temperature and Equilibrium State#平衡态|弛豫时间]]时，该过程就可以近似地看作准静态过程，比如说在气缸活塞上逐渐倒上沙子，此时活塞应为压力变化对气体影响的特征时间约为$0.1\mathrm{s}$，而气体系统从非平衡态达到平衡太的弛豫时间约为$0.001\mathrm{s}$，因此可以近似为准静态过程
+当过程变化的*特征时间*远大于系统的[[Temperature and Equilibrium State#平衡态|弛豫时间]]时，该过程就可以近似地看作准静态过程，比如说在气缸活塞上逐渐倒上沙子，此时活塞应为压力变化对气体影响的特征时间约为$0.1\mathrm{s}$，而气体系统从非平衡态达到平衡态的弛豫时间约为$0.001\mathrm{s}$，因此可以近似为准静态过程
 
 ## 过程曲线
-- 准静态过程中的每一时刻都可以用确 定的状态参量来描述，即对于*相图*上的一个点；
+- 准静态过程中的每一时刻都可以用确定的状态参量来描述，即对应于[[Phase Transition#相图|相图]]上的一个点；
 - 准静态过程可以用相图上的一条有方向的曲线来表示；
 - 准静态过程可分为：等温过程、等压过程、等体过程、[[Processes of Ideal Gases#绝热过程|绝热过程]]和[[Processes of Ideal Gases#循环过程|循环过程]]
 
@@ -31,7 +31,7 @@ $$
 > $$\mathrm{d}V = \left( \frac{ \partial V }{ \partial T }  \right)_p \mathrm{d} T + \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p $$
 > 且在恒温条件下
 > $$\mathrm{d}V = \left( \frac{ \partial V }{ \partial p }  \right)_T \mathrm{d}p = -\kappa_TV \mathrm{d}p$$
-> 故
+> 故有
 > $$W = -\int_1^2 p \mathrm{d}V = \int_{p_1}^{p_2} V \kappa_T p \mathrm{d}p$$
 > 又因为[[Response Function#等温压缩系数|固体的等温压缩系数]]特别小，所以过程中的体积可以近似为$V_1$，于是就有
 > $$W = \int_{p_1}^{p_2} V_1 \kappa_T p \mathrm{d}p = \dfrac{1}{2} V_1 \kappa_T(p_2^{2}-p_1^{2})$$
@@ -114,11 +114,11 @@ C_p = \lim_{\Delta T \to 0} \dfrac{(\Delta Q)_p}{\Delta T} = \lim_{\Delta T \to 
 $$
 是一个状态函数
 
-在实际应用中，焓闭内能更加实用，这是因为
+在实际应用中，焓比内能更加实用，这是因为
 - 固体和液体的[[Response Function#压强系数|压强系数]]较大，故实验上定压热容的测量要容易得多
 - 地球表面上得物体一般都是处于确定得大气压下，大部分工程技术或者化学反应等热力学过程都是在确定得压强下进行的
 - 由定压热容和定体热容可以得出[[Processes of Ideal Gases#绝热过程|绝热指数]]$\gamma = \dfrac{C_p}{C_V}$
-- 已经有大量物质在不同温度和压强下的焓值数据
+- 已经有大量物质在不同温度和压强下的焓值数据。
 # 理想气体的内能、焓和热容
 由[[Equipartition Theorem#多原子分子理想气体的内能和热容|能量均分定理]]，我们知道理想气体内能为$U = \dfrac{t + r + 2s}{2} \nu RT = U(T)$，由此可以推出理想气体焓：$H = U + pV = U(T) + \nu RT = H(T)$
 
@@ -142,7 +142,9 @@ $$
 $$
 \left(\dfrac{\partial U}{\partial V}\right)_T = T \left(\dfrac{\partial p}{\partial T}\right)_V - p
 $$
-也就是说可以直接从状态方程$f(p,V,T)$的形式在推导出$\left( \frac{ \partial U }{ \partial V } \right)_T$，由此可计算[[Van der Waals Equation of State|Van der Waals气体]]的内能
+也就是说可以直接从状态方程$f(p,V,T)$的形式在推导出$\left( \frac{ \partial U }{ \partial V } \right)_T$
+## Van der Waals气体的内能
+通过内能公式可计算[[Van der Waals Equation of State|Van der Waals气体]]的内能
 $$
 \left( \dfrac{\partial {U}}{\partial {V}} \right) = \dfrac{a\nu^2}{V}  \implies \mathrm{d} U = \left( \dfrac{\partial {U}}{\partial {T}} \right) \mathrm{d} T + \left( \dfrac{\partial {U}}{\partial {V}} \right) \mathrm{d} V = C_V\mathrm{d} T + \dfrac{a\nu^2}{V^2} \mathrm{d} V 
 $$

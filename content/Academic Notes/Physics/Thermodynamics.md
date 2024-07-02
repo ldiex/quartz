@@ -1,8 +1,7 @@
 ---
 tags:
-  - "#CoursePage"
+  - "CoursePage"
 ---
-
 # Contents
 [[Introduction to Thermodynamics]]
 [[Temperature and Equilibrium State]]
@@ -32,4 +31,4 @@ tags:
 
 # Exam & Review
 [[Thermodynamics Midterm Review]]
-
+[[Thermodynamics Final]]
