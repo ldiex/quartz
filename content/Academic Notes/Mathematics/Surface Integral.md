@@ -17,7 +17,10 @@ $$
 $$
 \iint_S f \mathrm{d}S = \iint_D f(\boldsymbol r(s,t)) \left\Vert \frac{ \partial \boldsymbol r }{ \partial s } \times \frac{ \partial \boldsymbol r }{ \partial t } \right \Vert \mathrm{d}s \mathrm{d}t
 $$
-其中$\Vert\cdot \Vert$表示[[Euclidean Space|欧式空间]]中的[[Euclidean Space#长度和距离|长度]]
+其中$\Vert\cdot \Vert$表示[[Euclidean Space|欧式空间]]中的[[Euclidean Space#长度和距离|长度]]，这是因为这里的面元$\mathrm{d}S$满足
+$$
+\mathrm{d}S = \left\Vert \mathrm{d}\boldsymbol l_s \times \mathrm{d}\boldsymbol l_t \right\Vert  = \left\Vert \frac{ \partial \boldsymbol r(s,t) }{ \partial s } \mathrm{d}s \times \frac{ \partial \boldsymbol r(s,t) }{ \partial t } \mathrm{d}t \right\Vert 
+$$
 # 第二型曲面积分
 ## 曲面的侧
 设连通曲面$S$上到处都有连续变动的切平面（或法线），$M$为曲面$S$上的一点，曲面在$M$处的法线有两个方向：当取定其中的一个方向为正方向时，另一个就是负方向。设$M_0$为$S$上任一点，$L$是$S$上任一经过点$M_0$，且不超出$S$边界的闭曲线。又设$M$为动点，它在$M_0$处与$M_0$有相同的法线方向，且有如下特性：当$M$从$M_0$出发沿$L$连续移动，这时作为曲面上的点$M$，它的法线方向也连续地变动。最后当$M$沿$L$回到$M_0$时，若这时$M$的法线方向仍然和$M_0$的法线方向一致，则说该曲面$S$时*双侧曲面*，若和$M_0$的法线方向相反，则说$S$是*单侧曲面*
@@ -27,18 +30,46 @@ $$
 ## 积分定义
 定义了曲面的正侧和负侧后，我们就能给出法向量$\boldsymbol{\hat{n}}$的方向，那么我们对于向量值函数$\boldsymbol f(x,y,z)$就能类似地定义第二型曲面积分
 $$
-\iint_S\boldsymbol f\cdot \boldsymbol{\hat{n}} \mathrm{d}S = \iint_S f_x\hat{n}_x+f_y\hat{n}_y +  f_z\hat{n}_z \mathrm{d}S
+\iint_S\boldsymbol f\cdot \boldsymbol{\hat{n}} \mathrm{d}S = \iint_S (f_x\hat{n}_x+f_y\hat{n}_y +  f_z\hat{n}_z) \mathrm{d}S
 $$
 写出分量后即可转换位第一型曲面积分来计算
 
+我们有时候也把上面的式子写成
+$$
+\begin{aligned}
+\iint_S\boldsymbol f\cdot \boldsymbol{\hat{n}} \mathrm{d}S &= \iint_S (f_x\hat{n}_x+f_y\hat{n}_y +  f_z\hat{n}_z) \mathrm{d}S \\
+&= \iint_S f_x \mathrm{d}y \mathrm{d}z + f_y \mathrm{d}x\mathrm{d}z + f_z \mathrm{d}x \mathrm{d}y
+\end{aligned}
+$$
+
 设积分曲面可由方程$F(x,y,z) = 0$来描述，则由[[Implicit Function#曲面的切平面与法线|隐函数定理]]，其上某点的法向量由隐函数$z = z(x,y)$确定
 $$
-\boldsymbol n = (z_x(x_0,y_0), z_y(x_0,y_0),-1) \text{ or } \boldsymbol n = —z_x(x_0,y_0), -z_y(x_0,y_0),1)
+\boldsymbol n = (z_x(x_0,y_0), z_y(x_0,y_0),-1) \text{ or } \boldsymbol n = (-z_x(x_0,y_0), -z_y(x_0,y_0),1)
 $$
 根据不同的正负规定，可以得到
 $$
 \boldsymbol {\hat{n}} = \pm\left( \frac{z_x}{\sqrt{ 1+z_x^{2}+z_y^{2} }}, \frac{z_y}{\sqrt{ 1+z_x^{2}+z_y^{2} }}, - \frac{1}{\sqrt{ 1+z_x^{2}+z_y^{2} }} \right) 
 $$
+或者我们采用更一般的形式，如果光滑曲面$S$可以由参量方程给出
+$$
+S: \begin{cases}
+ x= x(u,v)\\
+y = y(u,v) \\
+z = z(u,v)
+\end{cases}
+$$
+则有对应的一个法向量
+$$
+\left( \frac{ \partial (y,z) }{ \partial (u,v) } ,\frac{ \partial (z,x) }{ \partial (u,v) } ,\frac{ \partial (x,y) }{ \partial (u,v) }  \right) 
+$$
+且它的大小恰好满足
+$$
+\begin{gather}
+\iint_S f_x \mathrm{d}y \mathrm{d}z + f_y \mathrm{d}z \mathrm{d}x + f_z \mathrm{d}x \mathrm{d}y  \\
+= \pm \left[ \iint_{S'} f_x\frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}y \mathrm{d}z + f_y \frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d} z \mathrm{d}z + f_z \frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}x \mathrm{d}y \right] 
+\end{gather}
+$$
+这里的正负号取决于法向量$\displaystyle \left( \frac{ \partial (y,z) }{ \partial (u,v) } ,\frac{ \partial (z,x) }{ \partial (u,v) } ,\frac{ \partial (x,y) }{ \partial (u,v) }  \right)$是否在正向一侧
 # 相关定理
 散度定理 [[Gauss's Divergence Theorem]]
 旋度定理 [[Stokes' Curl Theorem]]

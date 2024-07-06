@@ -112,9 +112,13 @@ $$
 ## 用来求原函数
 如果$P,Q$满足上述四个条件中的任意一个（一般判定满足$\displaystyle \frac{ \partial P }{ \partial y }= \frac{ \partial Q }{ \partial x }$最为方便），则说明了二元函数在以固定的$A(x_0,y_0)$为起点，可变的$B(x,y)$为终点的曲线$L$上有
 $$
-u(x,y) = \int_{L} P \mathrm{d}x + Q \mathrm{d}y = \int_{A(x_0,y_0)}^{B(x,y)} P(s,t) \mathrm{d}s+ Q(s,t) \mathrm{d}t
+\begin{aligned}
+u(x,y) &= \int_{L} P \mathrm{d}x + Q \mathrm{d}y = \int_{A(x_0,y_0)}^{B(x,y)} P(s,t) \mathrm{d}s+ Q(s,t) \mathrm{d}t \\
+& = \int_{x_0}^xP(s,y_0) \mathrm{d}s + \int_{y_0}^yQ(s,t) \mathrm{d}t\quad (x_0,y_0) \to (x,y_0) \to(x,y) \\
+& = \int_{x_0}^xP(s,t) \mathrm{d}s + \int_{y_0}^yQ(x_0,t) \mathrm{d}t\quad (x_0,y_0) \to (x_0,y) \to(x,y) 
+\end{aligned}
 $$
-具有性质
+两条不同的路径给出了不同的积分方式，但是最终的积分结果总是具有性质
 $$
 \mathrm{d}u = P \mathrm{d}x + Q \mathrm{d}y
 $$
@@ -301,7 +305,7 @@ $$
 $$
 \Delta S = \iint_D \dfrac{\mathrm{d}x \mathrm{d}y}{\left|\cos \left< \boldsymbol n, \boldsymbol {\hat{z}} \right> \right|}
 $$
-### 质心的位置
+## 质心的位置
 对于某三维物体
 $$
 \bar{x} = \dfrac{\iiint_V x\rho(x,y,z) \mathrm{d}V}{\iiint_V \rho(x,y,z) \mathrm{d}V},\quad \bar{y} = \dfrac{\iiint_V y\rho(x,y,z) \mathrm{d}V}{\iiint_V \rho(x,y,z) \mathrm{d}V}
@@ -310,7 +314,7 @@ $$
 $$
 \bar{x} = \dfrac{\iint_D x \rho(x,y) \mathrm{d}\sigma}{\iint_D \rho(x,y) \mathrm{d}\sigma},\; \bar{y} = \dfrac{\iint_D y \rho(x,y) \mathrm{d}\sigma}{\iint_D \rho(x,y) \mathrm{d}\sigma}
 $$
-### 转动惯量
+## 转动惯量
 回顾力学定义
 $$
 J_o = \iiint_V R^{2}\mathrm{d}m = \iiint \Vert \overrightarrow{OR} \Vert ^{2} \rho \mathrm{d}V

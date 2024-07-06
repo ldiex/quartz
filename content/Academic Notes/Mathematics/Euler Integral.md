@@ -49,7 +49,7 @@ B(p,q) = 2\int_0^{\pi/2} \sin^{2q-1}\phi \cos^{2p-1}\phi\mathrm{d} \phi
 $$
 令$x = \dfrac{y}{1+y}$，就有
 $$
-B(p,q) = \int_0^{+\infty} \dfrac{y^{p-1}}{(1+y)^{p+q}} \mathrm{d} x
+B(p,q) = \int_0^{+\infty} \dfrac{y^{p-1}}{(1+y)^{p+q}} \mathrm{d} y
 $$
 设$y = \dfrac{1}{t}$，我们有
 $$
