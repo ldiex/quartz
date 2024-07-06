@@ -196,7 +196,7 @@ $$
 
 积分$\displaystyle \int_1^{+\infty} \dfrac{y \sin xy}{1+y^{2}} \mathrm{d}y$在$\mathbb{R}^+$上**内闭**一致收敛，这是因为考虑任意区间$[a,b] \subset (0,+\infty)$，对$\forall x\in[a,b]$，有
 $$
-\left|\int_a^b \sin xy \mathrm{d}y \right| = \left| -\dfrac{\cos xy}{x}\right| {\bigg{|}}_{a}^b \leq \dfrac{2}{a}
+\left|\int_a^b \sin xy \mathrm{d}y \right| = \left| -\dfrac{\cos xy}{x}\right| {\bigg|}_{a}^b \leq \dfrac{2}{a}
 $$
 故$\displaystyle \int_1^{+\infty} \sin xy \mathrm{d}y$一致有界。而$\displaystyle \dfrac{y}{1+y^{2}}$在$y \to +\infty$时单调趋于$0$，故得证
 ## 含参量反常积分的计算
@@ -236,7 +236,7 @@ $$
 故可以展开为分部积分
 $$
 \begin{aligned}
-\phi'(r) &= 1\cdot\dfrac{1}{2}\sin(rx)\exp(-x^{2}) {\bigg{|}}_0^{+\infty} + (-1)\cdot\int_0^{+\infty} \dfrac{r}{2}\cos(rx) \exp(-x^{2}) \mathrm{d}x \\
+\phi'(r) &= 1\cdot\dfrac{1}{2}\sin(rx)\exp(-x^{2}) {\bigg|}_0^{+\infty} + (-1)\cdot\int_0^{+\infty} \dfrac{r}{2}\cos(rx) \exp(-x^{2}) \mathrm{d}x \\
 &= -\dfrac{r}{2}\phi(r)
 \end{aligned}
 $$
@@ -489,7 +489,7 @@ $$
 
 计算抛物线$(x+y)^{2} = ax \; (a>0)$与$x$轴所围的面积，则我们希望求$\displaystyle \iint_D1 \cdot \mathrm{d}S$，需要找到一个函数$\boldsymbol f$使得$\displaystyle \nabla \times \boldsymbol f = 1 \iff \frac{ \partial f_y }{ \partial x } -\frac{ \partial f_x }{ \partial y } = 1$，故可令$\boldsymbol f =(y, 0)$，则此时有
 $$
-\iint_D \mathrm{d}S = \oint_{\delta D} y \mathrm{d}x= 0 + \int_a^0 (x -\sqrt{ ax }) \mathrm{d}x = \left(\dfrac{x^{2}}{2}- \dfrac{2}{3}\sqrt{ a }x^{3/2}\right) {\bigg{|}}_a^0 = \dfrac{1}{6}a^{2}
+\iint_D \mathrm{d}S = \oint_{\delta D} y \mathrm{d}x= 0 + \int_a^0 (x -\sqrt{ ax }) \mathrm{d}x = \left(\dfrac{x^{2}}{2}- \dfrac{2}{3}\sqrt{ a }x^{3/2}\right) {\bigg|}_a^0 = \dfrac{1}{6}a^{2}
 $$
 
 用曲线积分求$\displaystyle (2x+\sin y) \mathrm{d}x + (x\cos y)\mathrm{d}y$的一个原函数，考虑到
@@ -863,7 +863,7 @@ $$
 \begin{aligned}
 \iint_S \dfrac{\mathrm{d}S}{z} &= \int_0^{2\pi} \int_{0}^{\arccos (h/a)} \dfrac{a^{2}\sin \phi \mathrm{d}\phi}{a\cos \phi} \mathrm{d}\theta \\
 &= 2\pi a \int_0^{\arccos(h/a)} \tan \phi \mathrm{d}\phi  \\
-&=2\pi a \ln \left|\cos \phi\right| {\bigg{\vert}}_0^{\arccos (h/a)} \\
+&=2\pi a \ln \left|\cos \phi\right| {\bigg\vert}_0^{\arccos (h/a)} \\
 &= 2\pi \ln \dfrac{a}{h}
 \end{aligned}
 $$

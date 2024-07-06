@@ -249,7 +249,7 @@ $$
 $$
 故
 $$
-\dfrac{Q_2}{Q_1} = \dfrac{Q_2}{Q_3} \bigg{/} \dfrac{Q_1}{Q_3} \implies f(\theta_1,\theta_2) = \dfrac{f(\theta_3,\theta_2)}{f(\theta_3,\theta_1)}
+\dfrac{Q_2}{Q_1} = \dfrac{Q_2}{Q_3} \bigg/ \dfrac{Q_1}{Q_3} \implies f(\theta_1,\theta_2) = \dfrac{f(\theta_3,\theta_2)}{f(\theta_3,\theta_1)}
 $$
 由于$\theta_3$是独立的，所以$f$必须有$\dfrac{Q_2}{Q_1} = f(\theta_1,\theta_2) = \dfrac{\psi(\theta_1)}{\psi(\theta_2)}$的形式，我们可以用这个关系来标定温度：假设我们已经知道某个热源的温度，热力学温标$\psi(\theta_0)$，那么我们构建一个工作在这个已知温度和待测量温度之间的一个Carnot热机，就可以通过上式确定待测量温度的热力学温标$\psi(\theta_1)$
 

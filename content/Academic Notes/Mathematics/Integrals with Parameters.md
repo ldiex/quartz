@@ -258,7 +258,7 @@ $$
 故可以展开为分部积分
 $$
 \begin{aligned}
-\phi'(r) &= 1\cdot\dfrac{1}{2}\sin(rx)\exp(-x^{2}) {\bigg{|}}_0^{+\infty} + (-1)\cdot\int_0^{+\infty} \dfrac{r}{2}\cos(rx) \exp(-x^{2}) \mathrm{d}x \\
+\phi'(r) &= 1\cdot\dfrac{1}{2}\sin(rx)\exp(-x^{2}) {\bigg|}_0^{+\infty} + (-1)\cdot\int_0^{+\infty} \dfrac{r}{2}\cos(rx) \exp(-x^{2}) \mathrm{d}x \\
 &= -\dfrac{r}{2}\phi(r)
 \end{aligned}
 $$

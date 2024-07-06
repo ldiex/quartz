@@ -6,7 +6,8 @@ tags:
 [[Mathematical Analysis 23 Fall Final]]
 [[Analysis Notes]]
 [[Improper Integrals]]
-[[Mathematical Analysis 24 Spring Midterm Review]]
+[[Mathematical Analysis 24 Spring Midterm]]
+[[Mathematical Analysis 24 Spring Final]]
 # Course 2024 Spring Content
 [[Polynomial Series]]
 [[Function Series]]
