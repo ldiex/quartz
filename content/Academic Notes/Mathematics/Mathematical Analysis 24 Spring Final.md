@@ -1,8 +1,3 @@
-# 形心公式
-例如在对称的区域$D$（通常是球或者圆）上要计算
-$$
-\iint_D (x+3y) \mathrm{d}x \mathrm{d}y= \iint_D x \mathrm{d}x\mathrm{d}y + 3 \iint_D y \mathrm{d}x \mathrm{d}y = \bar{x} S_D + 3 \bar{y} S_D
-$$
 # 含参量积分
 ## 含参量正常积分
 含参量积分本质上就是一种*偏积分*，一个二元函数的含参量积分就是把一个变量看作常数，然后对另一个变量积分
@@ -39,7 +34,7 @@ $$
 $$
 故有
 $$
-F'(x) = \int_{c(x)}^{d(x)}f_x(x,y) \mathrm{d}x -f(x,c(x))c'(x) + f(x,d(x))d'(x)
+F'(x) = \int_{c(x)}^{d(x)}f_x(x,y) \mathrm{d}y -f(x,c(x))c'(x) + f(x,d(x))d'(x)
 $$
 
 含参量积分也**保持可积性**，且对于连续函数有
@@ -142,7 +137,7 @@ Cauchy准则的**否定**是，存在$\varepsilon_0>0$，对任意实数$M>c$，
 $$
 \left| \int_{A_1}^{A_2} f(x^*,y) \mathrm{d} y \right| \ge \varepsilon_0 
 $$
-若对任意$[a,b]\subset I$，含参量反常积分在$[a,b]$上一致收敛，则称该含参量反常积分在$I$上*内闭一致收敛*。
+若对任意$[a,b]\subset I$，含参量反常积分在$[a,b]$上一致收敛，则称该含参量反常积分在$I$上*内闭一致收敛*. 
 
 一个不一致收敛但是内闭一致收敛的例子是在$(0,+\infty)$上的含参量反常积分
 $$
@@ -185,20 +180,24 @@ $$
 总结
 - 大M: 通过放缩把参量$x$干掉
 - Abel: 一致收敛+单调一致有界
-- Dirichlet: 一致有界 + 单调收敛至$0$
+- Dirichlet: 一致有界 + 单调且在非参量趋于正无穷时一致收敛至$0$
 ## 含参量反常积分的判定实例
 积分$\displaystyle \int_0^{+\infty} \dfrac{\cos xy}{1+x^{2}}\mathrm{d}x$在$\mathbb{R}$上一致收敛，这是因为
 $$
 \int_0^{+\infty} \dfrac{\cos xy}{1+x^{2}} \mathrm{d}x \leq \int_0^{+\infty} \dfrac{\mathrm{d}x}{1 + x^{2}} = \dfrac{\pi}{2}
 $$
 
-积分$\displaystyle \int_0^{+\infty} \exp(-xy) \dfrac{\sin x}{x} \mathrm{d}x$在$[0, + \infty)$上一致收敛，这是因为反常积分$\displaystyle \int_0^{+\infty} \dfrac{\sin x}{x} \mathrm{d}x$收敛（由Dirichlet判别法，$\sin x$是有界的且$\dfrac{1}{x}$单调趋于$0$），且$\exp(-xy)$对$\forall x\in [0,+\infty)$单调收敛至$0$，故根据Abel判别法得证
+积分$\displaystyle \int_0^{+\infty} \exp(-xy) \dfrac{\sin x}{x} \mathrm{d}x$在$[0, + \infty)$上一致收敛，这是因为反常积分$\displaystyle \int_0^{+\infty} \dfrac{\sin x}{x} \mathrm{d}x$一致收敛（由Dirichlet判别法，$\sin x$是有界的且$\dfrac{1}{x}$单调趋于$0$），且$\exp(-xy)$在$y \t\oplus \infty$对$\forall x\in [0,+\infty)$单调收敛至$0$，故根据Abel判别法得证
+
+注意这里不能通过$\displaystyle \int_0^{+\infty} \exp(-xy) \sin x \mathrm{d}x\leq \int_0^{+\infty} \exp(-xy) \mathrm{d}x$一致有界且$\dfrac{1}{x}$单调趋于$0$来证明，这是因为当$y = 0$时$\displaystyle \int_0^{+\infty} \exp(-xy) \mathrm{d}x$是无界的
 
 积分$\displaystyle \int_1^{+\infty} \dfrac{y \sin xy}{1+y^{2}} \mathrm{d}y$在$\mathbb{R}^+$上**内闭**一致收敛，这是因为考虑任意区间$[a,b] \subset (0,+\infty)$，对$\forall x\in[a,b]$，有
 $$
 \left|\int_a^b \sin xy \mathrm{d}y \right| = \left| -\dfrac{\cos xy}{x}\right| {\bigg|}_{a}^b \leq \dfrac{2}{a}
 $$
-故$\displaystyle \int_1^{+\infty} \sin xy \mathrm{d}y$一致有界。而$\displaystyle \dfrac{y}{1+y^{2}}$在$y \to +\infty$时单调趋于$0$，故得证
+故$\displaystyle \int_1^{+\infty} \sin xy \mathrm{d}y$一致有界. 而$\displaystyle \dfrac{y}{1+y^{2}}$在$y \to +\infty$时单调趋于$0$，故得证
+
+同样的，如果$x$能取到$0$，这个含参量反常积分就不能一致收敛
 ## 含参量反常积分的计算
 要求$J=\displaystyle \int_0^{+\infty} \exp(-px)\dfrac{\sin bx - \sin ax}{x}\mathrm{d}x \quad(p>0,b>a)$，首先注意到
 $$
@@ -456,7 +455,7 @@ $$
 $$
 也就是说，我们利用上面的积分找到$P\mathrm{d}x + Q \mathrm{d}y$的一个*原函数*
 ### 计算例题
-计算$\displaystyle \int_{\ell} x \mathrm{d}y$，其中$\ell$为半径为$r$的原在第一象限的部分，方向为顺时针。我们考虑三段路径
+计算$\displaystyle \int_{\ell} x \mathrm{d}y$，其中$\ell$为半径为$r$的圆在第一象限的部分，方向为顺时针. 我们考虑三段路径
 $$
 L_1 :\text{线段} (r,0) \to(0,0),\quad L_2:\text{线段}(0,0) \to(0,r),\quad L_3:\ell
 $$
@@ -473,9 +472,9 @@ $$
 \int_\ell x \mathrm{d}y = \int_{\pi/2}^0 r\cos \theta \cdot r \cos \theta \mathrm{d}\theta = \dfrac{r^{2}}{2}\int_{\pi/2}^0 (1+\cos2\theta) \mathrm{d}\theta = -\dfrac{1}{4}\pi r^{2}
 $$
 > [!tip]
-> 使用Grenn公式时先画个图把路径的方向标出来（顺时针还是逆时针），然后根据方向来确定积分的**上下限**
+> 使用Green公式时先画个图把路径的方向标出来（顺时针还是逆时针），然后根据方向来确定积分的**上下限**
 
-计算$\displaystyle I = \oint_\ell \dfrac{x \mathrm{d}y - y \mathrm{d}x}{x^{2}+y^{2}}$ ，其中$\ell$是不包含原点的任意封闭曲线。设$\boldsymbol f = \left( -\dfrac{y}{x^{2}+y^{2}}, \dfrac{x}{x^{2}+y^{2}} \right)$，则
+计算$\displaystyle I = \oint_\ell \dfrac{x \mathrm{d}y - y \mathrm{d}x}{x^{2}+y^{2}}$ ，其中$\ell$是不包含原点的任意封闭曲线. 设$\boldsymbol f = \left( -\dfrac{y}{x^{2}+y^{2}}, \dfrac{x}{x^{2}+y^{2}} \right)$，则
 $$
 \begin{aligned}
 \nabla \times \boldsymbol f &= \frac{ \partial  }{ \partial x } \left( \dfrac{x}{x^{2}+y^{2}} \right) - \frac{ \partial  }{ \partial y } \left( -\dfrac{y}{x^{2}+y^{2}} \right) \\
@@ -617,7 +616,7 @@ I &= \int_0^{2\pi} \int_0^R \exp(-r^{2}) r \mathrm{d}r \mathrm{d}\theta  \\
 \end{aligned}
 $$
 > [!Tip]
-> 先写出合适的换元公式，确定面积元的变换，再确定**积分的边界**即积分变量的范围，最后再积分。含有三角函数的积分常用到Wallis积分结果
+> 先写出合适的换元公式，确定面积元的变换，再确定**积分的边界**即积分变量的范围（注意要保证如$r$需要取到正值，如果$\theta$和被积函数有关则尽可能一开始利用对称性将其转化为$[0, \dfrac{\pi}{2}]$，否则之后的每一步都有可能需要讨论$\sin \theta, \cos \theta$的正负），最后再积分. 含有三角函数的积分常用到Wallis积分结果
 ## 三重积分
 只需要注意三种积分常见的变量替换有两种
 ### 柱坐标变换
@@ -705,7 +704,7 @@ $$
 > [!Tip]
 > 不要漏乘$abc$
 
-计算$I = \displaystyle \iiint_V (x^{2}+y^{2}) \mathrm{d}x \mathrm{d}y \mathrm{d}z$，其中$V$是曲面$2(x^{2}+y^{2}) = z$与$z = 4$为界面的曲面，采用柱坐标变换
+计算$I = \displaystyle \iiint_V (x^{2}+y^{2}) \mathrm{d}x \mathrm{d}y \mathrm{d}z$，其中$V$是曲面$2(x^{2}+y^{2}) = z$与$z = 4$为界面的区域，采用柱坐标变换
 $$
 x = r \cos \theta,\; y = r\sin \theta \implies \mathrm{d}V = r \mathrm{d}r \mathrm{d}\theta \mathrm{d}z
 $$
@@ -775,6 +774,12 @@ $$
 $$
 \bar{x} = \dfrac{\iint_D x \rho(x,y) \mathrm{d}\sigma}{\iint_D \rho(x,y) \mathrm{d}\sigma},\; \bar{y} = \dfrac{\iint_D y \rho(x,y) \mathrm{d}\sigma}{\iint_D \rho(x,y) \mathrm{d}\sigma}
 $$
+#### 形心公式
+例如在对称的区域$D$（通常是球或者圆）上要计算
+$$
+\iint_D (x+3y) \mathrm{d}x \mathrm{d}y= \iint_D x \mathrm{d}x\mathrm{d}y + 3 \iint_D y \mathrm{d}x \mathrm{d}y = \bar{x} S_D + 3 \bar{y} S_D
+$$
+
 ### 转动惯量
 回顾力学定义
 $$
@@ -822,7 +827,7 @@ $$
 \mathrm{d}S = \left\Vert \mathrm{d}\boldsymbol l_s \times \mathrm{d}\boldsymbol l_t \right\Vert  = \left\Vert \frac{ \partial \boldsymbol r(s,t) }{ \partial s } \mathrm{d}s \times \frac{ \partial \boldsymbol r(s,t) }{ \partial t } \mathrm{d}t \right\Vert 
 $$
 
-计算$\displaystyle \iint_S \dfrac{\mathrm{d}S}{z}$，其中$S$是球面$x^{2}+y^{2} +z^{2} = a^{2}$被平面$z = h\quad(0 < h < a)$所截的顶部。我们先写出$S$的方程
+计算$\displaystyle \iint_S \dfrac{\mathrm{d}S}{z}$，其中$S$是球面$x^{2}+y^{2} +z^{2} = a^{2}$被平面$z = h\quad(0 < h < a)$所截的顶部. 我们先写出$S$的方程
 $$
 S:x^{2}+y^{2} +z^{2} = a^{2},z \geq h
 $$
@@ -864,7 +869,7 @@ $$
 \iint_S \dfrac{\mathrm{d}S}{z} &= \int_0^{2\pi} \int_{0}^{\arccos (h/a)} \dfrac{a^{2}\sin \phi \mathrm{d}\phi}{a\cos \phi} \mathrm{d}\theta \\
 &= 2\pi a \int_0^{\arccos(h/a)} \tan \phi \mathrm{d}\phi  \\
 &=2\pi a \ln \left|\cos \phi\right| {\bigg\vert}_0^{\arccos (h/a)} \\
-&= 2\pi \ln \dfrac{a}{h}
+&= 2\pi a \ln \dfrac{a}{h}
 \end{aligned}
 $$
 > [!tip]
@@ -878,7 +883,7 @@ y = a \sin \phi \sin \theta \\
 z = a+a\cos \phi 
 \end{cases},\quad 0 \leq \phi \leq \pi, \; 0 \leq \theta \leq 2\pi
 $$
-且$\mathrm{d}S = a^{2}\sin \phi$
+且$\mathrm{d}S = a^{2}\sin \phi \mathrm{d}\phi \mathrm{d}\theta$
 故有
 $$
 \begin{aligned}
@@ -888,7 +893,7 @@ I &= \int_0^{2\pi} \int_0^{\pi} (2a^{2} + 2a^{2}\cos \phi) a^{2}\sin \phi\mathrm
 \end{aligned}
 $$
 > [!Tip]
-> 此题中如果用标准的球坐标变换形式，则参数方程及其面元的形式将会十分难看。所以如何选取球坐标变换的形式需要综合分析在某个变换下被积函数$f$本身和面元$\mathrm{d}S$的复杂程度（在计算多重积分时则是$S$的边界的复杂程度）
+> 此题中如果用标准的球坐标变换形式，则参数方程及其面元的形式将会十分难看. 所以如何选取球坐标变换的形式需要综合分析在某个变换下被积函数$f$本身和面元$\mathrm{d}S$的复杂程度（在计算多重积分时则是$S$的边界的复杂程度）
 
 求均匀曲面$x^{2}+y^{2}+z^{2} = a^{2},\;x \geq 0,\; y \geq 0,\;z\geq 0$的质心，考虑球坐标
 $$
@@ -947,7 +952,7 @@ $$
 $$
 \begin{gather}
 \iint_S f_x \mathrm{d}y \mathrm{d}z + f_y \mathrm{d}z \mathrm{d}x + f_z \mathrm{d}x \mathrm{d}y  \\
-= \pm \left[ \iint_{S'} f_x\frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}y \mathrm{d}z + f_y \frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d} z \mathrm{d}z + f_z \frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}x \mathrm{d}y \right] 
+= \pm \left[ \iint_{S'} f_x\frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}u \mathrm{d}v + f_y \frac{ \partial (y,z) }{ \partial (u,v) }\mathrm{d}u \mathrm{d}v + f_z \frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}u \mathrm{d}v \right] 
 \end{gather}
 $$
 这里的正负号取决于法向量$\displaystyle \left( \frac{ \partial (y,z) }{ \partial (u,v) } ,\frac{ \partial (z,x) }{ \partial (u,v) } ,\frac{ \partial (x,y) }{ \partial (u,v) }  \right)$是否在正向一侧
@@ -1020,7 +1025,7 @@ $$
 $$
 就和直接转化为$\hat{n}_z\mathrm{d}S$的办法得到了一样的积分式子
 
-计算$\displaystyle \iint_S (2x+z) \mathrm{d}y \mathrm{d}z + z \mathrm{d}x \mathrm{d}y$，其中$S: z = x^{2}+y^{2}, 0 \leq z \leq 1$，我们依旧可以通过一般方法
+- [ ] 计算$\displaystyle \iint_S (2x+z) \mathrm{d}y \mathrm{d}z + z \mathrm{d}x \mathrm{d}y$，其中$S: z = x^{2}+y^{2}, 0 \leq z \leq 1$，我们依旧可以通般方法
 $$
 \begin{cases}
 z = r^{2} \\

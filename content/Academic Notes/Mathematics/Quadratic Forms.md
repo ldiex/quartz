@@ -56,7 +56,7 @@ $$
 # 可一次多项式分解的二次型的秩
 设$p\in F[x_1, \ldots, x_n]$非零齐二次. 那么如果$p$可以分解为两个一次多项式之积，则$p$作为$F^n$上的二次型秩小于$3$
 
-设$p = fg$，其中$f,g$是$F[x_1, \ldots, x_n]$的齐一次多项式。令
+设$p = fg$，其中$f,g$是$F[x_1, \ldots, x_n]$的齐一次多项式. 令
 $$
 f = \alpha_1 x_1 + \cdots + \alpha_n x_n, \quad g = \beta_1 x_1 + \cdots + \beta_n x_n
 $$

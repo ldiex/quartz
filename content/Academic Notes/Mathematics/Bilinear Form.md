@@ -131,7 +131,7 @@ $$
 	- 一方面$f(\boldsymbol e_1, \boldsymbol e_1) \neq 0$，故$\dim(\mathrm{im}(f(\boldsymbol x, \boldsymbol e_1))) \ge 1$
 	- 另一方面$\mathrm{im}(f(\boldsymbol x, \boldsymbol e_1)) \subset F$, 故$\dim(\mathrm{im}(f(\boldsymbol x, \boldsymbol e_1))) \le 1$
 	- 于是$\dim(\mathrm{im}(f(\boldsymbol x, \boldsymbol e_1))) = 1$, 由[[Basis and Dimension#对偶定理|对偶定理]] 得$\dim(W) = n - 1$
-- 设$g \in \mathcal L_2(W)$满足$\forall \boldsymbol x, \boldsymbol y \in W,\; g(\boldsymbol x, \boldsymbol y) = f(\boldsymbol x, \boldsymbol y)$，由归纳条件，存在$W$的一组基$\boldsymbol e_2, \cdots, \boldsymbol e_n$使得$\forall i, j \in\{2, 3, \cdots, n\},\; i \neq j$有$g(\boldsymbol e_i, \boldsymbol e_j) = f(\boldsymbol e_i, \boldsymbol e_j)  = 0$，由于我们已经证明了直和分解，$\boldsymbol e_1, \cdots, \boldsymbol e_n$即为$V$的一组基。
+- 设$g \in \mathcal L_2(W)$满足$\forall \boldsymbol x, \boldsymbol y \in W,\; g(\boldsymbol x, \boldsymbol y) = f(\boldsymbol x, \boldsymbol y)$，由归纳条件，存在$W$的一组基$\boldsymbol e_2, \cdots, \boldsymbol e_n$使得$\forall i, j \in\{2, 3, \cdots, n\},\; i \neq j$有$g(\boldsymbol e_i, \boldsymbol e_j) = f(\boldsymbol e_i, \boldsymbol e_j)  = 0$，由于我们已经证明了直和分解，$\boldsymbol e_1, \cdots, \boldsymbol e_n$即为$V$的一组基. 
 - 又由$W$的定义，$f(\boldsymbol e_i, \boldsymbol e_1) = 0,\; i = 2, 3, \cdots, n$. 再由$f$对称性反过来也成立. 于是$\forall i, j \in\{1, 2, \cdots, n\},\; i \neq j$有$f(\boldsymbol e_i, \boldsymbol e_j) = 0$. 归纳假设对$\dim(V) = n$也成立
 ### 合同对角化方法
 #### 求kernel

@@ -64,7 +64,7 @@ K = \lim_{x \to x_0}\lim_{y \to y_0} f(x, y)
 $$
 **累次极限与重极限是两个不同的概念，它们的存在性没有必然的蕴含关系**
 
-**但是如果重极限和累次极限（某一个）都存在，则它们必然相等**。如果两个累次极限存在但是不相等，则重极限不存在
+**但是如果重极限和累次极限（某一个）都存在，则它们必然相等**. 如果两个累次极限存在但是不相等，则重极限不存在
 
 # 二元函数的连续性
 ## 定义
@@ -100,7 +100,7 @@ $$
 \end{aligned}
 $$
 一般来说，函数的全增量不等于相应的两个偏增量之和
-如果有$\displaystyle \lim_{\Delta x \to 0} \Delta_x f(x_0, y_0) =0$或者$\displaystyle \lim_{\Delta y \to 0} \Delta_x f(x_0, y_0) =0$，则称$f$作为$x$的一元函数在$x_0$连续或者作为$y$的一元函数在$y_0$连续。但是，**二元函数对两个自变量都连续不能保证该函数的连续性**
+如果有$\displaystyle \lim_{\Delta x \to 0} \Delta_x f(x_0, y_0) =0$或者$\displaystyle \lim_{\Delta y \to 0} \Delta_x f(x_0, y_0) =0$，则称$f$作为$x$的一元函数在$x_0$连续或者作为$y$的一元函数在$y_0$连续. 但是，**二元函数对两个自变量都连续不能保证该函数的连续性**
 
 ### 复合函数的连续性
 设函数$u = \varphi(x, y)$和$v = \psi(x, y)$在$xy$平面上点$P_0(x_0, y_0)$的某邻域内有定义，并在点$P_0$连续；函数$f(u, v)$在$uv$平面上的点$Q_0(u_0, v_0)$的某邻域内有定义且在$Q_0$连续，其中$u_0 = \varphi(x_0, y_0), v_0 = \psi(x_0, y_0)$. 则复合函数$f(x, y) = f[\varphi(x, y), \psi(x, y)]$在点$P_0$连续
@@ -109,7 +109,7 @@ $$
 ### 有界性和最大、最小值定理
 若函数$f$在有界[[Planar Point Set#闭域|闭域]]$D \subset \mathbb R^2$上连续，则$f$在$D$上有界，且能取到最大值与最小值
 ### 一致连续性定理
-若函数$f$在有界闭域$D \subset \mathbb R^2$上连续，则$f$在$D$上*一致连续*。即对$\forall \varepsilon > 0$，总存在之依赖于$\varepsilon$的正数$\delta$，使得对于一切点$P, Q$，$\rho(P, Q) < \delta \implies \left|{f(P) - f(Q)}\right| < \varepsilon$
+若函数$f$在有界闭域$D \subset \mathbb R^2$上连续，则$f$在$D$上*一致连续*. 即对$\forall \varepsilon > 0$，总存在之依赖于$\varepsilon$的正数$\delta$，使得对于一切点$P, Q$，$\rho(P, Q) < \delta \implies \left|{f(P) - f(Q)}\right| < \varepsilon$
 ### 介值性定理
 设函数$f$在区域$D \subset \mathbb R^2$上连续，若$P_1, P_2 \in D$且$f(P_1) < f(P_2)$，则对任何满足$f(P_1) < \mu < f(P_2)$的$\mu$，必然存在$P_0 \in D$使得$f(P_0) = \mu$
 

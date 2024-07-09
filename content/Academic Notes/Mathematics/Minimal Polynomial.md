@@ -10,13 +10,13 @@ $$
 即$f(A) \sim_s f(B)$
 
 # 零化多项式和极小多项式
-设$f \in F[t], \mathcal A \in \mathcal L(V)$. 如果$f(\mathcal A) = \mathcal O$, 则称$f$是关于$\mathcal A$的*零化多项式*。 类似地可对$A \in \mathrm{M_n}(F)$定义$A$的零化多项式的概念。在这些零化多项式中，我们把**次数最小**的称为*极小多项式*
+设$f \in F[t], \mathcal A \in \mathcal L(V)$. 如果$f(\mathcal A) = \mathcal O$, 则称$f$是关于$\mathcal A$的*零化多项式*.  类似地可对$A \in \mathrm{M_n}(F)$定义$A$的零化多项式的概念. 在这些零化多项式中，我们把**次数最小**的称为*极小多项式*
 > [!Note]
 > 设$A, B\in \mathrm{M}_n(F)$，则$A \sim_s B \implies \mu_A = \mu_B$
 
 $\mathcal A$的[[Characteristic Polynomial|特征多项式]]是$\mathcal A$的一个特殊的零化多项式，通过后面的整除判别法，**我们可以从它的因子中寻找极小多项式**
 # 整除判别法
-设$\mathcal{A} \in \mathcal{L}(V)$和$p(t) \in F[t] \backslash \{0\}$零化$\mathcal{A}$。 则$p$是$\mathcal{A}$的极小多项式$\iff$对任意$f\in F[t]$零化$\mathcal{A}$, $p \mid f$
+设$\mathcal{A} \in \mathcal{L}(V)$和$p(t) \in F[t] \backslash \{0\}$零化$\mathcal{A}$.  则$p$是$\mathcal{A}$的极小多项式$\iff$对任意$f\in F[t]$零化$\mathcal{A}$, $p \mid f$
 
 > [!Tip]
 > 由此可知，$\mathcal{A}$的两个极小多项式必然在$F[t]$中相伴. **我们把关于$\mathcal{A}$的[[Multivariate Polynomial Ring#首一多项式|首一多项式]]记为$\mu_\mathcal{A}$**. 
@@ -58,7 +58,7 @@ $$
 # 零化某个向量的极小多项式
 设$\mathcal A \in \mathcal{L}(V), \boldsymbol v \in V, f(t) \in F[t]$. 如果$f(\mathcal A)(\boldsymbol v) = \boldsymbol 0$, 则称$f(t)$是*通过$\mathcal A$零化$\boldsymbol v$的多项式*. 
 
-非零、次数最小的这样的多项式称为*通过$\mathcal A$零化$\boldsymbol v$的极小多项式*，记为$\mu_{\mathcal A, \boldsymbol v}$, 它通常是首一的。
+非零、次数最小的这样的多项式称为*通过$\mathcal A$零化$\boldsymbol v$的极小多项式*，记为$\mu_{\mathcal A, \boldsymbol v}$, 它通常是首一的. 
 
 ## 零化某个向量的极小多项式的性质
 ### 平凡情况
@@ -71,7 +71,7 @@ $$
 
 ### 和极小多项式之间的联系
 1. $\mu_{\mathcal A ,\boldsymbol v} \mid \mu_\mathcal A$
-2. 对$\forall \mathcal A \in \mathcal{L}(V)$存在$\boldsymbol v\in V$使得$\mu_{\mathcal A, \boldsymbol v} = \mu_\mathcal A$. 也就是说，总是存在这样一个$\boldsymbol v$使得$f(\mathcal A)(\boldsymbol v) = \boldsymbol 0\implies f(\mathcal A) = \mathcal O$ (要把它'杀死'就必须先把$\mathcal A$ '杀死')
+2. 对$\forall \mathcal A \in \mathcal{L}(V)$，总存在$\boldsymbol v\in V$使得$\mu_{\mathcal A, \boldsymbol v} = \mu_\mathcal A$. 也就是说，总是存在这样一个$\boldsymbol v$使得$f(\mathcal A)(\boldsymbol v) = \boldsymbol 0\implies f(\mathcal A) = \mathcal O$ (要把它'杀死'就必须先把$\mathcal A$ '杀死')
 
 > [!Tip] 特征向量
 > 上面的$\boldsymbol v$可称为“同归于尽向量”，与之相对的还有[[Eigenvectors and Characteristic Polynomial#特征向量|特征向量]]，它被称为“懦弱的向量”，即可以在$f(\mathcal A) \neq \mathcal O$的情况下使得$f(\mathcal A)(\boldsymbol v) = \boldsymbol 0$，也就是自己先“投降”了

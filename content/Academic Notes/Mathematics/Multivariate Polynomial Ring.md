@@ -15,7 +15,7 @@ $$
 $$
 
 # 整环中的最大公因子和最小公倍式
-**记号**：设$D$是[[Integral Domain | 整环]]. 则$D^* = D \backslash \{0\}$ 且$U_D$是$D$中所有可逆元的集合.
+**记号**：设$D$是[[Integral Domain|整环]]. 则$D^* = D \backslash \{0\}$ 且$U_D$是$D$中所有可逆元的集合.
 ## 整除和相伴
 
 ### 整除
@@ -43,7 +43,7 @@ $$
 
 **推论**：$f \approx g \iff$ $f, g$ 的首一部分相同
 ## 最大公因子和最小公倍式
-通过[[Exgcd - Extended Euclidean Algorithm]]算法来计算一元多项式的最大公因子(利用多项式除法)
+通过[[Exgcd - Extended Euclidean Algorithm|exgcd]]算法来计算一元多项式的最大公因子(利用多项式除法)
 **定义**：设$f, g \in F[x]$不全为零. 如果$\gcd(f, g) = 1$，则称$f,g$*互素*
 **推论**：设$f, g \in F[x]$不全为零，则$f,g$互素当且仅当存在$u,v \in F[x]$使得
 $$

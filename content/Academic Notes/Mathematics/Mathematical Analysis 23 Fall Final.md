@@ -57,7 +57,7 @@ $$\lim_{n \to \infty} \dfrac{b_{n+1}-b_n}{a_{n+1}-a_n} = l \implies \lim_{n \to 
 
 $$\lim_{n \to \infty} \dfrac{b_{n+1}-b_n}{a_{n+1}-a_n} = l \implies \lim_{n \to \infty} \dfrac{b_n}{a_n} = l$$
 
-**注意:** 和L'Hôpital法则一样，差分之比（导数之比）的极限不存在不能说明原来的数列之比（函数之比）不存在。
+**注意:** 和L'Hôpital法则一样，差分之比（导数之比）的极限不存在不能说明原来的数列之比（函数之比）不存在. 
 
 ## 定积分的性质
 

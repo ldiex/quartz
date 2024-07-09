@@ -8,6 +8,9 @@
 
 ## 循环空间和循环算子
 设$\mathcal A \in \mathcal{L}(V),\; \boldsymbol v \in V$. 如果$V = F[\mathcal A]\cdot \boldsymbol v$，则称$\mathcal A$是$V$上的*循环算子*，$\boldsymbol v$是$V$中的*循环向量*，$V$是关于$\mathcal A, \boldsymbol v$的*循环空间*，简称 *$\mathcal A$-循环空间*
+
+> [!Tip]
+> 我们可以用任意的$\mathcal A\in \mathcal{L}(V), \boldsymbol v\in V$生成一个循环子空间，当我们选择一个合适的$\boldsymbol v$使得这个循环子空间就是$V$本身时，我们才能称$V$是$\mathcal A$-循环空间
 # 极小多项式的构造
 ## 极小多项式$\to$线性算子
 我们将说明，**任何一个首一多项式都可以是某一个线性算子$T$的[[Minimal Polynomial|极小多项式]]**
@@ -35,7 +38,7 @@ p(T_p)\boldsymbol e_1 &= (T_p^n+a_{n-1}T_p^{n-1}+\cdots + a_1T_p + a_0)\boldsymb
 $$
 同理有$p(T_p)\boldsymbol e_2 = p(T_p)T_p\boldsymbol e_1= T_pp(T_p)\boldsymbol e_1 = 0$，于是$p(T_p)\boldsymbol e_i = 0,\; \forall 1\le i \le n$，这说明$p$是$T_p$的一个*零化多项式*，那么便有$\mu_{T_p} \mid p$
 
-另一方面，我们又有$V = [\boldsymbol e_1] = F[T_p]\cdot \boldsymbol e_1$，所以$T_p$[[Minimal Polynomial#零化某个向量的极小多项式|零化]]$\boldsymbol e_1$的极小多项式的次数是$\dim V = n$。又因为$\mu_{T_p,\boldsymbol e_1} \mid \mu_{Tp}$，故有$\deg \mu_{T_p}\ge n$，于是只能有$p = \mu_{T_p}$
+另一方面，我们又有$V = [\boldsymbol e_1] = F[T_p]\cdot \boldsymbol e_1$，所以$T_p$[[Minimal Polynomial#零化某个向量的极小多项式|零化]]$\boldsymbol e_1$的极小多项式的次数是$\dim V = n$. 又因为$\mu_{T_p,\boldsymbol e_1} \mid \mu_{Tp}$，故有$\deg \mu_{T_p}\ge n$，于是只能有$p = \mu_{T_p}$
 ## 线性算子$\to$极小多项式
 如果$n$维线性空间$V$是$T$-循环的，设$V =F[T]\cdot \boldsymbol v$，则
 $$
@@ -76,15 +79,17 @@ $$
 ## 极小多项式
 在上面已经构造出了$\mu_\mathcal A =p(t)$的形式，可知$\dim(\mu_\mathcal A) = n =\dim(\chi_\mathcal A)$，又因为$\mu_\mathcal A \mid \chi_\mathcal A$，所以就有$\mu_\mathcal A = \chi_\mathcal A$，也就是$\mathcal A$的[[Minimal Polynomial|首一极小多项式]]等于它的[[Characteristic Polynomial|特征多项式]]
 
-相反，如果$\mu_\mathcal A = \chi_\mathcal A$，也可以推出$V$是$\mathcal A$-循环的。
+相反，如果$\mu_\mathcal A = \chi_\mathcal A$，也可以推出$V$是$\mathcal A$-循环的. 
 ## 不变子空间 
  $F[\mathcal A]\cdot \boldsymbol v$是$\mathcal A$-[[Invariant Subspace|不变]]的，因为$F[\mathcal A]\cdot\boldsymbol v$自然包含了所有对$\mathcal A$的多项式作用的结果，它自然是$\mathcal A$封闭的
  
-循环空间的所有不变子空间都是循环空间。
+循环空间的所有不变子空间都是循环空间. 
 ## 维数
-循环子空间的维数和$\mathcal A$的零化$\boldsymbol v$的极小多项式的次数一致，即$\dim(F[\mathcal A]\cdot \boldsymbol v) =\deg \mu_{\mathcal A,\boldsymbol v}$，又因为$\mu_{\mathcal A,\boldsymbol v} \mid \mu_{\mathcal A}$，故如果$V = F[\mathcal A]\cdot \boldsymbol v$时循环空间，则有$\dim(V) = \deg \mu_{\mathcal A,\boldsymbol v} =\deg \mu_\mathcal A$，且$\mu_{\mathcal A,\boldsymbol v} = \mu_{\mathcal A}$
+循环子空间的维数和$\mathcal A$的零化$\boldsymbol v$的极小多项式的次数一致，即$\dim(F[\mathcal A]\cdot \boldsymbol v) =\deg \mu_{\mathcal A,\boldsymbol v}$
 
-若设$d = \deg \mu_\mathcal A$则存在$\boldsymbol v \in V$使得
+如果$V = F[\mathcal A]\cdot \boldsymbol v$是循环空间，则$\dim{(V)} = \deg{\mu_{\mathcal A, \boldsymbol v}}$，又$\deg{\mu_{\mathcal A}} \leq \deg{\chi_{\mathcal A}}= \dim{(V)}$且$\mu_{\mathcal A,\boldsymbol v} \mid \mu_{\mathcal A} \implies \deg{(\mu_{\mathcal A, \boldsymbol v}) \leq \deg{(\mu_{\mathcal A})}}$，故有$\dim(V) = \deg \mu_{\mathcal A,\boldsymbol v} =\deg \mu_\mathcal A$，且$\mu_{\mathcal A,\boldsymbol v} = \mu_{\mathcal A}$
+
+反过来，若设$d = \deg \mu_\mathcal A$则存在$\boldsymbol v \in V$使得
 $$
 \dim (F[\mathcal A]\cdot \boldsymbol v) = d
 $$
@@ -98,7 +103,7 @@ $$
 $$
 V = (F[\mathcal A]\cdot \boldsymbol v_1) \oplus \cdots \oplus(F[\mathcal A]\cdot \boldsymbol v_{\ell})
 $$
-其中$W_i = F[\mathcal A]\cdot \boldsymbol v_i$都是$\mathcal A$-不可分的。
+其中$W_i = F[\mathcal A]\cdot \boldsymbol v_i$都是$\mathcal A$-不可分的. 
 # 循环定理
 **下面证明若$V$是$T$-循环空间，那么对于$V$的每一个$T$-子空间$W$，存在$\mu_T$的一个因子$f$使得$W =\ker f$**
 

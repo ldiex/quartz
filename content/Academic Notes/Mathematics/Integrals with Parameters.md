@@ -25,7 +25,7 @@ $$
 $$
 F(x) = \int_{c(x)}^{d(x)} f(x,y)\mathrm{d} y
 $$
-在$[a,b]$上可微。特别地，我们可以给出$F(x)$的微分（因为是单元函数，所以也就是导数）
+在$[a,b]$上可微. 特别地，我们可以给出$F(x)$的微分（因为是单元函数，所以也就是导数）
 $$
 \begin{aligned}
 F(x) &= H(x,c,d) = \int_{c(x)}^{d(x)} f(x,y) \mathrm{d}y \\
@@ -52,7 +52,7 @@ $$
 F'(x) = \int_{c(x)}^{d(x)}f_x(x,y) \mathrm{d}x -f(x,c(x))c'(x) + f(x,d(x))d'(x)
 $$
 ## 可积性
-若$f(x,y)$在矩形区域$R=[a,b]\times[c,d]$上连续，则$\varphi(x),\psi(y)$分别在$[a,b],[c,d]$上可积。也就是说，在连续性假设下，同时存在两个求积顺序不同的积分
+若$f(x,y)$在矩形区域$R=[a,b]\times[c,d]$上连续，则$\varphi(x),\psi(y)$分别在$[a,b],[c,d]$上可积. 也就是说，在连续性假设下，同时存在两个求积顺序不同的积分
 $$
 \int_a^b\left[ \int_c^df(x,y)\mathrm{d} y \right] \mathrm{d} x,\quad\int_c^d\left[ \int_a^bf(x,y)\mathrm{d} x \right]  \mathrm{d} y
 $$
@@ -93,7 +93,7 @@ Cauchy准则的**否定**是，存在$\varepsilon_0>0$，对任意实数$M>c$，
 $$
 \left| \int_{A_1}^{A_2} f(x^*,y) \mathrm{d} y \right| \ge \varepsilon_0 
 $$
-若对任意$[a,b]\subset I$，含参量反常积分在$[a,b]$上一致收敛，则称该含参量反常积分在$I$上*内闭一致收敛*。
+若对任意$[a,b]\subset I$，含参量反常积分在$[a,b]$上一致收敛，则称该含参量反常积分在$I$上*内闭一致收敛*. 
 
 一个不一致收敛但是内闭一致收敛的例子是在$(0,+\infty)$上的含参量反常积分
 $$

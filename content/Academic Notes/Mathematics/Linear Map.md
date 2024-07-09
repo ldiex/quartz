@@ -24,7 +24,7 @@ $$
 V / {\ker \phi} \cong \mathrm{im} \phi
 $$
 
-其中$V/\ker\phi$表示一个[[Quotient Space|商空间]]，$\cong$代表[[Linear Isomorphism|线性同构]]。这个式子两边取维数，就有
+其中$V/\ker\phi$表示一个[[Quotient Space|商空间]]，$\cong$代表[[Linear Isomorphism|线性同构]]. 这个式子两边取维数，就有
 $$
 \dim(\ker \phi) + \dim(\mathrm{im} \phi) = \dim V
 $$

@@ -23,7 +23,7 @@ $$
 $$
 # 第二型曲面积分
 ## 曲面的侧
-设连通曲面$S$上到处都有连续变动的切平面（或法线），$M$为曲面$S$上的一点，曲面在$M$处的法线有两个方向：当取定其中的一个方向为正方向时，另一个就是负方向。设$M_0$为$S$上任一点，$L$是$S$上任一经过点$M_0$，且不超出$S$边界的闭曲线。又设$M$为动点，它在$M_0$处与$M_0$有相同的法线方向，且有如下特性：当$M$从$M_0$出发沿$L$连续移动，这时作为曲面上的点$M$，它的法线方向也连续地变动。最后当$M$沿$L$回到$M_0$时，若这时$M$的法线方向仍然和$M_0$的法线方向一致，则说该曲面$S$时*双侧曲面*，若和$M_0$的法线方向相反，则说$S$是*单侧曲面*
+设连通曲面$S$上到处都有连续变动的切平面（或法线），$M$为曲面$S$上的一点，曲面在$M$处的法线有两个方向：当取定其中的一个方向为正方向时，另一个就是负方向. 设$M_0$为$S$上任一点，$L$是$S$上任一经过点$M_0$，且不超出$S$边界的闭曲线. 又设$M$为动点，它在$M_0$处与$M_0$有相同的法线方向，且有如下特性：当$M$从$M_0$出发沿$L$连续移动，这时作为曲面上的点$M$，它的法线方向也连续地变动. 最后当$M$沿$L$回到$M_0$时，若这时$M$的法线方向仍然和$M_0$的法线方向一致，则说该曲面$S$时*双侧曲面*，若和$M_0$的法线方向相反，则说$S$是*单侧曲面*
 
 单侧曲面的常见例子是*Möbius带*，而我们平时用$z = z(x,y)$表示的曲面基本都是双侧曲面，当以其法线正方向与$z$轴正向的夹角成锐角的一侧为正侧时，此时另一侧为负侧；当$S$为封闭曲面时，通常规定**曲面的外侧为正侧，内侧为负侧**
 
@@ -66,7 +66,7 @@ $$
 $$
 \begin{gather}
 \iint_S f_x \mathrm{d}y \mathrm{d}z + f_y \mathrm{d}z \mathrm{d}x + f_z \mathrm{d}x \mathrm{d}y  \\
-= \pm \left[ \iint_{S'} f_x\frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}y \mathrm{d}z + f_y \frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d} z \mathrm{d}z + f_z \frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}x \mathrm{d}y \right] 
+= \pm \left[ \iint_{S'} f_x\frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}u \mathrm{d}v + f_y \frac{ \partial (y,z) }{ \partial (u,v) }\mathrm{d}u \mathrm{d}v + f_z \frac{ \partial (y,z) }{ \partial (u,v) } \mathrm{d}u \mathrm{d}v \right] 
 \end{gather}
 $$
 这里的正负号取决于法向量$\displaystyle \left( \frac{ \partial (y,z) }{ \partial (u,v) } ,\frac{ \partial (z,x) }{ \partial (u,v) } ,\frac{ \partial (x,y) }{ \partial (u,v) }  \right)$是否在正向一侧

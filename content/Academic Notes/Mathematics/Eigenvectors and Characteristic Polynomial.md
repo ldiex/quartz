@@ -7,9 +7,9 @@
 3. $\exists \lambda \in F,\; \mathcal A(\boldsymbol v) = \lambda \boldsymbol v$
 
 # 特征值
-我们称上面等价结论$3.$中的$\lambda$是关于特征向量$\boldsymbol v$的*特征值*，简称$\mathcal A$的*特征值*。
+我们称上面等价结论$3.$中的$\lambda$是关于特征向量$\boldsymbol v$的*特征值*，简称$\mathcal A$的*特征值*. 
 
-特别地，如果$0$是$\mathcal A$的一个特征值，那么$\mathcal A$必然是不可逆的。
+特别地，如果$0$是$\mathcal A$的一个特征值，那么$\mathcal A$必然是不可逆的. 
 
 对于$\lambda \in F$，以下两个结论等价
 1. $\lambda$是$\mathcal A$的特征值
@@ -67,7 +67,7 @@ $$
 $$
 V^\lambda = \left\{ \boldsymbol x \in V \mid \mathcal A(\boldsymbol x) = \lambda \boldsymbol x \right\} 
 $$
-称为$\mathcal A$关于$\lambda$的*特征子空间*，可以验证$V^\lambda$是$\mathcal A$-子空间
+称为$\mathcal A$关于$\lambda$的*特征子空间*，可以验证$V^\lambda$是$\mathcal A$的[[Invariant Subspace|不变子空间]]
 
 由定义，特征子空间可以写成
 $$
@@ -84,4 +84,5 @@ $$
 \dim V^\lambda = \dim \ker(\lambda E - A) = n - \mathrm{rank}(\lambda E - A)
 $$
 我们把$\dim V^\lambda$称为$\lambda$的*几何重数*，而把$\lambda$在$\chi_A(t)$中的[[Gauss's Lemma and Eisenstein's Irreducibility Criterion#重数|重数]]称为$\lambda$的*代数重数*
-> [!Tip] $\lambda$的代数重数总是大于等于它的几何重数
+> [!Tip] 
+> $\lambda$的代数重数总是大于等于它的几何重数

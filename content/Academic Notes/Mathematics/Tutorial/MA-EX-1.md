@@ -11,7 +11,7 @@ $$
 
 # 抽象问题用Cauchy，具体问题具体分析
 证明：正项级数$\sum u_n, \sum v_n$发散$\implies \sum (u_n+ v_n)$发散
-对于抽象的级数，一般采用[[Polynomial Series#级数收敛的Cauchy准则| Cauchy准则]]判断，计算$S_n$的极限一般只用于具体的级数。具体证明略
+对于抽象的级数，一般采用[[Polynomial Series#级数收敛的Cauchy准则| Cauchy准则]]判断，计算$S_n$的极限一般只用于具体的级数. 具体证明略
 
 # 利用积分判别法的条件是$f$为$[1, +\infty)$上的减函数
 

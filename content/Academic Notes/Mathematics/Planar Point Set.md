@@ -31,7 +31,7 @@ $$
 若存在点$A$的某邻域$U(A) \cap E = \emptyset$，则称$A$是$E$的*外点*
 
 ### 界点
-若在点$A$的任何邻域内既含有属于$E$的点，又含有不属于$E$的点，则称$A$是$E$的界点。即对任何$\delta > 0$，恒有
+若在点$A$的任何邻域内既含有属于$E$的点，又含有不属于$E$的点，则称$A$是$E$的界点. 即对任何$\delta > 0$，恒有
 $$
 (U(A; \delta) \cap E \neq \emptyset ) \land (U(A; \delta) \cap E^c \neq \emptyset)
 $$
@@ -91,7 +91,7 @@ $$
 
 # $\mathbb R^2$上的完备性定理
 ## 平面点列的收敛性
-设$\{P_n\} \subset \mathbb R^2$为平面点列，$P_0 \in \mathbb R^2$为一固定点。若对任给的正数$\varepsilon$，存在正整数$N$，使得当$n > N$时，有$P_n \in U(P_0; \varepsilon)$，则称点列$\{P_n\}$收敛于$P_0$，记为
+设$\{P_n\} \subset \mathbb R^2$为平面点列，$P_0 \in \mathbb R^2$为一固定点. 若对任给的正数$\varepsilon$，存在正整数$N$，使得当$n > N$时，有$P_n \in U(P_0; \varepsilon)$，则称点列$\{P_n\}$收敛于$P_0$，记为
 $$
 \lim_{n \to \infty} P_n = P_0
 $$

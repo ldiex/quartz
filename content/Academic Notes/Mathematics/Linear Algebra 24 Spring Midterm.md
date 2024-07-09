@@ -132,7 +132,7 @@ $$
 2. $A^\vee = \det(A) A^{-1} = \left( \sqrt{ \det(A) }P^{-1} \right) \left( \sqrt{ \det(A) }P^{-1} \right)^t$, 故$A^\vee$正定
 > 设$A,B$是半正定的，则$\mathrm{rank}(A + B) \ge \max(\mathrm{rank}(A), \mathrm{rank}(B))$
 
-因为$\boldsymbol x^t(A + B) \boldsymbol x = \boldsymbol x^t A \boldsymbol x + \boldsymbol x^T B \boldsymbol x \ge 0$，所以$A + B$是半正定的。故存在$P,Q,R\in \mathrm{M}_n(\mathbb{R})$使得$A = P^tP, B = Q^tQ, A+B = R^tR$, 且设$s = \mathrm{rank}(A+B) = \mathrm{rank}(R)$，并不妨令$r = \mathrm{rank}(P) = \mathrm{rank}(A)> \mathrm{rank}(Q) = \mathrm{rank}(B)$，只需要证明$s \ge r$，为此只需要证明$V_R \subset V_P$. 设$\boldsymbol v\in V_R$也就是$R\boldsymbol v  = \boldsymbol 0$，故有
+因为$\boldsymbol x^t(A + B) \boldsymbol x = \boldsymbol x^t A \boldsymbol x + \boldsymbol x^T B \boldsymbol x \ge 0$，所以$A + B$是半正定的. 故存在$P,Q,R\in \mathrm{M}_n(\mathbb{R})$使得$A = P^tP, B = Q^tQ, A+B = R^tR$, 且设$s = \mathrm{rank}(A+B) = \mathrm{rank}(R)$，并不妨令$r = \mathrm{rank}(P) = \mathrm{rank}(A)> \mathrm{rank}(Q) = \mathrm{rank}(B)$，只需要证明$s \ge r$，为此只需要证明$V_R \subset V_P$. 设$\boldsymbol v\in V_R$也就是$R\boldsymbol v  = \boldsymbol 0$，故有
 $$
 \boldsymbol v^t (A + B)\boldsymbol v = 0 \implies \boldsymbol v^t A \boldsymbol v + \boldsymbol v^t B \boldsymbol v = 0 \implies \boldsymbol v^t A \boldsymbol v = \boldsymbol v^t B \boldsymbol v = 0
 $$
@@ -241,7 +241,7 @@ $W$是直和与以下两个命题等价
 > 设$U$是$V$中$f,g$所有公倍式的集合，证明$\dim(U) = m + n - d + 1$，其中$d = \deg(\ell)$
 
 **直接构造基底**
-注意到$\ell, x\ell, \ldots, x^{m + n - d}\ell \in U$. 因为这些多项式次数两两不同，所以它们线性无关。设$h \in U$，则存在$q\in F[x]$使得$h = q \ell$. 因为$\deg(h) \le m+ n$，故$\deg(q) \le m + n - d$，于是
+注意到$\ell, x\ell, \ldots, x^{m + n - d}\ell \in U$. 因为这些多项式次数两两不同，所以它们线性无关. 设$h \in U$，则存在$q\in F[x]$使得$h = q \ell$. 因为$\deg(h) \le m+ n$，故$\deg(q) \le m + n - d$，于是
 $$
 q = q_{m + n - d}x^{m + n - d} + \cdots + q_1 x + q_0
 $$

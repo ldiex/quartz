@@ -36,7 +36,7 @@ $$
 $$
 回忆[[Cyclic Subspace#不可分子空间的判定准则|不可分子空间的性质]]，首先它是循环的，其次$\mathcal A$限制在$V$上的算子的极小多项式是$F[t]$中某个**不可约多项式**的幂次，不妨设为$\mu_\mathcal A = p^m$，那么我们就可以给出它的所有因子作用在$\mathcal A$上后形成的新算子的[[Matrix Rank|秩]]
 # 只有一个不可约因子的情况
-如果$\mathcal A$的[[Characteristic Polynomial|特征多项式]]（容易得到）只有一个不可约因子$p$，那么它的极小多项式必然也只有一个因子，这个时候就可以给出这个因子的某个幂次$p^\ell$在直和分解产生的*初等因子组*中的[[Elementary Divisors#重集|重数]]（在集合中出现的次数）。从[[Jordan Canonical Form#Jordan标准型的形式|Jordan标准型的形式]]中，我们知道
+如果$\mathcal A$的[[Characteristic Polynomial|特征多项式]]（容易得到）只有一个不可约因子$p$，那么它的极小多项式必然也只有一个因子，这个时候就可以给出这个因子的某个幂次$p^\ell$在直和分解产生的*初等因子组*中的[[Elementary Divisors#重集|重数]]（在集合中出现的次数）. 从[[Jordan Canonical Form#Jordan标准型的形式|Jordan标准型的形式]]中，我们知道
 - 某个初等因子$p^\ell$是对应不可分空间的极小多项式，它的*重数*（多项式的重数），即$\ell$，就对应着Jordan块的大小$J_\ell(\lambda)$，这里的$\lambda$满足$p(\lambda)=0$
 - 这个初等因子$p^\ell$在整个初等因子组中的*重数*（出现的次数），设为$n_\ell$，则为对应Jordan块$J_\ell(\lambda)$在Jordan标准型中出现的次数，也就是$\lambda$对应特征子空间的[[Eigenvectors and Characteristic Polynomial#维数和重数|几何重数]]
 

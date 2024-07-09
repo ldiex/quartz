@@ -42,7 +42,7 @@ $$
 f(x) = \sum_{n =-\infty}^{+\infty} \left[ \dfrac{1}{T} \int_0^{T}\mathrm{e}^{-in\omega_0x} f(x) \mathrm{d} x\right] \mathrm{e}^{\mathrm{i}n\omega_0x}
 $$
 # Fourier变换
-傅里叶级数展开是针对**周期函数**的，但是在现实中大多数信号都是非周期的。非周期函数可以看作是周期$T\to +\infty$的周期函数，当$T = +\infty$时，基频率$\omega_0$就变成了微分$\mathrm{d} \omega$，就需要把求和转化成积分
+傅里叶级数展开是针对**周期函数**的，但是在现实中大多数信号都是非周期的. 非周期函数可以看作是周期$T\to +\infty$的周期函数，当$T = +\infty$时，基频率$\omega_0$就变成了微分$\mathrm{d} \omega$，就需要把求和转化成积分
 $$
 \begin{aligned}
 f(x) & = \sum_{n =-\infty}^{+\infty} \left[ \dfrac{1}{T} \int_0^{T}\mathrm{e}^{-in\omega_0x} f(x) \mathrm{d} x\right] \mathrm{e}^{\mathrm{i}n\omega_0x} \\

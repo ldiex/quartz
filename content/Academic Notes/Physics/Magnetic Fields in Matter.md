@@ -46,7 +46,7 @@ $$
 $$
 \boldsymbol A (\boldsymbol r) = \dfrac{\mu_0}{4\pi}\frac{\boldsymbol m \times \boldsymbol r}{r^3}
 $$
-在现实模型中，每个$\mathrm{d}\tau'$的体积元带有$\boldsymbol M \mathrm{d}\tau'$的磁偶极矩。积分后，上面的式子可以写成
+在现实模型中，每个$\mathrm{d}\tau'$的体积元带有$\boldsymbol M \mathrm{d}\tau'$的磁偶极矩. 积分后，上面的式子可以写成
 $$
 \boldsymbol A (\boldsymbol r) = \frac{\mu_0}{4\pi} \int \frac{1}{|\boldsymbol{r'-r}|}\left( \nabla'\times \boldsymbol {M(r')} \mathrm{d} \tau' + \boldsymbol{M(r')} \times \mathrm{d} \boldsymbol{a'} \right)
 $$
@@ -114,7 +114,7 @@ $$
 \oint \boldsymbol{H} \cdot \mathrm{d}\boldsymbol{l} = I_f
 $$
 
-在实际运用中，我们更加常用$\boldsymbol{H}$或者$\boldsymbol{E}$来描述磁场或电场。因为在实验中我们用一载流线圈可以产生一个磁场，而$\boldsymbol{H}$只有电流决定，和介质无关；而当我们需要产生一个电场时，我们使用的电压计测得的是$\boldsymbol{E}$场的线积分，和介质也无关
+在实际运用中，我们更加常用$\boldsymbol{H}$或者$\boldsymbol{E}$来描述磁场或电场. 因为在实验中我们用一载流线圈可以产生一个磁场，而$\boldsymbol{H}$只有电流决定，和介质无关；而当我们需要产生一个电场时，我们使用的电压计测得的是$\boldsymbol{E}$场的线积分，和介质也无关
 
 ### 边界条件
 

@@ -88,7 +88,7 @@ $$
 
 # 方向导数和梯度
 ## 方向导数
-设三元函数$f$在点$P_0(x_0, y_0, z_0)$的某邻域$U(P_0) \in \mathbb R^3$有定义，$\boldsymbol l$是从$P_0$出发的射线，$P(x, y, z)$是$\boldsymbol l$上含于$U(P_0)$的任一点，以$\rho$表示$P,P_0$之间的距离。若极限
+设三元函数$f$在点$P_0(x_0, y_0, z_0)$的某邻域$U(P_0) \in \mathbb R^3$有定义，$\boldsymbol l$是从$P_0$出发的射线，$P(x, y, z)$是$\boldsymbol l$上含于$U(P_0)$的任一点，以$\rho$表示$P,P_0$之间的距离. 若极限
 $$
 \lim_{ \rho \to 0^+} \dfrac{f(P) - f(P_0)}{\rho}   
 $$

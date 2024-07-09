@@ -57,5 +57,9 @@ From *Russell's paradox*, we know that there is no such thing as the "set of all
 
 We call a category $C$ is *small* if $C_0$ and $C_1$ (see the [[Category#Definition|definition]] above) are sets. And a category $C$ is called *locally small* if for every to objects $X$ and $Y$ of $C$, the morphisms $X \to Y$ form a set
 
-Based on this, if we let 
+Based on this, if we let $X$ and $Y$ be objects of a *locally small* category $C$. The *hom-set* or *hom-space* of $X$ and $Y$ is the set of morphisms of $C$ from X to Y, denoted by $\mathrm{Hom}_C(X,Y)$. For example,
+- $\mathrm{Hom}_{\textbf{Set}}(\mathbb{R},\mathbb{R}^{2})$ is the set of all functions $\mathbb{R} \to \mathbb{R}^{2}$, i.e. the morphisms of $\mathbf{Set}$
+- $\mathrm{Hom}_{\textbf{Top}}(\mathbb{R} ,\mathbb{R}^{2})$ is the set of all *continuous* functions $\mathbb{R} \to \mathbb{R}^{2}$, i.e. the morphisms of $\textbf{Top}$
+- $\mathrm{Hom}_{\textbf{Vect}}(\mathbb{R},\mathbb{R}^{2})$ is the set of all linear functions $\mathbb{R} \to \mathbb{R}^{2}$
+
 

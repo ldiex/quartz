@@ -2,12 +2,10 @@
 tags:
   - CoursePage
 ---
-
 # Course & Final Review
 [[Linear Algebra 23 Fall Final]]
-[[Linear Algebra 24 Spring Midterm Review]]
-
-[[Reminders of Linear Algebra]]
+[[Linear Algebra 24 Spring Midterm]]
+[[Linear Algebra 24 Spring Final]]
 # 24 Spring
 [[Complex Numbers]]
 [[Linear Space]]
@@ -51,6 +49,3 @@ tags:
 [[Group Theory]]
 ## Tricks
 [[Tricks on Vectors]]
-[[Hamilton Quaternion]]
-[[Tackling Non-coordinate Space]]
-

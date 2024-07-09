@@ -4,7 +4,7 @@ tags:
 ---
 
 [[Mathematical Analysis 23 Fall Final]]
-[[Analysis Notes]]
+[[23 Fall Analysis Notes]]
 [[Improper Integrals]]
 [[Mathematical Analysis 24 Spring Midterm]]
 [[Mathematical Analysis 24 Spring Final]]

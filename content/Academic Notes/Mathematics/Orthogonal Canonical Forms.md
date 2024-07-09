@@ -30,7 +30,7 @@ N(\alpha,\beta) = \begin{pmatrix}
 $$
 也就是说，存在如上这样一个标准型$B$使得$A$[[Euclidean Space#正交等价|正交等价]]于$B$，即$A \sim_o B$，弱化这个结论就是有$A$[[Linear Operator#矩阵相似|相似]]于$B$，即$A \sim_s B$
 
-设$\mathcal A\in \mathcal{L}(V)$正规，$\lambda_1,\lambda_1\in \mathrm{spec}_{\mathbb{R}}(\mathcal A)$，且$\lambda_1 \neq \lambda_2$，则$V^{\lambda_1} {\perp} V^{\lambda_2}$。也就是说，一个正规算子的不同[[Eigenvectors and Characteristic Polynomial#特征值|特征值]]对于的[[Eigenvectors and Characteristic Polynomial#特征子空间|特征子空间]]两两[[Euclidean Space#正交子空间和正交投影|正交]]，这是在正规算子情况下，对命题[[Eigenvectors and Characteristic Polynomial#特征子空间的和|特征子空间的和是直和]]的一个加强
+设$\mathcal A\in \mathcal{L}(V)$正规，$\lambda_1,\lambda_1\in \mathrm{spec}_{\mathbb{R}}(\mathcal A)$，且$\lambda_1 \neq \lambda_2$，则$V^{\lambda_1} {\perp} V^{\lambda_2}$. 也就是说，一个正规算子的不同[[Eigenvectors and Characteristic Polynomial#特征值|特征值]]对于的[[Eigenvectors and Characteristic Polynomial#特征子空间|特征子空间]]两两[[Euclidean Space#正交子空间和正交投影|正交]]，这是在正规算子情况下，对命题[[Eigenvectors and Characteristic Polynomial#特征子空间的和|特征子空间的和是直和]]的一个加强
 
 # 实对称矩阵的正交标准型
 ## 实对称矩阵可正交化
