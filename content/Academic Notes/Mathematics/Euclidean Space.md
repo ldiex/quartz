@@ -1,8 +1,6 @@
 # $V$上的内积
 ## 内积的定义
 设$f(\boldsymbol x, \boldsymbol y)$是$V$上的[[Bilinear Form#对称双线性型|对称双线性型]]满足$f(\boldsymbol x,\boldsymbol x)$是[[Real Quadratic Forms#（半）正定二次型|正定]]的，则称$(V,f)$是一个*欧式空间*，$f$是$V$上的*内积*
-> [!Tip]
-> 由于正定性，我们无法在$\mathbb{C}^n$上定义一个内积空间
 ## 举例
 设$V = \mathbb{R}^n$，由上述定义，就有内积$f(\boldsymbol x,\boldsymbol y) =\boldsymbol x ^t \boldsymbol y$满足$f(\boldsymbol x, \boldsymbol x)$是正定的，所以$(\mathbb{R}^n,f)$是欧式空间
 
@@ -74,7 +72,7 @@ $$
 > Gram矩阵可以把向量的内积转化为基底的内积
 # 长度、距离、角度和正交
 ## 长度和距离
-设$V$是欧式空间，$\boldsymbol x \in V$. 称$\sqrt{ (\boldsymbol x \vert \boldsymbol x) }$是$\boldsymbol x$的*长度*（或称为*范数*），记为$\Vert \boldsymbol x \Vert$. 再设$\boldsymbol y \in V$. 则$\left\Vert \boldsymbol x - \boldsymbol y \right\Vert$称为$\boldsymbol x$到$\boldsymbol y$之间的*距离*
+设$V$是欧式空间，$\boldsymbol x \in V$. 称$\sqrt{ (\boldsymbol x \vert \boldsymbol x) }$是$\boldsymbol x$的*长度*，记为$\Vert \boldsymbol x \Vert$. 再设$\boldsymbol y \in V$. 则$\left\Vert \boldsymbol x - \boldsymbol y \right\Vert$称为$\boldsymbol x$到$\boldsymbol y$之间的*距离*
 
 ## Cauchy-Bunyakovsky不等式
 设$\boldsymbol x,\boldsymbol y \in V$，则

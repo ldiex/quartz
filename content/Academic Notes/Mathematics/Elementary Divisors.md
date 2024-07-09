@@ -29,7 +29,7 @@ $$
 # 不可分子空间极小多项式的秩
 设$\mathcal A \in \mathcal{L}(V)$，$V$是$\mathcal A$-[[Cyclic Subspace#循环空间和循环算子|循环]]的. 设$\mu_\mathcal A = p^m$，其中$p\in F[t]\backslash F$，则
 $$
-\mathrm{rank}(p(\mathcal A)^k) = \begin{cases}
+\mathrm{rank}(p^k(\mathcal A)) = \begin{cases}
 (m-k)\deg(p), &0\le k \le m \\
 0,&k>m
 \end{cases}

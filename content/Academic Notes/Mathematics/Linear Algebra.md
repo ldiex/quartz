@@ -47,5 +47,6 @@ tags:
 # Additional Notes
 ## Group Theory
 [[Group Theory]]
-## Tricks
+## Lifesaver
 [[Tricks on Vectors]]
+[[Jordan Canonical Form Life Saver]]

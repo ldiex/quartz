@@ -137,3 +137,28 @@ $$
 
 这就是说，对$\mu_{\mathcal A}$的不可约因子分解可以看作是对空间的一个划分，其中每一个空间都是某个因子作用于$\mathcal A$后的核空间
 
+# 不可分子空间
+## 判定规则
+设$\mathcal A \in \mathcal{L}(V)$, $U$是$\mathcal A$-子空间，则$U$是$\mathcal A$-[[Invariant Subspace#单和半单|不可分]]的当且仅当下述两个条件都成立
+1. $U$是$\mathcal A$-[[Cyclic Subspace|循环子空间]]
+2. $\mu_{\mathcal A_U}$是$F[t]$中某个[[Unique Factorization Domain, UFD#不可约元|不可约多项式]]的幂次. 特别地，在$F= \mathbb{C}$也就是[[Complex Numbers|复数域]]上时，$\mu_{{\mathcal A}_U}$应当为某个一次多项式的幂次，及$\mu_{{\mathcal A}_U}(t) = (t-\lambda)^m$
+
+> [!Tip]
+> 由此可知，$\mathcal A$-不可分子空间一定是$\mathcal A$-循环的，不可分的条件比循环更强
+## 不可分子空间直和分解
+设$\mathcal A \in \mathcal{L}(V)$. 则存在$\mathcal A$-不可分子空间$W_1,\ldots,W_k$使得
+$$
+V = W_1\oplus\cdots\oplus W_k
+$$
+且$W_i$是$\mathcal A$-循环的，$\mu_{\mathcal A_{W_i}}$是$F[t]$中的某个不可约多项式的幂次，$i = 1, 2,\ldots,k$
+
+同样地，如果$F = \mathbb{C}$，则$\mu_{\mathcal A_{W_i}}=(t-\lambda_i)^{d_i}$，其中$d_i= \dim{(W_i)}$，从而$\mathcal A_{W_i}$在$W_i$上的某一个矩阵表示是一个[[Jordan Canonical Form#Jordan块|Jordan块]]$J_{d_i}(\lambda)$
+## 分解在多项式作用下的不变性
+设$\mathcal A \in \mathcal{L}(V),\;f\in F[t]$，设$V$的$\mathcal A$-不可分子空间直和分解为
+$$
+V = U_1\oplus \cdots \oplus U_\ell
+$$
+则
+$$
+f(\mathcal A)(V) = f(\mathcal A)(U_1) \oplus \cdots \oplus f(\mathcal A)(U_\ell)
+$$

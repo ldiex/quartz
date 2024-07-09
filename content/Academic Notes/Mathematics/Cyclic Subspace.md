@@ -166,28 +166,4 @@ $$\chi_{\mathcal A} = p_1^{n_1}\cdots p_s^{n_s}
 $$
 其中$m_1\le n_1,\ldots, m_s \le n_s$且$n_1\deg(p_1) + \cdots + n_s\deg(p_s)=n$
 
-# 不可分子空间的判定准则
-设$\mathcal A \in \mathcal{L}(V)$, $U$是$\mathcal A$-子空间，则$U$是$\mathcal A$-[[Invariant Subspace#单和半单|不可分]]的当且仅当下述两个条件都成立
-1. $U$是$\mathcal A$-循环子空间
-2. $\mu_{\mathcal A_U}$是$F[t]$中某个不可约多项式的幂次
-
-> [!Tip]
-> 这告诉我们，$\mathcal A$-不可分子空间一定是$\mathcal A$-循环的，不可分的条件比循环更强
-
-## 不可分子空间直和分解
-进一步地，设$\mathcal A \in \mathcal{L}(V)$. 则存在$\mathcal A$-不可分子空间$W_1,\ldots,W_k$使得
-$$
-V = W_1\oplus\cdots\oplus W_k
-$$
-且$W_i$是$\mathcal A$-循环的，$\mu_{\mathcal A_{W_i}}$是$F[t]$中的某个不可约多项式的幂次，$i = 1, 2,\ldots,k$
-
-## 分解在多项式作用下的不变性
-
-设$\mathcal A \in \mathcal{L}(V),\;f\in F[t]$，设$V$的$\mathcal A$-不可分子空间直和分解为
-$$
-V = U_1\oplus \cdots \oplus U_\ell
-$$
-则
-$$
-f(\mathcal A)(V) = f(\mathcal A)(U_1) \oplus \cdots \oplus f(\mathcal A)(U_\ell)
-$$
+	
