@@ -870,3 +870,32 @@ $$
 \lambda_i = \lambda_{\sigma(i)}^k = \lambda_{\sigma^{2}(i)}^{k^{2}} = \cdots = \lambda_{\sigma^m(i)}^{k^m} = \lambda_i^{k^m}
 $$
 其中$m$为$\sigma$的[[Permutation#Order of a Permutation|阶数]]，进而$\lambda_i^{k^m-1}=1$，命题得证
+
+## T11
+> 计算$J_5^2(0)$和$J_5^3(0)$的Jordan标准型
+
+由[[Linear Algebra 24 Spring Final#T10|T10]]的(i)我们知道$J_5(0),J_5^2(0),J_5^3(0)$的特征多项式都为$t^5$，而它们的极小多项式分别为$t^5,t^3,t^2$（$J_5^2(0)$需要乘三次才能大于等于$5$次，$J_5^3(0)$需要乘两次才能大于等于$5$次），又注意到它们的秩分别为$4,3,2$，也即是说它们的几何重数分别为$1,2,3$，进而唯一确定它们的Jordan标准型分别为$J_5(0),\mathrm{diag}{(J_3(0),J_2(0))},\mathrm{diag}{(J_2(0),J_2(0),J_1(0))}$
+
+也可以直接通过秩序列公式$n_\ell = \mathrm{rank}{(J_5^{\ell +1}(0))} + \mathrm{rank}{(J_5^{\ell -1}(0))}-2\mathrm{rank}{(J_5^\ell (0))}$来求
+
+## T12
+> 若$\mathcal A\in \mathcal{L}(V)$可逆，且$W \subset V$是$\mathcal A$-不变子空间，证明$W$也是$\mathcal A^{-1}$-不变子空间
+
+因为$\mathcal A$可逆，所以$\mathcal A_W$是单射，即$\ker \mathcal A = \left\{ \boldsymbol 0 \right\}$，则$\dim{(\mathrm{im(\mathcal A)})}= \dim{W} - 0 = \dim{W}$，所以$\mathrm{im}(\mathcal A)= W$，从而$\mathcal A_W$也是满射，进而$\mathcal A_W$是双射. 所以对任意$\boldsymbol w\in W$，存在$\boldsymbol v\in W$使得$\mathcal A(\boldsymbol v) = \boldsymbol w\implies \mathcal A^{-1}(\boldsymbol w)\in W$，故$W$也是$\mathcal A^{-1}$-不变子空间
+
+另外，由[[Matrix Inverse#Polynomials|矩阵求逆的多项式法]]可知，$\mathcal A^{-1}\in F[\mathcal A]$，所以该命题是显然的
+
+## T13
+> 设$V$是域$F$上的线性空间，$\mathcal A\in \mathcal{L}(V)$. 设$p\in F[t]\backslash F$使得$\mu_{\mathcal A}=p^kq$，其中$q\in F[t]$，且有$\gcd(p,q)=1$，证明$\ker (p(\mathcal A)^{k-1}) \varsubsetneqq \ker (p(\mathcal A)^k) = \ker(p(\mathcal A)^{k+1})$
+
+因为$\mu_\mathcal{A}(\mathcal A)=0$，且$\gcd(p,q)=1$，故由核核分解定理
+$$
+V = \ker(p^k) \oplus  \ker(q)
+$$
+设$P = \ker(p^k),Q = \ker(q)$，则$P,Q$都是$\mathcal A$-不变子空间且$\mu_{\mathcal A_P}=p^k,\mu_{\mathcal A_Q} = q$（因为这两者显然是$\mathcal A_P$和$\mathcal A_Q$的零化多项式，且它们的次数最小，否则它们乘起来就会有比$\mu_{\mathcal A}$次更小的零化$\mathcal A$的多项式）
+
+于是$\ker (p(\mathcal A)^{k-1}) \neq \ker (p(\mathcal A)^k)$，因为如果不然$p^k$就不是$\mathcal A_P$的极小多项式；另一方面，由于$p^{k+1}q=p\mu_{\mathcal A}$自然也零化$\mathcal A$且$\gcd(p^{k+1},q)=0$，故再利用核核分解
+$$
+V = \ker(p^{k+1}) \oplus  \ker(q)
+$$
+故必然有$\ker (p(\mathcal A)^k) = \ker(p(\mathcal A)^{k+1})$
