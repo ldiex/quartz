@@ -11,7 +11,7 @@ $$
 > [!Note] 
 > 设$A, B \in \mathrm{M}_n(F)$. 如果存在$P \in \mathrm{GL}_n(F)$使得$B = P^{-1}AP$，则称$B$与$A$*相似*，记为$B \sim_s A$. 可以验证，相似关系是一个[[Equivalence Relation|等价关系]]
 
-设$A, B \in \mathrm{M}_n(F)$. 如果$A \sim_s B$，则
+设$A, B \in \mathrm{M}_n(F)$. 如果$A \sim_s B$，则有如下*相似不变量*
 $$
 \mathrm{rank}(A) = \mathrm{rank}(B),\; \det(A) = \det(B), \;\mathrm{tr}(A) = \mathrm{tr}(B), \chi_A = \chi_B, \mu_A = \mu_B
 $$

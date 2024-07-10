@@ -643,7 +643,7 @@ $$
 设$A\in \mathrm{SM}_n(\mathbb{R})$，则$A$的正（负）[[Real Quadratic Forms#惯性定理 (Sylvester)|惯性指数]]等于$\mathrm{spec}(A)$中正（负）根的个数（在记重数的意义下），特别地，$A$（半）正定当且仅当$A$的特征根都是正的（非负的）
 
 特别地，设$A,B\in \mathrm{SM}_n(\mathbb{R})$且$A$正定，则存在$P\in \mathrm{GL}_n(\mathbb{R})$使得$P^tAP=E$和$P^tBP$是对角阵，这是因为
-1. 由于$A$正定，所以存在$P_1\in \mathrm{O}_n(\mathbb{R}) \subset \mathrm{GL}_n(\mathbb{R})$使得$P_1^tAP_1=E$
+1. 由于$A$正定，所以存在$P_1\in\mathrm{GL}_n(\mathbb{R})$使得$P_1^tAP_1=E$
 2. 令$C = P_1^tBP_1$，则$C$也对称，故存在$P_2\in \mathrm{O}_n(\mathbb{R})$使得$D = P_2^tCP_2$是对角阵
 3. 令$P = P_1P_2$，则$P^tBP = P_2^tCP_2 = D$且
 $$
@@ -804,10 +804,69 @@ $$
 ## T8
 > 设$V$是$n$维欧氏空间
 > (i). 设$n=2$，$\boldsymbol e_1, \boldsymbol e_2$是$V$的一组单位正交基，且$\mathcal A\in \mathcal{L}(V)$由$\mathcal A(\boldsymbol e_1)= \boldsymbol e_2,\mathcal A(\boldsymbol e_2)=-\boldsymbol e_1$确定，证明$\mathcal A$可逆且对任意$\boldsymbol x\in V$有$\boldsymbol x {\perp} \mathcal A{(\boldsymbol x)}$
-> (ii). 设$n=3$，是否存在$V$上的可逆线性算子$\mathcal B$使得对于任意$\boldsymbol x\in V$,$\boldsymbol x {\perp} \mathcal B(\boldsymbol x)$?
+> (ii). 设$n=3$，是否存在$V$上的可逆线性算子$\mathcal B$使得对于任意$\boldsymbol x\in V$，$\boldsymbol x {\perp} \mathcal B(\boldsymbol x)$?
 
 (i). 设$\mathcal A^*$由$\mathcal A(\boldsymbol e_1)= \boldsymbol -e_2,\mathcal A(\boldsymbol e_2)=\boldsymbol e_1$确定，那么对于任意的$\boldsymbol v = x\boldsymbol e_1+y\boldsymbol e_2\in V$，我们有$(\mathcal A^*\mathcal A)\boldsymbol v =\mathcal A^*(-y\boldsymbol e_1+x\boldsymbol e_2)=x \boldsymbol e_1+y\boldsymbol e_2 = \boldsymbol v$，从而$\mathcal A^*\mathcal A = \mathcal E$，故$\mathcal A$可逆. 同时又因为$(\boldsymbol x \vert \mathcal A(\boldsymbol x)) = (-y\boldsymbol e_1+x\boldsymbol e_2 \vert x\boldsymbol e_1 + y\boldsymbol e_2) = -yx+xy = 0$，于是$\forall \boldsymbol x\in V, \boldsymbol x {\perp} \mathcal A(\boldsymbol x)$
 
-(ii). 
+(ii). 因为$\chi_{\mathcal B}$的次数等于$3$，所以$\mathcal B$有实特征根$\lambda$（三次方程一定有一个实根），因为$\mathcal B$可逆，所以$\lambda \neq0$，设$\boldsymbol v$为$\lambda$对应的特征向量，则
+$$
+(\boldsymbol v \vert \mathcal B(\boldsymbol v))=(\boldsymbol v \vert \lambda \boldsymbol v)=\lambda \Vert \boldsymbol v \Vert ^{2} \neq 0
+$$
+所以这样的$\mathcal B$不存在
 
+或者，设$\boldsymbol e_1,\boldsymbol e_2,\boldsymbol e_3$为$V$的一组单位正交基，则$\mathcal B$在该基底下的矩阵为$B=(b_{i,j})\in \mathrm{M}_3(\mathbb{R})$，因为特别地有$\boldsymbol e_i {\perp} \mathcal B(\boldsymbol e_i)$，所以$b_{ii}=0$，而对$\forall \boldsymbol v = x \boldsymbol e_1 + y \boldsymbol e_2 + z \boldsymbol e_3\in V$，我们有
+$$
+\boldsymbol v {\perp} \mathcal B(\boldsymbol v) \implies x(b_{12}y+b_{13}z) + y(b_{21}x+b_{23}z)+ z(b_{31}x + b_{32}y)=0
+$$
+整理后得到$(b_{12}+b_{21})xy + (b_{13}+b_{31})xz + (b_{23}+b_{32})yz=0$，所以$b_{ij} + b_{ji}=0$，从而$B$是斜对称的，可以计算三阶斜对称矩阵的行列式总是为$0$，故$B$不可逆，进而$\mathcal B$不存在
 
+## T9
+> (i). 设$P$是$n$阶正交矩阵，证明$-n \leq \mathrm{tr}{(P)} \leq n$
+> (ii). 设$A,B\in \mathrm{SM}_n(\mathbb{R})$都正定，证明如果$A-B$正定，那么$B^{-1}-A^{-1}$正定
+
+(i). 由矩阵乘法的定义$\displaystyle (AB)_{ij} = \sum_{k=1}^n \sum_{i = 1}^m \sum_{j = 1}^s A_{ik}B_{kj}$，知
+$$
+n = \mathrm{tr}{(E_n)} = \mathrm{tr}{(PP^t)} = \sum_{i = 1}^n (PP^t)_{ii} = \sum_{i=1}^n \sum_{j = 1}^n P_{ij}P^t_{ji } = \sum_{i = 1}^n \sum_{j = 1}^n P_{ij}^{2}
+$$
+于是我们有
+$$
+\sum_{i = 1}^n P_{ii}^{2} \leq \sum_{i = 1}^n \sum_{j = 1}^n P_{ij}^{2} = n
+$$
+由Cauchy不等式
+$$
+\left( \sum_{i = 1}^n P_{ii}^{2} \right) \left( \sum_{i = 1}^n 1^{2} \right)  \geq \left( \sum_{i = 1}^n P_{ii}\cdot1 \right) ^{2}
+$$
+即有$n\cdot n \geq \left(\mathrm{tr}{(P)} \right)^{2} \implies -n \leq \mathrm{tr}{(P) \leq n}$
+
+或者说，因为$P$是正交矩阵，所以$P$的列向量都是单位向量，$P$中的每一个元素的绝对值都不大于$1$，所以命题得证
+
+(ii). 因为$A$正定，所以存在$P\in \mathrm{GL}_n(\mathbb{R})$使得$E = P^tAP,\;D=P^tBP$，其中$D = \mathrm{diag}{(\lambda_1, \ldots ,\lambda_n)}$，又因为$B$正定，所以$\lambda_1, \ldots ,\lambda_n >0$. 又因为$A-B$正定，所以$E-D$正定，于是
+$$
+1-\lambda_1, \ldots ,1-\lambda_n >0 \implies 0 < \lambda_i < 1,\; i = 1,2, \ldots ,n
+$$
+从而$D^{-1}-E = \mathrm{diag}{(\dfrac{1}{\lambda_1}-1, \ldots \dfrac{1}{\lambda_n}-1)}$正定，所以$B^{-1}-A = (P^t)^{-1}(D^{-1}-E)P^{-1}$正定，命题得证
+
+## T10
+> 设$A\in \mathrm{M}_n(\mathbb{C})$，它的特征多项式是$(t-\lambda_1)^{d_1}\cdots(t-\lambda_s)^{d_s}$，其中$\lambda_1, \ldots ,\lambda_s\in \mathbb{C}$两两不同，$d_1, \ldots ,d_s\geq1$，再设$k$是大于$1$的正整数
+> (i). 证明$A^k$的特征多项式是$(t-\lambda_1^k)^{d_1}\cdots (t-\lambda_s^k)^{d_s}$
+> (ii). 再设$A$与$A^k$相似，证明$A$的非零特征值都是单位根，即满足方程$z^m=1 \;(m\in \mathbb{N}^*)$的复数根
+
+(i). 设$J_A$的对角线是
+$$
+\underbrace{ \lambda_1, \ldots ,\lambda_1 }_{ d_1 }, \ldots ,\underbrace{ \lambda_s, \ldots ,\lambda_s }_{ d_s }
+$$
+因为$J_A$是上三角的，所以$J_A^k$的对角线就是
+$$
+\underbrace{ \lambda_1^k, \ldots ,\lambda_1^k }_{ d_1 }, \ldots ,\underbrace{ \lambda_s^k, \ldots ,\lambda_s^k }_{ d_s^k }
+$$
+因为$A^k$和$J^k_A$相似，所以$A^k$的特征多项式就是$J_A^k$的，也就是$(t-\lambda_1^k)^{d_1}\cdots (t-\lambda_s^k)^{d_s}$
+
+(ii). 由于特征多项式是相似不变量，故而
+$$
+(t-\lambda_1)^{d_1}\cdots(t-\lambda_s)^{d_s} = (t-\lambda_1^k)^{d_1}\cdots (t-\lambda_s^k)^{d_s}
+$$
+故而左边和右边的特征根一一对应，我们设$\lambda_i$和$\lambda_j^k$的对应关系用一个置换$\sigma\in S_s$来表示，使得对任意$i = 1,2, \ldots ,s$有$\lambda_i = \lambda_{\sigma(i)}^k$，从而我们有
+$$
+\lambda_i = \lambda_{\sigma(i)}^k = \lambda_{\sigma^{2}(i)}^{k^{2}} = \cdots = \lambda_{\sigma^m(i)}^{k^m} = \lambda_i^{k^m}
+$$
+其中$m$为$\sigma$的[[Permutation#Order of a Permutation|阶数]]，进而$\lambda_i^{k^m-1}=1$，命题得证

@@ -106,7 +106,7 @@ $$
 设$A\in \mathrm{SM}_n(\mathbb{R})$，则$A$的正（负）[[Real Quadratic Forms#惯性定理 (Sylvester)|惯性指数]]等于$\mathrm{spec}(A)$中正（负）根的个数（在记重数的意义下），特别地，$A$（半）正定当且仅当$A$的特征根都是正的（非负的）
 
 特别地，设$A,B\in \mathrm{SM}_n(\mathbb{R})$且$A$正定，则存在$P\in \mathrm{GL}_n(\mathbb{R})$使得$P^tAP=E$和$P^tBP$是对角阵，这是因为
-1. 由于$A$正定，所以存在$P_1\in \mathrm{O}_n(\mathbb{R}) \subset \mathrm{GL}_n(\mathbb{R})$使得$P_1^tAP_1=E$
+1. 由于$A$正定，所以存在$P_1\in\mathrm{GL}_n(\mathbb{R})$使得$P_1^tAP_1=E$
 2. 令$C = P_1^tBP_1$，则$C$也对称，故存在$P_2\in \mathrm{O}_n(\mathbb{R})$使得$D = P_2^tCP_2$是对角阵
 3. 令$P = P_1P_2$，则$P^tBP = P_2^tCP_2 = D$且
 $$
