@@ -216,7 +216,7 @@ $$
 集合$\mathrm{O}_n(\mathbb{R})$是$\mathrm{GL}_n(\mathbb{R})$的[[Group#Subgroup|子群]]
 
 正交矩阵有如下性质
-- 如果$P\in \mathrm{{O}}_n(\mathbb{R})$，则$\det (P) = \pm1$，这说明了正交矩阵是一个**旋转矩阵**
+- 如果$P\in \mathrm{{O}}_n(\mathbb{R})$，则$\det (P) = \pm1$，这说明了正交矩阵是一个**旋转矩阵**或者是一个**反射矩阵**
 - $P\in \mathrm{O}_n(\mathbb{R})$当且仅当$P$的列向量是标准欧式空间$\mathbb{R}^n$中的一组单位正交基
 - $P\in \mathrm{O}_n(\mathbb{R})$当且仅当$P$的行向量是标准欧式空间$\mathbb{R}^{1\times n}$中的一组单位正交基
 
@@ -232,6 +232,8 @@ P = \begin{pmatrix}
 \sin \theta  & -\cos \theta
 \end{pmatrix}
 $$
+前面这种行列式为$1$，代表旋转；后面这种行列式为$-1$，代表反射
+
 设欧式空间$V$由基$\boldsymbol e_1, \ldots , \boldsymbol e_n$和$\boldsymbol \epsilon_1, \ldots ,\boldsymbol \epsilon_n$，矩阵$P\in \mathrm{GL}_n(\mathbb{R})$满足
 $$
 (\boldsymbol \epsilon_1, \ldots ,\boldsymbol \epsilon_n) = (\boldsymbol e_1, \ldots ,\boldsymbol e_n)P

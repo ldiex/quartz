@@ -84,7 +84,7 @@ $$
 故
 $$
 V^{\lambda_2} = \left< \begin{pmatrix}
-1 \\ -1 \\ -1 \\ -1
+1 \\ -1 \\ -1 \\ 1
 \end{pmatrix} \right> 
 $$
 利用Gram-Schmidt正交化可分别求出$V^{\lambda_1},V^{\lambda_2}$的单位正交基

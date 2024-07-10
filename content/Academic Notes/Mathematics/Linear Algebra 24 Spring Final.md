@@ -474,14 +474,14 @@ $$
 $$
 \left< \boldsymbol e_1 \right>^{\perp} = \left< \boldsymbol e_2,\boldsymbol e_3 \right> ,\quad \left< \boldsymbol e_1 \right> ^{\perp\perp} = \left< \boldsymbol e_2,\boldsymbol e_3 \right> ^{\perp} = \left< \boldsymbol e_1 \right> 
 $$
-# 正规算子
+# 正交和正规
 ## 正交矩阵
 设$P\in \mathrm{GL}_n(\mathbb{R})$. 如果$P^t = P^{-1}$，则称$P$是*正交矩阵*. 所有$n$阶正交矩阵的集合记为$\mathrm{O}_n(\mathbb{R})$
 
 集合$\mathrm{O}_n(\mathbb{R})$是$\mathrm{GL}_n(\mathbb{R})$的[[Group#Subgroup|子群]]
 
 正交矩阵有如下性质
-- 如果$P\in \mathrm{{O}}_n(\mathbb{R})$，则$\det (P) = \pm1$，这说明了正交矩阵是一个**旋转矩阵**
+- 如果$P\in \mathrm{{O}}_n(\mathbb{R})$，则$\det (P) = \pm1$，这说明了正交矩阵是一个**旋转矩阵**或者是一个**反射矩阵**
 - $P\in \mathrm{O}_n(\mathbb{R})$当且仅当$P$的列向量是标准欧式空间$\mathbb{R}^n$中的一组单位正交基
 - $P\in \mathrm{O}_n(\mathbb{R})$当且仅当$P$的行向量是标准欧式空间$\mathbb{R}^{1\times n}$中的一组单位正交基
 
@@ -497,6 +497,8 @@ P = \begin{pmatrix}
 \sin \theta  & -\cos \theta
 \end{pmatrix}
 $$
+前面这种行列式为$1$，代表旋转；后面这种行列式为$-1$，代表反射
+
 设欧式空间$V$由基$\boldsymbol e_1, \ldots , \boldsymbol e_n$和$\boldsymbol \epsilon_1, \ldots ,\boldsymbol \epsilon_n$，矩阵$P\in \mathrm{GL}_n(\mathbb{R})$满足
 $$
 (\boldsymbol \epsilon_1, \ldots ,\boldsymbol \epsilon_n) = (\boldsymbol e_1, \ldots ,\boldsymbol e_n)P
@@ -508,7 +510,162 @@ $$
 可以验证，$\sim_o$是[[Equivalence Relation|等价关系]]. 且若$A\sim_oB$，则由$A\sim _s B$且$A\sim_c B$，这是因为正交矩阵的逆和转置相等. 由此可得，矩阵的[[Linear Operator#矩阵相似|相似不变量]]和[[Bilinear Form#合同关系的不变量|合同不变量]]都是正交等价的不变量. 但是反之不然，不能用合同等价及相似等价同时成立推出正交等价
 
 在正交等价下，可以同时用$B = P^{-1}AP$和$B = P^tAP$来表示基底变换
-## 正交标准型
+## 伴随算子
+设$\mathcal A\in \mathcal{L}(V)$，如果算子$\mathcal B\in \mathcal{L} (V)$满足对任意$\boldsymbol x, y\in V$都有$(\mathcal A(\boldsymbol x) \vert \boldsymbol y) = (\boldsymbol x \vert \mathcal B(\boldsymbol y))$，则称$\mathcal B$是$\mathcal A$的*伴随算子（Adjoint Operator）*
+
+设$\mathcal A\in \mathcal{L}(V)$，则$\mathcal A$的伴随算子存在且唯一. 如果$\mathcal A$在$V$的[[Euclidean Space#单位正交基|单位正交基]]$\boldsymbol e_1, \ldots ,\boldsymbol e_n$下的矩阵等于$A$，则其伴随算子在该基下的矩阵等于$A^t$
+
+我们把$\mathcal A$的伴随算子记为$\mathcal A^*$
+## 正规算子
+> [!Tip]
+> 我们只在$V = \mathbb{R}^n$时讨论正规算子
+
+设$\mathcal A\in \mathcal{L} (V)$，如果$\mathcal A \mathcal A^* = \mathcal A^* \mathcal A$，则称$\mathcal A$是*正规算子（Normal Operator）*，类似地，设$A\in \mathrm{M}_n(\mathbb{R})$，如果$AA^t = A^tA$，则称$A$是*正规矩阵（Normal Matrix）*
+
+特别地，若$\mathcal A \mathcal A^* = \mathcal E$，则称$\mathcal A$是*正交算子（Orthogonal Operator）*
+
+由定义，设$\mathcal A\in \mathcal{L} (V)$，$\mathcal A$在$V$的单位正交基$\boldsymbol e_1, \ldots ,\boldsymbol e_n$下的矩阵为$A$，则$\mathcal A$正规当且仅当$A$正规
+
+设$\mathcal A\in \mathcal{L}(V)$，如果$\mathcal A^* = \mathcal A$，则称$\mathcal A$是*对称算子（Symmetric Operator）*，如果$\mathcal A^* = - \mathcal A$，则称$\mathcal A$是*斜对称算子（Skew-symmetrix Operator）* . 由此可知，对称和斜对称算子都是正规算子，对称和斜对称矩阵都是正规矩阵
+
+> [!Tip]
+> [[Euclidean Space#正交矩阵|正交矩阵]]是正规矩阵，这是因为设$P\in \mathrm{O}_n(\mathbb{R})$，则有$P^tP = E = PP^t$
+## 正规算子的保内性
+设$\mathcal A\in \mathcal{L}(V)$，如果对于任意$\boldsymbol x,\boldsymbol y\in V$
+$$
+(\boldsymbol x \vert \boldsymbol y) = \left( \mathcal A(\boldsymbol x)  \vert \mathcal A(\boldsymbol y)\right) 
+$$
+则称$\mathcal A$是*保内(积)的（preserve the inner product）*
+
+若$\mathcal A$在$V$的单位正交基$\boldsymbol e_1, \ldots ,\boldsymbol e_n$下的矩阵为$A$，则下列断言等价
+1. $\mathcal A$保内
+2. $A\in \mathrm{O}_n(\mathbb{R})$
+3. 对任意$\boldsymbol x\in V,\; \Vert \boldsymbol x \Vert = \Vert \mathcal A(\boldsymbol x) \Vert$ （保长）
+4. 对任意$\boldsymbol x, \boldsymbol y\in V,\; \Vert \boldsymbol x - \boldsymbol y \Vert = \Vert \mathcal A(\boldsymbol x) - \mathcal A(\boldsymbol y)\Vert$（保距离）
+上述等价命题说明了正交矩阵的“旋转”性质，且*保内算子*是正规算子，也称为正交（保长，保距）算子，因为正交算子一定是正规算子
+
+# 正交标准型
+## 正规矩阵的标准型
+设$\dim (V) = 1$，则任意的$\mathcal A\in \mathcal{L}(V)$都是[[Normal Operator and Normal Matrix#正规算子|正规算子]]，这是因为对$V$中的单位向量$\boldsymbol v$，$\mathcal A(\boldsymbol v) = \lambda \boldsymbol v$，其中$\lambda$是某个实数
+
+设$\dim{(V)}=2,\;\mathcal A\in \mathcal{L}(V)$正规，且$V$是$\mathcal A$-不可分的（在可分的情形下$A$可以通过一维形式的直和得到），则$\mathcal A$在$V$的任意[[Euclidean Space#单位正交基|单位正交基]]下的矩阵式
+$$
+A = \begin{pmatrix}
+\alpha  &  - \beta \\
+\beta  &  \alpha
+\end{pmatrix}
+$$
+其中$\alpha,\beta\in \mathbb{R}$且$\beta \neq 0$
+
+设$\mathcal A\in \mathcal{L}(V)$正规，则存在$V$的一组单位正交基$\boldsymbol e_1, \ldots ,\boldsymbol e_n$和$\alpha_1,\beta_1, \ldots , \alpha_s,\beta_s,\;\lambda_{2s+1},\lambda_n\in \mathbb{R}$，其中$\beta_1, \ldots ,\beta_s \neq 0$，使得$\mathcal A$在这组基下的矩阵等于
+$$
+B=\begin{pmatrix}
+N(\alpha_1,\beta_1) & & & & &\\
+& \ddots & & & &\\
+& & N(\alpha_s,\beta_s) & & & \\
+& & & \lambda_{2s+1} & & \\
+& & & & \ddots & \\
+& & & & & \lambda_n
+\end{pmatrix}
+$$
+其中
+$$
+N(\alpha,\beta) = \begin{pmatrix}
+\alpha & -\beta \\
+\beta & \alpha
+\end{pmatrix}
+$$
+也就是说，存在如上这样一个标准型$B$使得$A$[[Euclidean Space#正交等价|正交等价]]于$B$，即$A \sim_o B$，弱化这个结论就是有$A$[[Linear Operator#矩阵相似|相似]]于$B$，即$A \sim_s B$
+## 实对称矩阵的标准型
+求解该对角矩阵的算法
+1. 计算$\mathcal A$的特征根，设互不相同的特征根是$\lambda_1, \ldots ,\lambda_k$
+2. 对$i\in \left\{ 1,2, \ldots ,k \right\}$，求$V^{\lambda_i}$的一组基
+3. 对$i\in \left\{ 1,2, \ldots ,k \right\}$，利用[[Euclidean Space#Gram-Schmidt正交化|Gram-Schmidt正交化]]求$V^{\lambda_i}$的一组单位正交基$\boldsymbol e_{i,1}, \ldots ,\boldsymbol e_{i,d_i}$
+4. 由此得到的$\boldsymbol e_{1,1}, \ldots ,\boldsymbol e_{1,d_1}, \ldots ,\boldsymbol e_{k,1}, \ldots ,\boldsymbol e_{k,d_k}$是$V$的一组单位正交基，且在该基下$\mathcal A$是对角的
+
+例如，设
+$$
+A = \begin{pmatrix}
+0 & 1 & 1 & -1 \\
+1 & 0 & -1 & 1 \\
+1 & -1 & 0 & 1 \\
+-1 & 1 & 1 & 0
+\end{pmatrix}\in \mathrm{SM}_4(\mathbb{R})
+$$
+则可计算$\chi_A(t) = (t-1)^3(t+3) \implies \lambda_1 = 1,\lambda_2 = -3$，由于$4 = \dim{V^{\lambda_1}} + \dim{V^{\lambda_2}}$且$\dim{V^{\lambda_2}}$至少为$1$且其最大值为$\lambda_2$的[[Eigenvectors and Characteristic Polynomial#维数和重数|代数重数]]也为$1$，故$\dim{V^{\lambda_2}}=1,\dim{V^{\lambda_1}} = 3$，(事实上，由于$A$是[[Diagonalization|可对角化的]]，故$\lambda_1$的代数重数必然等于其几何重数)，考虑到
+$$
+{V^{\lambda_1}} = {{\ker \left( \lambda_1E-A \right) }} = \ker \begin{pmatrix}
+1 & -1 & -1 & 1 \\
+-1 & 1 & 1 & -1 \\
+-1 & 1 & 1 & -1 \\
+1 & -1 & -1 & 1
+\end{pmatrix}
+$$
+只需要考虑方程
+$$
+x_1 -x_2-x_3+x_4 = 0
+$$
+的解空间即可，直接得出
+$$
+V^{\lambda_1} = \left< \begin{pmatrix}
+1 \\ 1 \\ 0 \\ 0
+\end{pmatrix}, \begin{pmatrix}
+0 \\ 0 \\ 1 \\ 1
+\end{pmatrix}, \begin{pmatrix}
+1 \\ 0 \\ 0 \\ -1
+\end{pmatrix} \right> 
+$$
+再计算$V^{\lambda_2}$，因为$V^{\lambda_1} {\perp} V^{\lambda_2}$且$\mathbb{R}^4 = V^{\lambda_1} \oplus V^{\lambda_2}$，所以$V^{\lambda_2}$为$V^{\lambda_1}$的[[Euclidean Space#正交补|正交补]]，由于上述方程已经给出了
+$$
+(1,-1,-1,1)\cdot(x_1,x_2,x_3,x_4) = 0
+$$
+故
+$$
+V^{\lambda_2} = \left< \begin{pmatrix}
+1 \\ -1 \\ -1 \\ 1
+\end{pmatrix} \right> 
+$$
+利用Gram-Schmidt正交化可分别求出$V^{\lambda_1},V^{\lambda_2}$的单位正交基
+$$
+\boldsymbol \epsilon_1 = \dfrac{1}{\sqrt{ 2 }} (1,1,0,0)^t,\boldsymbol \epsilon_2 = \dfrac{1}{\sqrt{ 2 }}(0,0,1,1)^t,\boldsymbol \epsilon_3 = \dfrac{1}{2}(1,-1,1,-1)^t;\;\boldsymbol \epsilon_4 = \dfrac{1}{2} (1,-1,-1,1)^t
+$$
+故
+$$
+P = \begin{pmatrix}
+\dfrac{1}{\sqrt{ 2 }} & 0 & \dfrac{1}{2} & \dfrac{1}{2} \\
+\dfrac{1}{\sqrt{ 2 }} & 0 & -\dfrac{1}{2} & -\dfrac{1}{2} \\
+0 & \dfrac{1}{\sqrt{ 2 }} & \dfrac{1}{2} & -\dfrac{1}{2} \\
+0 & \dfrac{1}{\sqrt{ 2 }} & -\dfrac{1}{2} & \dfrac{1}{2}
+\end{pmatrix}
+$$
+我们得到$P^tAP = \mathrm{diag}(1,1,1,-3)$
+## 惯性指数的求法
+设$A\in \mathrm{SM}_n(\mathbb{R})$，则$A$的正（负）[[Real Quadratic Forms#惯性定理 (Sylvester)|惯性指数]]等于$\mathrm{spec}(A)$中正（负）根的个数（在记重数的意义下），特别地，$A$（半）正定当且仅当$A$的特征根都是正的（非负的）
+
+特别地，设$A,B\in \mathrm{SM}_n(\mathbb{R})$且$A$正定，则存在$P\in \mathrm{GL}_n(\mathbb{R})$使得$P^tAP=E$和$P^tBP$是对角阵，这是因为
+1. 由于$A$正定，所以存在$P_1\in \mathrm{O}_n(\mathbb{R}) \subset \mathrm{GL}_n(\mathbb{R})$使得$P_1^tAP_1=E$
+2. 令$C = P_1^tBP_1$，则$C$也对称，故存在$P_2\in \mathrm{O}_n(\mathbb{R})$使得$D = P_2^tCP_2$是对角阵
+3. 令$P = P_1P_2$，则$P^tBP = P_2^tCP_2 = D$且
+$$
+P_2\in \mathrm{{O}_n(\mathbb{R}) \implies }P^tAP = P_2^tEP_2 = P_2^tP_2 = E
+$$
+由此可以证明**对于正定矩阵**
+$$
+\det{(A+B)} \geq \det{(A)} + \det{(B)}
+$$
+由于存在$P\in \mathrm{GL_n}(\mathbb{R})$使得$P^tAP = E,P^tBP = \mathrm{diag}(\alpha_1, \ldots ,\alpha_n)$，于是
+$$
+P^t(A+B)P = \mathrm{diag}(1+\alpha_1, \ldots ,1+\alpha_n)
+$$
+两边取行列式有
+$$
+\det{(P)}^{2} \det{(A+B)} = \prod_{i = 1}^n(1+\alpha_i)
+$$
+而
+$$
+\det{(P)}^{2}\left( \det{(A)} + \det{(B)}\right)  = \det{(P^tAP)} + \det{(P^tBP)} = 1+ \prod_{i = 1}^n \alpha_i
+$$
+因为$B$正定，所以$\alpha_1, \ldots ,\alpha_n\in \mathbb{R}^+$，于是$\prod(1+\alpha_i) \geq 1+ \prod\alpha_i$，故命题得证
 
 # 必考题
 ## 给定具体的矩阵，计算特征多项式，特征值和特征子空间，并判断是否可以对角化
@@ -520,3 +677,137 @@ $$
 ## Gram-Schmidt正交化，正交补的构造
 
 ## 计算正交标准型
+
+# 例题
+## T1
+> 设复数矩阵$\displaystyle A = \begin{pmatrix}1 & 0 & a \\ 0 & 1 & 0 \\ 0 & 0 &1 \end{pmatrix}$. 计算$A$的特征多项式和Jordan标准型.
+
+由于$\displaystyle tE-A$为上三角矩阵，故$\chi_A = \det{(tE-A)} = (t-1)^3$，考虑到
+$$
+A - E = \begin{pmatrix}
+0 & 0 & a  \\
+0 & 0 & 0  \\
+0 & 0 & 0
+\end{pmatrix}, \quad (A - E)^{2} = \begin{pmatrix}
+0 & 0 & 0  \\
+0 & 0 & 0  \\
+0 & 0 & 0
+\end{pmatrix}
+$$
+故若$a = 0$，则$\mu_A = t-1$，那么最大的Jordan块是一阶的，所以$J_A=\mathrm{diag}{(1,1,1)}$
+若$a \neq0$，则$\mu_A = (t-1)^{2}$，那么最大的Jordan块是二阶的，所以$J_A = \mathrm{diag}{(J_1(1),J_2(1))}$
+## T2
+> 设复数方阵$A$的特征多项式是$(t-2)^{2}(t+3)^3$.
+> (i). 设$A$的极小多项式是$(t-2)^{2}(t+3)^2$. 计算$A$的Jordan标准型
+> (ii). 设$\mathrm{rank}{(A-2E)}=3,\;\mathrm{rank}{(A+3E)}=4$，计算$A$的Jordan标准型和极小多项式
+
+(i). 由特征多项式我们知道$J_A$的对角线上出现了两个$2$和三个$-3$，又根据极小多项式存在$J_2(2)$和$J_2(-3)$，故$J_A = \mathrm{diag}{(J_2(2),J_2(-3),J_1(-3))}$
+
+(ii). 注意到几何重数的定义$\displaystyle m_\lambda = \dim{V^\lambda} = \dim{\ker(A-\lambda E)}= n-\mathrm{rank}{(A-\lambda E)}$，从而我们知道$2$的几何重数为$5-3=2$和$-3$的几何重数$5-4=1$，所以我们有两个$J(2)$和一个$J(-3)$，故$J_A$只能为$J_A = \mathrm{diag}{(J_1(2),J_1(2),J_3(-3))}$，其中最大的$2$的Jordan块是$1$阶的，而最大的$-3$的Jordan块是$3$阶的，故$\mu_A = (t-2)(t+3)^3$
+
+## T3
+> 设标准欧式空间$\mathbb{R}^3$中的子空间$U$是方程$x_1-x_2+x_3$的解空间.
+> (i). 计算$U$的正交补$U^{{\perp}}$的一组基
+> (ii). 计算$\mathbb{R}^3$的一组单位正交基$\boldsymbol u_1, \boldsymbol u_2, \boldsymbol u_3$，其中$\boldsymbol u_1, \boldsymbol u_2\in U$且$\boldsymbol u_3\in U^{\perp}$
+
+(i). 由题意，$U$中所有的元素$(x_1,x_2,x_3)^T$都满足
+$$
+x_1-x_2+x_3 = 0 \iff (1,-1,1)\cdot(x_1,x_2,x_3) = 0
+$$
+于是$U^{\perp} = \left< \begin{pmatrix}1\\-1\\1\end{pmatrix} \right>$
+(ii). 先直接写出$\boldsymbol u_3 = \dfrac{1}{\sqrt{ 3 }}\left( 1,-1,1 \right)^T$. 接着我们再来求解$U$的一组基，不妨直接用$x_1,x_3$来表示$x_2$即$x_2 = x_1 + x_3$，由此我们容易写出$U$的一组基为
+$$
+\boldsymbol v_1 = (1,1,0)^T,\quad\boldsymbol v_2=(0,1,1)^T
+$$
+考虑Gram-Schmidt正交化，有
+$$
+\begin{gather}
+\boldsymbol u_1' = (1,1,0)^T \implies \boldsymbol u_1 = \dfrac{1}{\sqrt{ 2 }}(1,1,0)^T\\
+\boldsymbol u_2' = \boldsymbol v_2 - (\boldsymbol v_2\vert \boldsymbol u_1)\boldsymbol u_1 = (0,1,1)^T - \dfrac{1}{2}(1,1,0)^T = (-\dfrac{1}{2}, \dfrac{1}{2},1)^T
+\end{gather}
+$$
+从而有
+$$
+\boldsymbol u_1 = \dfrac{1}{\sqrt{ 2 }}(1,1,0)^T,\;\boldsymbol u_2 = \dfrac{1}{\sqrt{ 6 }}(-1,1,2)^T,\;\boldsymbol u_3 = \dfrac{1}{\sqrt{ 3 }}(1,-1,1)^T
+$$
+## T4
+> 设实对称矩阵$A = \begin{pmatrix}0 & -1 & 1 & -1 \\-1 & 0 & -1 & 1 \\1 & -1 & 0 & -1 \\-1 & 1 & -1 & 0\end{pmatrix}$，已知$A$的特征多项式为$(t-3)(t+1)^3$，计算正交矩阵$P$和对角矩阵$D$使得$P^tAP=D$
+
+我们需要计算$V^{3}$和$V^{-1}$，显然后者好看一些，考虑矩阵
+$$
+A + E= \begin{pmatrix}1 & -1 & 1 & -1 \\-1 & 1 & -1 & 1 \\1 & -1 & 1 & -1 \\-1 & 1 & -1 & 1\end{pmatrix}
+$$
+容易看出$\mathrm{rank}{(A+E)} = 1$，从而$\dim{V^{-1}} = 4 - 1=3, \dim{V^3}= 4 -3=1$，而$A+E$的第一行就直接告诉我们了$V^3$的一个基底
+$$
+V^3 = \left< (1,-1,1,-1)^T \right>  
+$$
+考虑$x_1-x_2+x_3-x_4 = 0$，把$x_1,x_2,x_3$作为自由变量，则写出$V^{-1}$的一组基（先省略转置）
+$$
+\boldsymbol v_1 = (1,0,0,1),\; \boldsymbol v_2 = (0,1,0,-1),\; \boldsymbol v_3 = (0,0,1,1)
+$$
+然后正交化
+$$
+\begin{gather}
+\boldsymbol e_1' = \boldsymbol v_1 = (1,0,0,1) \implies \boldsymbol e_1 = \dfrac{1}{\sqrt{ 2 }}(1,0,0,1) \\
+\boldsymbol e_2' = \boldsymbol v_2 - (\boldsymbol v_2 \vert \boldsymbol e_1)\boldsymbol e_1 = (0,1,0,-1) - \left( -\dfrac{1}{2} \right) (1,0,0,1) = (\dfrac{1}{2}, 1,0,-\dfrac{1}{2})  \\
+\implies \boldsymbol e_2 = \dfrac{1}{\sqrt{ 6 }}(1,2,0,-1) \\
+\boldsymbol e_3' = \boldsymbol v_3- (\boldsymbol v_3\vert \boldsymbol e_1) \boldsymbol e_1 - (\boldsymbol v_3\vert \boldsymbol e_2) \boldsymbol e_2 = (0,0,1,1) -\dfrac{1}{2}(1,0,0,1)+\dfrac{1}{6}(1,2,0,-1)  \\
+ = (-\dfrac{1}{3}, \dfrac{1}{3}, 1, \dfrac{1}{3}) \implies \boldsymbol e_3 = \dfrac{1}{2\sqrt{ 3 }}(-1,1,3,1)
+\end{gather}
+$$
+故而我们有
+$$
+P = \begin{pmatrix}
+\dfrac{1}{\sqrt{ 2 }} & \dfrac{1}{\sqrt{ 6 }} & -\dfrac{1}{2\sqrt{ 3 }} & \dfrac{1}{2} \\
+0 & \dfrac{2}{\sqrt{ 6 }} & \dfrac{1}{2\sqrt{ 3 }} & -\dfrac{1}{2} \\
+0 & 0 & \dfrac{3}{2\sqrt{ 3 }} & \dfrac{1}{2} \\
+\dfrac{1}{\sqrt{ 2 }} & -\dfrac{1}{\sqrt{ 6 }} & \dfrac{1}{2\sqrt{ 3 }} & -\dfrac{1}{2}
+\end{pmatrix}
+$$
+从而$P^tAP= \mathrm{diag}{(-1,-1,-1,3)}$
+
+## T5
+> 设$P = \begin{pmatrix}\cos \theta & \sin \theta \\ \sin \theta & -\cos \theta\end{pmatrix}, \; Q = \begin{pmatrix}0 & -1 \\ 1 & 0\end{pmatrix}$和$A = \begin{pmatrix} P & O \\ O & Q\end{pmatrix}$. 计算$A$的极小多项式和$A^{2023}$
+
+$A$的极小多项式为$\mu_P$和$\mu_Q$的乘积，我们直接计算$\chi_P = t^{2}-1,\chi_Q = t^{2}+1$，而$\mu_P,\mu_Q$显然都不能是一次的，故$\mu_P = \chi_P = t^{2}-1,\mu_Q = \chi_Q = t^{2}+1$，从而$\mu_A = \mu_P\mu_Q = t^4-1$
+由对角分块矩阵的性质有$A^{2023} = \begin{pmatrix}P^{2023} & O \\ O & Q^{2023}\end{pmatrix}$，而$P^2 = E,Q^2 = -E$，从而
+$$
+A^{2023} = \begin{pmatrix}
+P & O \\ O & -Q
+\end{pmatrix}
+$$
+
+## T6
+> 设$V$是域$F$上的有限维线性空间，$\mathcal A$是$V$上的线性算子，$\boldsymbol v_1$和$\boldsymbol v_2$是$\mathcal A$的两个线性无关的特征向量. 证明：$\boldsymbol v_1+\boldsymbol v_2$是$\mathcal A$的特征向量$\iff \boldsymbol v_1,\boldsymbol v_2$在同一个特征子空间中
+
+右边推左边是显然的，故我们来证明左边推右边，设$\mathcal A \boldsymbol v_1 = \lambda_1 \boldsymbol v_1,\;\mathcal A \boldsymbol v_2 = \lambda_2 \boldsymbol v_2$和$\mathcal A(\boldsymbol v_1 + \boldsymbol v_2) = \lambda_3(\boldsymbol v_1+\boldsymbol v_2)$，第三个式子减去前面两个式子就有
+$$
+(\lambda_3-\lambda_1)\boldsymbol v_1 + (\lambda_3-\lambda_2)\boldsymbol v_2 = \boldsymbol 0
+$$
+由于$\boldsymbol v_1,\boldsymbol v_2$线性无关，故$\lambda_1=\lambda_2 = \lambda_3$，所以它们在一个特征子空间中
+
+## T7
+> 设$V$是域$F$上的$n$维线性空间，$\mathcal A$是$V$上的线性算子. 证明：$\mathcal A$在$F$中有$n$个互不相同的特征根当且仅当以下两个条件同时满足 (i). $\mathcal A$可对角化; (ii). $V$是$\mathcal A$-循环的
+
+先证明充分性，因为$\mathcal A$可对角化，故$\mathcal A$的Jordan标准型中每一个Jordan块的大小均为一，所以$\mathcal A$的极小多项式中每一个不可约元的重数都为$1$，即
+$$
+\mu_{\mathcal A}=(t-\lambda_1)(t-\lambda_2) \cdots (t-\lambda_s)
+$$
+其中$\lambda_1, \ldots ,\lambda_s$两两不同，而又因为$V$是$\mathcal A$-循环的，所以$\deg{(\mu_{\mathcal A})} = \deg{(\chi_{\mathcal A})} = n$，故$s = n$，从而$\mathcal A$有$n$个互不相同的特征根
+
+再证必要性，如果$\mathcal A$有$n$个互补相同的特征根，则
+$$
+\chi_{\mathcal A}= (t-\lambda_1)(t-\lambda_2) \cdots (t-\lambda_n)
+$$
+由Hamilton-Cayley定理，$\chi_{\mathcal A}$的不可约元都是$\mu_{\mathcal A}$的不可约元，从而$\mu_{\mathcal A}= \chi_{\mathcal A}$，故$V$是$\mathcal A$-循环的，且$\mathcal A$的Jordan标准型中每一个Jordan块的大小均为一，进而$\mathcal A$可对角化
+
+## T8
+> 设$V$是$n$维欧氏空间
+> (i). 设$n=2$，$\boldsymbol e_1, \boldsymbol e_2$是$V$的一组单位正交基，且$\mathcal A\in \mathcal{L}(V)$由$\mathcal A(\boldsymbol e_1)= \boldsymbol e_2,\mathcal A(\boldsymbol e_2)=-\boldsymbol e_1$确定，证明$\mathcal A$可逆且对任意$\boldsymbol x\in V$有$\boldsymbol x {\perp} \mathcal A{(\boldsymbol x)}$
+> (ii). 设$n=3$，是否存在$V$上的可逆线性算子$\mathcal B$使得对于任意$\boldsymbol x\in V$,$\boldsymbol x {\perp} \mathcal B(\boldsymbol x)$?
+
+(i). 设$\mathcal A^*$由$\mathcal A(\boldsymbol e_1)= \boldsymbol -e_2,\mathcal A(\boldsymbol e_2)=\boldsymbol e_1$确定，那么对于任意的$\boldsymbol v = x\boldsymbol e_1+y\boldsymbol e_2\in V$，我们有$(\mathcal A^*\mathcal A)\boldsymbol v =\mathcal A^*(-y\boldsymbol e_1+x\boldsymbol e_2)=x \boldsymbol e_1+y\boldsymbol e_2 = \boldsymbol v$，从而$\mathcal A^*\mathcal A = \mathcal E$，故$\mathcal A$可逆. 同时又因为$(\boldsymbol x \vert \mathcal A(\boldsymbol x)) = (-y\boldsymbol e_1+x\boldsymbol e_2 \vert x\boldsymbol e_1 + y\boldsymbol e_2) = -yx+xy = 0$，于是$\forall \boldsymbol x\in V, \boldsymbol x {\perp} \mathcal A(\boldsymbol x)$
+
+(ii). 
+
+
