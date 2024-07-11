@@ -118,11 +118,11 @@ $$
 \end{aligned}
 $$
 **且这个变量替换是可逆的**
-$3. \implies 1.$ 做完变量替换后，在基底$\boldsymbol \var_1, \ldots, \boldsymbol \var_{2n}$下有
+$3. \implies 1.$ 做完变量替换后，在基底$\boldsymbol \delta_1, \ldots, \boldsymbol \delta_{2n}$下有
 $$
 q(\boldsymbol y) = y_1 y_2 + \cdots y_{2n-1}y_{2n}
 $$
-考虑$U = \langle\boldsymbol \var_1, \boldsymbol \var_3 \ldots, \boldsymbol \var_{2n - 1}\rangle$，则对$\forall \boldsymbol y \in U$有$y_2 = y_4 = \cdots = y_{2n} = 0$故有$q(\boldsymbol y) = 0$
+考虑$U = \langle\boldsymbol \delta_1, \boldsymbol \delta_3 \ldots, \boldsymbol \delta_{2n - 1}\rangle$，则对$\forall \boldsymbol y \in U$有$y_2 = y_4 = \cdots = y_{2n} = 0$故有$q(\boldsymbol y) = 0$
 
 > 设$A\in \mathrm{SM}_n(\mathbb{R})$是正定矩阵，则
 > 1. $A^{-1}$正定

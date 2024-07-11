@@ -330,7 +330,6 @@ $$
 设$A\in \mathrm{M}_n(\mathbb{C})$，在不计Jordan块出现的顺序的前提下，$A$的Jordan标准型由A的初等因子组唯一确定
 
 设$A,B\in \mathrm{M}_n(F)$，则$A\sim_sB$当且仅当$A$和$B$有共同的初等因子组
-
 ### 相等多项式和秩
 设$A,B\in \mathrm{M}_n(F)$，则$A\sim_sB$当且仅当下述两点同时成立
 1. $\chi_A = \chi_B$或$\mu_A = \mu_B$
@@ -404,34 +403,6 @@ $$
 可以利用如下递推式构造$\boldsymbol \epsilon_i$,
 $$
 \boldsymbol \epsilon_i' = \boldsymbol v_i - (\boldsymbol v_i \vert \boldsymbol \epsilon_1)\boldsymbol \epsilon_1 - \cdots - (\boldsymbol v_i \vert \boldsymbol \epsilon_{i-1})\boldsymbol  \epsilon_{i - 1} \implies \boldsymbol \epsilon_i = \dfrac{\boldsymbol \epsilon_i'}{\Vert \boldsymbol \epsilon_i' \Vert }
-$$
-例如要求$U = \left< \boldsymbol u_1,\boldsymbol u_2,\boldsymbol u_3 \right>$是$\mathbb{R}^4$的子空间的一组正交单位基，其中
-$$
-\boldsymbol u_1 = \begin{pmatrix}
-1 \\ 0 \\ 1 \\ 0
-\end{pmatrix},\;\boldsymbol u_2 = \begin{pmatrix}
-0 \\ -1 \\ 1 \\ -1
-\end{pmatrix},\; \boldsymbol u_3 = \begin{pmatrix}
-1 \\ 1 \\ 1 \\ 1
-\end{pmatrix}
-$$
-则可由Gram-Schmidt正交化得
-$$
-\begin{gather}
-\boldsymbol \epsilon_1 = \dfrac{{\boldsymbol u_1}}{\Vert \boldsymbol u_1 \Vert } = \dfrac{1}{\sqrt{ 2 }} \boldsymbol u_1 \\
-\boldsymbol \epsilon_2' = \boldsymbol u_2 - (\boldsymbol u_2 \vert \boldsymbol \epsilon_1)\boldsymbol \epsilon_1 = \begin{pmatrix}
--\frac{1}{2} \\ -1\\ \frac{1}{2} \\ -1
-\end{pmatrix} \\
-\boldsymbol \epsilon_2 = \dfrac{\boldsymbol \epsilon_2'}{\Vert \boldsymbol \epsilon_2' \Vert } = \dfrac{1}{\sqrt{ 10 }} \begin{pmatrix}
--1 \\ -2 \\ 1 \\ -2
-\end{pmatrix} \\
-\boldsymbol \epsilon_3' = \boldsymbol u_3 - (\boldsymbol u_3 \vert \boldsymbol \epsilon_1) \boldsymbol \epsilon_1 -(\boldsymbol u_3 \vert \boldsymbol \epsilon_2)\boldsymbol \epsilon_2 = \dfrac{1}{5} \begin{pmatrix}
--2 \\ 1 \\ 2 \\ 1
-\end{pmatrix} \\
-\boldsymbol \epsilon_3 = \dfrac{\boldsymbol \epsilon_3'}{\Vert  \boldsymbol\epsilon_3' \Vert } = \dfrac{1}{\sqrt{ 10 }} \begin{pmatrix}
--2 \\ 1 \\ 2 \\ 1
-\end{pmatrix}
-\end{gather}
 $$
 ### 正交基的性质
 ### 内积的形式
@@ -666,6 +637,37 @@ $$
 \det{(P)}^{2}\left( \det{(A)} + \det{(B)}\right)  = \det{(P^tAP)} + \det{(P^tBP)} = 1+ \prod_{i = 1}^n \alpha_i
 $$
 因为$B$正定，所以$\alpha_1, \ldots ,\alpha_n\in \mathbb{R}^+$，于是$\prod(1+\alpha_i) \geq 1+ \prod\alpha_i$，故命题得证
+## 斜对称矩阵的标准型
+设$\mathcal A\in \mathcal{L}(V)$斜对称，则存在$\beta_1, \ldots ,\beta_s\in \mathbb{R} \backslash \left\{ 0 \right\}$，使得$\mathcal A$在$V$的某组单位正交基下的矩阵为
+$$
+M = \begin{pmatrix}
+N(0,\beta_1) & & & & & \\
+& \ddots & & & &  \\
+& & N(0,\beta_s) & & & \\
+& & & 0 & & \\
+& & & & \ddots &  \\
+& & & & & 0
+\end{pmatrix}
+$$
+设$A\in \mathrm{SSM}_n(\mathbb{R})$，则$A$正交相似于上述形式的矩阵
+
+实斜对称矩阵和欧式空间上的斜对称算子的特征根或者是纯虚数，或者等于$0$
+
+## 正交矩阵的标准型
+设$\mathcal A\in \mathcal{L}(V)$正交，则存在$\theta_1, \ldots ,\theta_s\in(0,\pi) \cup (\pi,2\pi)$和$\lambda_{2s+1}, \ldots ,\lambda_n\in \left\{ -1,1 \right\}$使得$\mathcal A$在$V$的某组单位正交基下的矩阵为
+$$
+M=\begin{pmatrix}
+N(\cos \theta_1,\sin \theta_1) & & & & &\\
+& \ddots & & & &\\
+& & N(\cos \theta_s, \sin \theta_s) & & & \\
+& & & \lambda_{2s+1} & & \\
+& & & & \ddots & \\
+& & & & & \lambda_n
+\end{pmatrix}
+$$
+设$A\in \mathrm{O}_n(\mathbb{R})$，则$A$正交相似于上述形式的矩阵$M$
+
+正交矩阵和正交算子的（复）特征根的模长都等于$1$
 
 # 必考题
 ## 给定具体的矩阵，计算特征多项式，特征值和特征子空间，并判断是否可以对角化
@@ -899,3 +901,111 @@ $$
 V = \ker(p^{k+1}) \oplus  \ker(q)
 $$
 故必然有$\ker (p(\mathcal A)^k) = \ker(p(\mathcal A)^{k+1})$
+
+## T14
+> 设$A,B\in \mathrm{M}_n(\mathbb{R})$证明 
+> (i). 如果$A$是正交矩阵且$\det{(A)} = -1$，则$-1$是$A$的特征根
+> (ii). 如果$A$是正定矩阵且$B$是斜对称矩阵，则$A+B$可逆
+
+(i). 因为$A$正交，所以存在$P\in \mathrm{O}_n(\mathbb{R})$使得
+$$
+P^tAP = M = \mathrm{diag}{(N(\cos \theta_1,\sin \theta_1), \ldots ,N(\cos \theta_s,\sin \theta_s),1, \ldots ,1,-1, \ldots ,-1)}
+$$
+故$\det{(M)} = \det{(P^tAP)}= \det{(P^{-1}AP)} = \det{(A)} = -1$，而$\det{(N(\cos \alpha,\sin \alpha))}=1$，故$A$必有$-1$作为特征根
+(ii). 因为$A$正定，所以存在$P\in \mathrm{GL}_n(\mathbb{R})$使得$P^tAP= E$，从而
+$$
+\det{(A+B)} \neq 0 \iff \det{(P^t(A+B)P)} \neq 0 \iff \det{(E + P^tBP)} \neq 0
+$$
+而其中$P^tBP + (P^tBP)^t = P^tBP + P^tB^t P = P^t(B + B^t)P = P^tOP = O$，故$P^tBP$也是斜对称的，故要证明原命题，只需证明对任意$B\in \mathrm{SSM}_n(\mathbb{R})$，$E + B$可逆
+
+由于$B$是斜对称的，所以存在$Q\in \mathrm{O}_n(\mathbb{R})$使得
+$$
+Q^tBQ = M = \mathrm{diag}{(N(0,\beta_1), \ldots ,N(0,\beta_s),0, \ldots ,0)}
+$$
+从而
+$$
+Q^t(E+B)Q = Q^{-1}EQ + Q^tBQ = \mathrm{diag}{(N(1,\beta_1), \ldots ,N(1,\beta_s),1, \ldots ,1)}
+$$
+故$\det{(E+B)} = \det{(Q^t(E+B)Q)} = \det{N(1,\beta_1) \cdots \det{N(1,\beta_s)}} \geq1$，于是$E+B$可逆, 原命题进而也得证
+
+## T15
+> 设$A,B\in \mathrm{M}_n(\mathbb{R})$. 证明$AB$和$BA$的特征多项式相等; 如果考虑一般域$F$, 该命题还成立吗
+
+如果$B$可逆, 则有$B(AB)B^{-1} = BA$即$AB$和$BA$相似, 故它们有相同的特征多项式. 
+
+由于可逆矩阵在$\mathrm{M}_n(\mathbb{R})$上是稠密的, 所以存在实数$a > 0$使得对任意的$\varepsilon\in(0,a)$, 我们有$\varepsilon E + B$可逆, 故而$A(\varepsilon E + B)$和$(\varepsilon+B)A$相似, 所以它们拥有相同的特征多项式, 即
+$$
+\det{(tE-A(\varepsilon E+B))} = \det{(tE - (\varepsilon E + B)A)}
+$$
+注意到上式两侧都是关于$\varepsilon$的多项式, 故而取$\varepsilon=0$时上述等式依然成立, 即$AB$和$BA$的特征多项式相等
+
+如果考虑一般域, 命题也是成立的. 这是因为我们设$\varepsilon\in F$, 则$\varepsilon E + B\in \mathrm{M}_n(F[\varepsilon])$, 且$\det{(\varepsilon E + B)}$是关于$\varepsilon$的$n$次多项式, 故而不等于$0$, $\varepsilon + B$可逆, 所以我们仍然能通过上面的方式证明$AB$和$BA$的特征多项式相等
+
+## T16
+> 设$M\in \mathrm{M}_m(F)$和$N\in \mathrm{M}_n(F)$. 证明$(m+n)$阶矩阵$\begin{pmatrix} M & O \\ O & N\end{pmatrix}$和$\begin{pmatrix}N & O \\ O & M\end{pmatrix}$相似
+
+同一算子在不同基底下的矩阵表示是相似的, 故而上述两个矩阵可以看成某个线性算子在两组基底的交换后的结果, 从而我们容易给出
+$$
+Q^{-1} \begin{pmatrix}
+ M & O \\ O & N
+\end{pmatrix} Q = \begin{pmatrix}
+N & O \\
+O & M
+\end{pmatrix}
+$$
+其中
+$$
+Q = \begin{pmatrix}
+O & E_m \\ E_n & O
+\end{pmatrix}, \quad Q^{-1} = \begin{pmatrix}
+O & E_n \\
+E_m & O
+\end{pmatrix}
+$$
+## T17
+> 设$V$是域$F$上的$n$维线性空间, $\mathcal A$是$V$上的线性算子. 如果$W$既是$\mathcal A$-循环子空间又是$\mathcal A$的一个特征子空间, 计算$\dim{(W)}$
+
+因为$W$是$\mathcal A$的一个特征子空间, 所以$\mathcal A_W$是一个数乘算子, 记为$\mathcal A_W = \lambda \mathcal E$, 所以它的极小多项式是$\mu_{\mathcal A_W} = t- \lambda$, 又因为$W$是$\mathcal A$-循环的, 所以就有$\dim{(W)} = \deg{\chi_{\mathcal A_W}} = \deg{\mu_{\mathcal A_W}} = 1$
+
+## T18
+> 设$\mathbb{R}^n$是标准欧式空间, 其中的向量为列向量. 设$\boldsymbol v\in \mathbb{R}^n$是单位向量. 令$n$阶方阵$H_{\boldsymbol v } = E - 2\boldsymbol v \boldsymbol v^t$, 计算$H_{\boldsymbol v}$的所有特征根和它们的几何重数
+
+考虑到
+$$
+H_{\boldsymbol v} \boldsymbol v = \boldsymbol v - 2 \boldsymbol v \boldsymbol v^t \boldsymbol v = \boldsymbol v - 2\boldsymbol v\cdot1 = - \boldsymbol v
+$$
+故$-1$是$H_{\boldsymbol v}$的特征根. 而由$\boldsymbol v$出发可以得到$V$的一组单位正交基$\boldsymbol v, \boldsymbol e_2, \ldots ,\boldsymbol e_n$, 则有
+$$
+H_{\boldsymbol v} \boldsymbol e_i = \boldsymbol e_i -2 \boldsymbol v \boldsymbol v^t \boldsymbol e_i = \boldsymbol e_i - 2\boldsymbol v\cdot0 = \boldsymbol e_i
+$$
+所以$1$也是$H_{\boldsymbol v}$的特征根, 并且$V^1 = \left< \boldsymbol e_2, \ldots ,\boldsymbol e_n \right>$是$1$的特征子空间, 所以自然有$1$的几何重数为$n-1$, 而$-1$的几何重数为$1$, 不可能存在其他的特征根
+
+## T19
+> 设$A\in \mathrm{M}_n(\mathbb{R})$是正规矩阵, 证明$A$和$A^t$正交相似
+
+由于$A$正规, 则存在$P\in \mathrm{O}_n(\mathbb{R})$使得
+$$
+P^t A P = M = \mathrm{diag}{(N(\alpha_1,\beta_1), \ldots ,N(\alpha_s,\beta_s),\lambda_{2s+1}, \ldots ,\lambda_n)}
+$$
+两边取转置, 则有
+$$
+P^t A^t P = M^t = \mathrm{diag}{(N^t(\alpha_1,\beta_1), \ldots ,N^t(\alpha_s,\beta_s),\lambda_{2s+1}, \ldots ,\lambda_n)}
+$$
+要证明$A \sim_o A^t$, 只需证明$M \sim_o M^t$, 考虑最小的单位, 容易发现
+$$
+\begin{pmatrix}
+-1 & 0  \\
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+\alpha & -\beta \\
+\beta & \alpha
+\end{pmatrix} \begin{pmatrix}
+-1 & 0  \\
+0 & 1
+\end{pmatrix} = \begin{pmatrix}
+\alpha & \beta \\
+-\beta & \alpha
+\end{pmatrix}
+$$
+也就是$Q^tN(\alpha,\beta)Q = N^t(\alpha,\beta)$, 其中$Q = \begin{pmatrix}-1 & 0 \\ 9 & 1\end{pmatrix}$是正交矩阵, 从而就有$Q^tMQ = M^t$, 故$M$和$M^t$正交相似, 原命题也得证
+
