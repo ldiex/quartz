@@ -154,7 +154,7 @@ $$
 $$
 \det{(E+A) \geq 1}
 $$
-这里用到了[[Determinant#对角分块矩阵的行列式|对角分块矩阵的行列式]]
+这里用到了[[Matrix Determinant#对角分块矩阵的行列式|对角分块矩阵的行列式]]
 # 正交算子和正交矩阵
 设$\mathcal A\in \mathcal{L}(V)$正交，则存在$\theta_1, \ldots ,\theta_s\in(0,\pi) \cup (\pi,2\pi)$和$\lambda_{2s+1}, \ldots ,\lambda_n\in \left\{ -1,1 \right\}$使得$\mathcal A$在$V$的某组单位正交基下的矩阵为
 $$

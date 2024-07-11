@@ -980,6 +980,7 @@ H_{\boldsymbol v} \boldsymbol e_i = \boldsymbol e_i -2 \boldsymbol v \boldsymbol
 $$
 所以$1$也是$H_{\boldsymbol v}$的特征根, 并且$V^1 = \left< \boldsymbol e_2, \ldots ,\boldsymbol e_n \right>$是$1$的特征子空间, 所以自然有$1$的几何重数为$n-1$, 而$-1$的几何重数为$1$, 不可能存在其他的特征根
 
+这里的$H$实际上是[[Householder Transformation and Matrix|Householder矩阵]]
 ## T19
 > 设$A\in \mathrm{M}_n(\mathbb{R})$是正规矩阵, 证明$A$和$A^t$正交相似
 
@@ -1008,4 +1009,13 @@ $$
 \end{pmatrix}
 $$
 也就是$Q^tN(\alpha,\beta)Q = N^t(\alpha,\beta)$, 其中$Q = \begin{pmatrix}-1 & 0 \\ 9 & 1\end{pmatrix}$是正交矩阵, 从而就有$Q^tMQ = M^t$, 故$M$和$M^t$正交相似, 原命题也得证
+
+## T20
+> 设$V$是域$F$上的$n$维线性空间, 且$\mathcal A$是$V$上的线性算子. 如果$V$是$\mathcal A$-循环的, 证明对于任意的$\mathcal A$-不变子空间$U$, 存在$p\in F[t]$使得$U = \ker (p(\mathcal A))$
+
+我们取$p = \mu_{\mathcal A_U}$, 其中$\mathcal A_U\in \mathcal{L}(U)$是限制在$U$上的线性算子$\mathcal A$, 那么对任意$\boldsymbol u\in U$, 都有$p(\mathcal A)(\boldsymbol u) = \boldsymbol 0$, 故有$U \subset \ker (p(\mathcal A))$
+
+设$K = \ker (p(\mathcal A))$, 因为$V$是循环空间, 所以它的所有不变子空间都是循环的, 从而$U$和$K$都是$\mathcal A$-循环的,  则有$\dim{(U)}= \deg{(\mu_{\mathcal A_U)}} = \deg{(p)}$和$\dim{(K)} = \deg{(\mu_{\mathcal A_K})}$, 而$p$是$K$中的零化多项式, 所以有$\mu_{\mathcal A_K} \mid p$, 故有$\deg{(\mu_{\mathcal A_K})} \leq \deg{(p)}$即$\dim{(K)} \leq \dim{(U)}$, 又$U \subset K$, 所以就有$\dim{(K)}= \dim{(U)}$, 进而$K =U$
+
+
 

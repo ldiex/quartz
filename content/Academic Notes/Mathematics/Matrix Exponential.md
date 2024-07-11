@@ -23,7 +23,7 @@ where $A^0$is the *identity matrix* $I$.
 3. **Nilpotent Matrices**: If $A$ is *nilpotent* (i.e., there exists some $k$such that $A^k = 0$), the series terminates after a finite number of terms.
 
 ### Determinant
-For any complex square matrix the following [[Trace|trace]] holds
+For any complex square matrix the following [[Matrix Trace|trace]] holds
 $$
 \det (e^A) = e^{\mathrm{tr}(A)}
 $$

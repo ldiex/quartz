@@ -34,10 +34,10 @@ tags:
 [[Least Squares Method]]
 [[Spectral Decomposition]]
 # 23 Fall
-[[Determinant]]
+[[Matrix Determinant]]
 [[Matrix Minor]]
 [[Adjugate Matrix]]
-[[Trace]]
+[[Matrix Trace]]
 [[Equivalence Relation]]
 [[Circulant Matrix]]
 [[Linear Isomorphism]]

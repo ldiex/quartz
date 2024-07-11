@@ -36,7 +36,7 @@ q: \mathrm{M}_n(\mathbb R) &\to \mathbb R \\
 A &\to \mathrm{tr} (A^2)
 \end{aligned}
 $$
-其中$\mathrm{tr} A$表示$A$的[[Trace | 迹]]
+其中$\mathrm{tr} A$表示$A$的[[Matrix Trace| 迹]]
 则$q$是二次型，且它的签名是
 $$
 \left(\dfrac{n(n + 1)}{2}, \dfrac{n(n - 1)}{2}\right)

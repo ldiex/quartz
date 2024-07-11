@@ -6,7 +6,7 @@ where $I$ is the identity matrix.
 1. Only square matrices can have inverses.
 2. Not all square matrices have inverses. Those that do are called *invertible* or *non-singular*.
 3. If $A^{-1}$ exists, it is unique.
-4. $A$ is invertible if and only if the [[Determinant|determinant]] $\det{A} \neq0$
+4. $A$ is invertible if and only if the [[Matrix Determinant|determinant]] $\det{A} \neq0$
 5. $A$ is invertible if and only if $A$ have no zero [[Eigenvectors and Characteristic Polynomial#特征值|eigenvalue]]
 # Calculation
 ## Adjugate Matrix

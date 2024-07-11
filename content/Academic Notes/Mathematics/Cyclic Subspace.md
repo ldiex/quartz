@@ -166,4 +166,3 @@ $$\chi_{\mathcal A} = p_1^{n_1}\cdots p_s^{n_s}
 $$
 其中$m_1\le n_1,\ldots, m_s \le n_s$且$n_1\deg(p_1) + \cdots + n_s\deg(p_s)=n$
 
-	

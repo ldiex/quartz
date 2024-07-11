@@ -41,7 +41,7 @@ B & C \\
 O_{(n-k)\times k} & D
 \end{pmatrix}
 $$
-其中$B\in \mathrm{M}_k(\mathbb{R})$，那么如果$A$正规，则$C = O_{k\times(n-k)}$，这一点可以通过矩阵[[Trace|迹]]的交换不变性导出
+其中$B\in \mathrm{M}_k(\mathbb{R})$，那么如果$A$正规，则$C = O_{k\times(n-k)}$，这一点可以通过矩阵[[Matrix Trace|迹]]的交换不变性导出
 
 ## 正规算子的不变子空间
 设$\mathcal A\in \mathcal{L}(V)$是正规算子，$W \subset V$是$\mathcal A$-子空间（$\mathcal A$的[[Invariant Subspace|不变子空间]]），则

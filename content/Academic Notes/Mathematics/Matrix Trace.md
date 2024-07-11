@@ -4,6 +4,8 @@ $$
 \mathrm{tr} A = \sum_i^n A_{ii}
 $$
 # Properties
+## Sum of eigenvalues
+The trace of a matrix is always the sum of its [[Eigenvectors and Characteristic Polynomial#特征值|eigenvalues]] (including repeated ones). This relationship holds because the trace is invariant under [[Linear Operator#矩阵相似|similarity transformations]] and the [[Characteristic Polynomial|characteristic polynomial]] of the matrix (which has roots equal to the eigenvalues) has coefficients that relate to the trace and [[Matrix Determinant|determinant]] of the matrix.   
 ## Cyclic property
 The trace of a matrix is an invariant under the commutation of matrix multiplication
 $$

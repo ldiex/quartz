@@ -15,7 +15,7 @@ $$
 $$
 \mathrm{rank}(A) = \mathrm{rank}(B),\; \det(A) = \det(B), \;\mathrm{tr}(A) = \mathrm{tr}(B), \chi_A = \chi_B, \mu_A = \mu_B
 $$
-这一点告诉我们，无论通过选取何种基底得到的$\mathcal A$的矩阵$A$，它的[[Matrix Rank|秩]]、[[Determinant|行列式]]、[[Trace|迹]]、[[Characteristic Polynomial|特征多项式]]、[[Minimal Polynomial|极小多项式]]都是不变的. 
+这一点告诉我们，无论通过选取何种基底得到的$\mathcal A$的矩阵$A$，它的[[Matrix Rank|秩]]、[[Matrix Determinant|行列式]]、[[Matrix Trace|迹]]、[[Characteristic Polynomial|特征多项式]]、[[Minimal Polynomial|极小多项式]]都是不变的. 
 设$A, B \in \mathrm{M}_n(F)$. 如果$A \sim_s B$，则
 $$
 \forall f \in F[t], \; f(A) \sim_s f(B)

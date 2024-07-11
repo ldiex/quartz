@@ -19,7 +19,7 @@ $$
 \mathrm{diag}(a_1^k,a_2^k,\ldots,a_n^k)
 $$
 
-# [[Determinant]]
+# [[Matrix Determinant]]
 $$
 \mathrm{diag}(a_1,a_2,\ldots,a_n) = a_1a_2\cdots a_n
 $$
