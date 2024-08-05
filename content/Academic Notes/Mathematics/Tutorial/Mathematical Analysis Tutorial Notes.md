@@ -1,0 +1,12 @@
+# Class Notes
+[[MA-EX-1]]
+[[MA-EX-2]]
+[[MA-EX-3]]
+[[MA-EX-4]]
+[[MA-Ex-5]]
+[[MA-Ex-6]]
+[[MA-Ex-7]]
+[[MA-Ex-8]]
+[[MA-Ex-9]]
+[[MA-Ex-10]]
+[[MA-Ex-11]]

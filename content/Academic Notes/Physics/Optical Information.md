@@ -74,7 +74,7 @@ $$
 2. $\widetilde U_{t2}(\xi,\eta) = \widetilde t(\xi,\eta) \widetilde U_{t1}(\xi,\eta)$
 3. $\widetilde U_{i}(x',y') = \mathscr F\left\{ \widetilde U_{t2}(\xi,\eta) \right\}$
 
-其中最后一步可以进一步写成(用$*$表示[[Convolution|卷积]])
+其中最后一步可以进一步写成(用$*$表示[[Convolution (Continuous)|卷积]])
 $$
 \widetilde U_{i}(x',y') = \mathscr F\left\{  \widetilde t(\xi,\eta) \widetilde U_{t1}(\xi,\eta) \right\} = \mathscr F \left\{ \widetilde t(\xi,\eta) \right\} *\mathscr F\left\{  \widetilde U_{t1}(\xi,\eta)\right\} 
 $$
