@@ -5,4 +5,6 @@
 [[Linear Regression]]
 [[Softmax Regression]]
 [[Multilayer Perceptrons]]
-[[Convolutional Neural Networks]]
+[[Convolutional Neural Networks (CNNs)]]
+[[Recurrent Neural Networks (RNNs)]]
+
