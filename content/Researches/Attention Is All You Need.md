@@ -20,7 +20,7 @@ link: https://arxiv.org/abs/1706.03762
 - **Attention Mechanism**: directly access the previous inputs to achieve longer memory
 
 # Model Architecture
-![[ML-Transformer-Arch.png]]
+![[AI-Transformer-Arch.png]]
 ## Input / Output Embedding
 Convert token to vectors, see [[Word Embedding]]. The weights of the embedding layer are initialized with random numbers and will be optimized during training process.
 

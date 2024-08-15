@@ -14,7 +14,7 @@
 - Works better with [[Recurrent Neural Networks (RNNs)|RNNs]]
 - Does not depend on batch size, making it more suitable for scenarios with variable batch sizes
 
-![[ML-Batch-vs-layer-norm.png]]
+![[AI-Batch-vs-layer-norm.png]]
 In the diagram, $C$ stands for channels/features, $N$ stands for batches and $H,W$ stand for the height and weight of the feature map
 
 For detail algorithm implement, refer to [[Batch Normalization]]
