@@ -1,4 +1,4 @@
-In neural networks, *Xavier initialization* helps maintain consistent variance of activations and gradients throughout the network layers. This prevents the [[Stable Activations and Gradients in Deep Learning#Vanishing Gradients|vanishing gradients]] and [[[Stable Activations and Gradients in Deep Learning#Exploding Gradients|exploding gradient]] as they propagate through the network during training
+In neural networks, *Xavier initialization* helps maintain consistent variance of activations and gradients throughout the network layers. This prevents the [[Stable Activations and Gradients in Deep Learning#Vanishing Gradients|vanishing gradients]] and [[Stable Activations and Gradients in Deep Learning#Exploding Gradients|exploding gradient]] as they propagate through the network during training
 
 Consider the scale distribution of an output $o_i$ for some fully connected layer without nonlinearities. With $n_{\mathrm{in}}$ inputs $x_j$ and their associated weights $w_{ij}$ for this layer, an output is given by 
 $$

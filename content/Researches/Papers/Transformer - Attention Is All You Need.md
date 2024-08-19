@@ -1,5 +1,6 @@
 ---
 type: paper
+title: Attention Is All You Need
 tags:
   - AI
   - Transformer

@@ -1,5 +1,6 @@
 ---
 type: paper
+title: Generative Adversarial Nets
 tags:
   - AI
   - Generative-AI
