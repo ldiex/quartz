@@ -1,13 +1,21 @@
 ---
-type: paper
-title: Generative Adversarial Nets
-tags:
-  - AI
-  - Generative-AI
-  - GAN
-author: Ian J. Goodfellow
-year: "2014"
-link: https://arxiv.org/abs/1406.2661
+zotero-key: E6Y6N98R
+zt-attachments:
+  - "61"
+title: Generative Adversarial Networks
+authors:
+  - Ian J. Goodfellow
+  - Jean Pouget-Abadie
+  - Mehdi Mirza
+  - Bing Xu
+  - David Warde-Farley
+  - Sherjil Ozair
+  - Aaron Courville
+  - Yoshua Bengio
+collections: []
+publish-date: 2014
+url: http://arxiv.org/abs/1406.2661
+DOI: 10.48550/arXiv.1406.2661
 ---
 # Idea
 The traditional way for generative models to synthesize contents is by trying to figure out the underlying mechanism of the generating process. However, why not just start with nonsenses (e.g. random noises) and train our model to improve this until the final output is so similar to a real one that no one could differentiate them?

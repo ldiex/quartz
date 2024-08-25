@@ -1,12 +1,20 @@
 ---
-type: paper
+zotero-key: W6PD38LF
+zt-attachments:
+  - "140"
 title: Masked Autoencoders Are Scalable Vision Learners
-tags:
-  - AI
-  - Computer-Vision
-author: Kaiming He
-year: "2021"
-link: http://arxiv.org/abs/2111.06377
+authors:
+  - Kaiming He
+  - Xinlei Chen
+  - Saining Xie
+  - Yanghao Li
+  - Piotr Dollár
+  - Ross Girshick
+collections:
+  - Vision Backbone > Computer Vision > Artificial Intelligence
+publish-date: 2021
+url: http://arxiv.org/abs/2111.06377
+DOI: 10.48550/arXiv.2111.06377
 ---
 # Idea
 Develop an asymmetric encoder-decoder model, where

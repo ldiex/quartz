@@ -1,13 +1,26 @@
 ---
-type: paper
+zotero-key: 7N9KVBYG
+zt-attachments:
+  - "87"
 title: "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
-tags:
-  - AI
-  - Attention-Mechanism
-  - Computer-Vision
-author: Dosovitskiy Alexey
-year: "2021"
-link: http://arxiv.org/abs/2010.11929
+authors:
+  - Alexey Dosovitskiy
+  - Lucas Beyer
+  - Alexander Kolesnikov
+  - Dirk Weissenborn
+  - Xiaohua Zhai
+  - Thomas Unterthiner
+  - Mostafa Dehghani
+  - Matthias Minderer
+  - Georg Heigold
+  - Sylvain Gelly
+  - Jakob Uszkoreit
+  - Neil Houlsby
+collections:
+  - Vision Backbone > Computer Vision > Artificial Intelligence
+publish-date: 2021
+url: http://arxiv.org/abs/2010.11929
+DOI: 10.48550/arXiv.2010.11929
 ---
 
 # Idea
@@ -18,4 +31,4 @@ link: http://arxiv.org/abs/2010.11929
 - Slice the original image into $16 \times 16$ pixel *patches*
 - Convert these patches to embeddings (each patch has a vector embedding, similar as word2vec) through a linear layer
 - Add positional embeddings
-- Append a special token to the front of the embedding sequence. This can be a `[CLS]` token (see [[BERT#Steps]]), whose corresponding output vector representation in the latent space after the final layer can hold the information of the whole sequence (image)  
+- Append a special token to the front of the embedding sequence. This can be a `[CLS]` token (see [[BERT - Bidirectional Encoder Representation from Transformers#Steps]]), whose corresponding output vector representation in the latent space after the final layer can hold the information of the whole sequence (image)  

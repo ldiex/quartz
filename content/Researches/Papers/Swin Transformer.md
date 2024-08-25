@@ -1,14 +1,24 @@
 ---
-type: paper
+zotero-key: K8LHTLVT
+zt-attachments:
+  - "147"
 title: "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows"
-tags:
-  - AI
-  - Computer-Vision
-  - Transformer
-author: Ze Liu
-year: "2021"
-link: http://arxiv.org/abs/2103.14030
+authors:
+  - Ze Liu
+  - Yutong Lin
+  - Yue Cao
+  - Han Hu
+  - Yixuan Wei
+  - Zheng Zhang
+  - Stephen Lin
+  - Baining Guo
+collections:
+  - Vision Backbone > Computer Vision > Artificial Intelligence
+publish-date: 2021
+url: http://arxiv.org/abs/2103.14030
+DOI: 10.48550/arXiv.2103.14030
 ---
+
 # Idea
 The "SW" in "Swin" stands for **Shifted Windows**.
 ## Issues with traditional vision transformer

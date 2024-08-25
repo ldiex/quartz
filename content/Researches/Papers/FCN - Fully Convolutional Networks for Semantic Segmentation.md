@@ -1,14 +1,17 @@
 ---
-type: paper
+zotero-key: M6X4T65R
+zt-attachments:
+  - "162"
 title: Fully Convolutional Networks for Semantic Segmentation
-tags:
-  - AI
-  - Convolutional-Network
-  - Semantic-Segmentation
-  - Computer-Vision
-author: Jonathan Long
-year: "2015"
-link: http://arxiv.org/abs/1411.4038
+authors:
+  - Jonathan Long
+  - Evan Shelhamer
+  - Trevor Darrell
+collections:
+  - Semantic Segmentation > Computer Vision > Artificial Intelligence
+publish-date: 2015
+url: http://arxiv.org/abs/1411.4038
+DOI: 10.48550/arXiv.1411.4038
 ---
 # Idea
 Introduce a pixelwise prediction layer at the end of [[Convolutional Neural Networks (CNNs)|CNN]] sequences (replacing the original fully connected layer used for classification like in VGG), so that the output segmentation have the same size of the input image

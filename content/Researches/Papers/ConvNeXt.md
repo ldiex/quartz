@@ -1,13 +1,20 @@
 ---
-type: paper
+zotero-key: PR8HPBPT
+zt-attachments:
+  - "133"
 title: A ConvNet for the 2020s
-tags:
-  - AI
-  - Computer-Vision
-  - Convolutional-Network
-author: Zhuang Liu
-year: "2022"
-link: http://arxiv.org/abs/2201.03545
+authors:
+  - Zhuang Liu
+  - Hanzi Mao
+  - Chao-Yuan Wu
+  - Christoph Feichtenhofer
+  - Trevor Darrell
+  - Saining Xie
+collections:
+  - Vision Backbone > Computer Vision > Artificial Intelligence
+publish-date: 2022
+url: http://arxiv.org/abs/2201.03545
+DOI: 10.48550/arXiv.2201.03545
 ---
 # Idea
 If we modify traditional [[Convolutional Neural Networks (CNNs)|CNNs]] according to modern [[Transformer - Attention Is All You Need|Transformer]] architecture, they may perform better. The conclusion is that, in terms of Computer Vision, we cannot say Transforms is just better than CNNs.

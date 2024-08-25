@@ -1,0 +1,6 @@
+*Global pooling* is a technique used in deep learning, particularly in ([[Convolutional Neural Networks (CNNs)|CNNs]]) to **reduce the spatial dimensions of feature maps while retaining essential information for classification tasks.** This method is especially significant in scenarios where fully connected layers are typically used.
+# Types of Global Pooling
+## Global Average Pooling
+*Global Average Pooling (GAP)* computes the average of all the values in each feature map, **resulting in a single value per feature map**. This approach is beneficial as it eliminates the need for fully connected layers, which can lead to overfitting due to their large number of parameters. By averaging the feature maps, GAP provides a more compact representation that directly corresponds to the number of target classes in a classification task. The output can then be fed into a [[Softmax|softmax]] layer to obtain class probabilities
+## Global Max Pooling
+*Global Max Pooling (GMP)* operates similarly but instead takes the maximum value from each feature map. This method emphasizes the most prominent features detected by the CNN, making it useful in tasks where the presence of specific features is more critical than their average representation

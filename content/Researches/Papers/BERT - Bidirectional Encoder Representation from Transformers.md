@@ -1,13 +1,18 @@
 ---
-type: paper
+zotero-key: LQY8AQTE
+zt-attachments:
+  - "93"
 title: "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
-tags:
-  - AI
-  - Transformer
-  - NLP
-author: Jacob Devlin
-year: "2019"
-link: http://arxiv.org/abs/1810.04805
+authors:
+  - Jacob Devlin
+  - Ming-Wei Chang
+  - Kenton Lee
+  - Kristina Toutanova
+collections:
+  - NLP > Artificial Intelligence
+publish-date: 2019
+url: http://arxiv.org/abs/1810.04805
+DOI: 10.48550/arXiv.1810.04805
 ---
 # Idea
 ## Previous Works

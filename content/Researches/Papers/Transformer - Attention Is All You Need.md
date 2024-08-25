@@ -1,14 +1,22 @@
 ---
-type: paper
+zotero-key: FVDRY85M
+zt-attachments:
+  - "57"
 title: Attention Is All You Need
-tags:
-  - AI
-  - Transformer
-  - Attention-Mechanism
-  - Generative-AI
-author: Ashish Vaswani
-year: "2017"
-link: https://arxiv.org/abs/1706.03762
+authors:
+  - Ashish Vaswani
+  - Noam Shazeer
+  - Niki Parmar
+  - Jakob Uszkoreit
+  - Llion Jones
+  - Aidan N. Gomez
+  - Lukasz Kaiser
+  - Illia Polosukhin
+collections:
+  - Fundamentals > Artificial Intelligence
+publish-date: 2023
+url: http://arxiv.org/abs/1706.03762
+DOI: 10.48550/arXiv.1706.03762
 ---
 # Why Transformer
 ## Limitations of [[Recurrent Neural Networks (RNNs)|RNNs]]
