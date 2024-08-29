@@ -47,6 +47,8 @@ e.g.
 $$
 (x \oplus y) \to z = (x \vee \bar y \vee z)\wedge(\bar x \vee y \vee z)
 $$
+This is a natural result of [[Logic Equivalences#De Morgan's laws|De Morgan's Law]]
+
 # Representation with Least Operators
 One could use and only use 
 1. AND, NOT

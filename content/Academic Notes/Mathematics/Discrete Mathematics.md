@@ -1,1 +1,2 @@
 [[Graph]]
+[[Logic and Proofs]]
