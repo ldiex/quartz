@@ -41,7 +41,8 @@ $$
 注意到$r(s) = \mathbb E[R_t|S_t = s]$和
 $$
 \mathbb E [\gamma V(S_{t + 1})| S_t = s] = \gamma \sum_{s' \in \mathcal S} p(s'|s) V(s')
-$$于是
+$$
+于是
 $$
 V(s) = r(s) + \gamma \sum_{s' \in \mathcal S} p(s'|s) V(s')
 $$
