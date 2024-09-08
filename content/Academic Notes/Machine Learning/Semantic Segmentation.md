@@ -1,5 +1,12 @@
 # Definition
 *Semantic segmentation* is simply the task of assigning a class label to every single pixel of an input image. 
+## Semantic vs Instance vs Panoptic
+
+| **Segmentation Type**     | **Definition**                                                                         | **Key Characteristics**                                                                                                                        | **Applications**                                                                                         |
+| ------------------------- | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Semantic Segmentation** | Assigns a class label to each pixel in an image without distinguishing instances.      | - Focuses on classifying pixels into categories (e.g., road, sky). <br> - Treats multiple objects of the same class as one entity.             | - Scene understanding (e.g., road and sky recognition) <br> - Medical imaging for tissue classification. |
+| **Instance Segmentation** | Identifies and segments individual object instances within an image.                   | - Differentiates between instances of the same class (e.g., each car or person). <br> - Assigns unique masks or bounding boxes to each object. | - Counting objects (e.g., cars on a road) <br> - Robotics and autonomous vehicles for object detection.  |
+| **Panoptic Segmentation** | Combines semantic and instance segmentation to provide a complete scene understanding. | - Each pixel is labeled with both a semantic class and an instance ID. <br> - Resolves conflicts between overlapping segments.                 | - Comprehensive scene analysis in autonomous vehicles <br> - Advanced applications in robotics and AI.   |
 # The Naive Approach - Sliding Windows
 Imagine a sliding window of some dimensions ($3 \times3$ or $7\times7$) and for each window, we can try to classify the **center pixel**. By this way, we convert the segmentation task to a classification task
 
