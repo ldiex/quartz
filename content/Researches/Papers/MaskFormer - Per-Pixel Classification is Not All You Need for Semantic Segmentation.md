@@ -26,6 +26,6 @@ Each prediction is supervised with a per-pixel binary mask loss and a classifica
 3. A [[Vision Transformer (ViT)|transformer]] decoder attends to image features and produces $N$ per-segment embeddings $\mathcal Q$, then embeddings then independently generate
 	- $N$ class predictions (shape $N \times (K + 1)$), where $\emptyset$ is introduced to represent "no-object" class
 	- $N$ corresponding mask embeddings $\mathcal E_{\mathrm{mask}}$
-4. Predict $N$ possibly overlapping binary mask predictions via a dot product between pixel embeddings $\mathcal E_{\mathrm{pixel}}$ and mask embeddings $\mathcal E_{\mathrm{mask}}$ followed by a sigmoid activation.
+4. Predict $N$ possibly overlapping binary mask predictions via a dot product between pixel embeddings $\mathcal E_{\mathrm{pixel}}$ and mask embeddings $\mathcal E_{\mathrm{mask}}$ followed by a [[Sigmoid Function|sigmoid]] activation.
 5. Finally we can get the prediction by combining $N$ binary masks with their class predictions using a simple matrix multiplication.
 

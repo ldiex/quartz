@@ -43,4 +43,4 @@ e_{ik} = \dfrac{\exp (-s_k \Vert r_{ik} \Vert^{2} )}{\sum_{j = 1}^K \exp(-s_j \V
 $$
 and the residuals are given by $r_{ik} = x_i - d_k$. The final output is $e = \sum_{k = 1}^K \phi(e_k)$, where $\phi$ denotes [[Batch Normalization]] with [[Rectified Linear Unit (ReLU)|ReLU]] activation. ($e$ is a $C$-dimensional vector)
 ## Feature Map Attention
-Use a fully connected layer to predict feature map scaling factors $\gamma = \delta(We)$, where $W$ denotes the layer weights and $\delta$ is the sigmoid function. Then the module output is given by $Y = X \otimes \gamma$.
+Use a fully connected layer to predict feature map scaling factors $\gamma = \delta(We)$, where $W$ denotes the layer weights and $\delta$ is the [[Sigmoid Function|sigmoid]] function. Then the module output is given by $Y = X \otimes \gamma$.

@@ -22,6 +22,7 @@ Use a single neural network to predict bounding boxes and class probabilities di
 - Each gird cell also predicts $C$ conditional class probabilities. These probabilities are conditioned on the grid cell containing an object. The model only predict one set of class probabilities per gird cell, regardless of the number of boxes $B$
 - Therefore, the predictions are encoded as an $S \times S \times (5B+C)$ tensor
 ![[AI-YOLO-v1-Method.png]]
+- After that, we have each grids having scores and box positions for every class. Then we could obtain the boxes for each class by combing all the gird box predictions together whose class scores for this certain class if relatively high.
 # Architecture
 ![[AI-YOLO-v1-Arch.png]]
 Apply $20$ convolutional layers pre-trained on ImageNet

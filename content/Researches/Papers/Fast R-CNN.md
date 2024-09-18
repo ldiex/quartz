@@ -21,4 +21,4 @@ DOI: 10.48550/arXiv.1504.08083
 3. Apply **RoI Pooling** to extract feature map for each object proposal (**Key Optimization:** here the input of pooling is the projection of the CNN feature map output on these object proposals, therefore we save the CNN forward computing time)
 4. Compute the classification loss and box regression loss
 ## RoI Pooling
-Just like [[SPP-Net - Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition|SPP]], pool the input with multiple sizes into some fixed-size feature maps.
+Just like [[SPP-Net - Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition|SPP]], which extracts a fixed-size feature representation from a variable-sized RoI in an input feature map. It allows the use of fully connected layers after the convolutional layers, even though the RoIs can have different sizes.

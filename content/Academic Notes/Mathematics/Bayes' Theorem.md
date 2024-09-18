@@ -9,3 +9,5 @@ And can be simply proven from the definition of conditional probability:
 $$
 P(A \vert B) = \dfrac{P(A \cap B)}{P(B)}, \quad P(B \vert A) = \dfrac{P(A \cap B)}{P(A)}
 $$
+# See also
+[[Conditional Probability#Bayes' rule]]

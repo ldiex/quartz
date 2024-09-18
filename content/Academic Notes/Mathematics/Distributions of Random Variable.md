@@ -1,0 +1,8 @@
+[[Bernoulli and Binomial Distributions]]
+[[Geometric and Hypergeometric Distributions]]
+[[Uniform Distributions]]
+[[Poisson Distribution]]
+[[Normal Distribution (Gaussian Distribution)]]
+[[Exponential Distribution]]
+[[Beta Distribution]]
+[[Gamma Distribution]]
