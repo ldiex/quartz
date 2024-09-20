@@ -27,7 +27,7 @@ tags:
 [[Fresnel Diffraction]]
 [[Fraunhofer Diffraction]]
 [[Grating]]
-[[Fourier Transformation in Optics]]
+[[Fourier Transform in Optics]]
 [[Fourier Optics]]
 [[Optical Information]]
 

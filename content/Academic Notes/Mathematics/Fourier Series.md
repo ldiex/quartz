@@ -136,6 +136,6 @@ $$
 来确定
 
 # Fourier级数的复数形式
-参见[[Fourier Transformation#Fourier 级数的复数形式|Fourier级数的复数形式]]
+参见[[Fourier Transform#Fourier 级数的复数形式|Fourier级数的复数形式]]
 
 

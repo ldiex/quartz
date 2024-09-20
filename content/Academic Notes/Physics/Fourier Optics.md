@@ -1,5 +1,5 @@
 # Fourier 变换基础
-见[[Fourier Transformation|Fourier变换]]和[[Fourier Transformation in Optics|光学中的Fourier变换]]
+见[[Fourier Transform|Fourier变换]]和[[Fourier Transform in Optics|光学中的Fourier变换]]
 # 衍射系统和屏函数
 凡是能使波前复振幅发生改变的物，统称为衍射屏
 ![[光学-Fourier衍射系统.png#invert_B]]

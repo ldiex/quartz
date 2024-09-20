@@ -24,7 +24,7 @@ $$
 
 但是理想的单色波是不存在的，波列不会无限长. 一列有限长的波相当于许多单色波列的叠加，通常把由这样一群单色波组成的波列叫做*波包（wave packet）*. 当波包通过有色散的介质时，它的各个单色分量将以不同的相速前进，整个波包在向前传播的同时，其形状也会发生变化. 称波包中振幅最大的地方叫做它的*中心*，以波包中心为代表的前进速度叫做*群速（group velocity）*
 
-在介质中，$f$不变，而$\lambda = \dfrac{c}{nf}$，设$\omega = 2\pi f,\;k = \dfrac{2\pi}{\lambda} =\dfrac{2\pi nf}{c}$，我们有$v_p = \dfrac{c}{n} = \dfrac{\omega}{k}$，而通过[[Fourier Transformation in Optics|Fourier变换]]，可以推导得
+在介质中，$f$不变，而$\lambda = \dfrac{c}{nf}$，设$\omega = 2\pi f,\;k = \dfrac{2\pi}{\lambda} =\dfrac{2\pi nf}{c}$，我们有$v_p = \dfrac{c}{n} = \dfrac{\omega}{k}$，而通过[[Fourier Transform in Optics|Fourier变换]]，可以推导得
 $$
 v_g = \frac{ \mathrm{d} \omega }{ \mathrm{d} k } 
 $$

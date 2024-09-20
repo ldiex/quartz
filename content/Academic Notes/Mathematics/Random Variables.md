@@ -59,7 +59,11 @@ $$
 > We can prove this by converting the CDF of $F(X)$ to the CDF of $X$, that is, $P(F(X) \leq y) = P(X \leq F^{-1}(y)) = F(F^{-1}(y))=y$
 > Here $F^{-1}(y)$ exists since $F(x)$ is continuous and strictly increasing (the property of CDF)
 > See [[Uniform Distributions#Universality of the Uniform|the universality of the uniform]]
-
+## Formula of transform for monotone functions
+Let $X$ be a continuous r.v. with PDF $f_X(X)$. Consider a monotonic function $y=g(x)$ defined on the support of $X$, for which the derivative of $g^{-1}(y)$ exists and is continuous. Then $Y = g(X)$ is a continuous r.v. with PDF given by
+$$
+f_Y(y) = f_X(g^{-1}(y))\left|\left( g^{-1} \right)'(y) \right|
+$$
 # Independence of Random Variables
 Random variables $X$ and $Y$ are said to be *independent* if 
 $$

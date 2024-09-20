@@ -34,7 +34,7 @@ Some key properties of convolution include:
 
 # Relationship with Fourier Transformation
 
-The convolution operation in the time domain is intimately connected to multiplication in the frequency domain through the [[Fourier Transformation|Fourier Transform]]. The Fourier transform $\mathscr{F}$ of a function $f(t)$ is given by:
+The convolution operation in the time domain is intimately connected to multiplication in the frequency domain through the [[Fourier Transform|Fourier Transform]]. The Fourier transform $\mathscr{F}$ of a function $f(t)$ is given by:
 
 $$
 \mathscr{F}\{f(t)\} = F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i \omega t} \, dt

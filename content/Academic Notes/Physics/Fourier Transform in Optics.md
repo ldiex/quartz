@@ -1,5 +1,5 @@
 # 光学的空间形式
-在Fourier光学中，我们把[[Fourier Transformation|Fourier变换]]
+在Fourier光学中，我们把[[Fourier Transform|Fourier变换]]
 $$
 f(x)=\frac1{2\pi}\int_{-\infty}^{+\infty}F(\omega)\cdot e^{i2\pi\omega x}\mathrm{~}\mathrm{d} \omega , \quad F(\omega) = \int_{-\infty}^{+\infty}e^{-i2\pi\omega x}\cdot f(x)\mathrm{~}\mathrm{d} x
 $$
@@ -196,7 +196,7 @@ $$
 $$
 E(k_Y,k_Z) = \iint\mathscr A(y,z) e^{i(k_Yy+k_Zz) } \mathrm{d} y \mathrm{d} z
 $$
-这个形式和上文中的[[Fourier Transformation in Optics#二维变换|二维Fourier变换]]中的形式是一致的，所以可以被写成
+这个形式和上文中的[[Fourier Transform in Optics#二维变换|二维Fourier变换]]中的形式是一致的，所以可以被写成
 $$
 E(k_Y,k_Z) = \mathscr F\left\{ \mathscr A(y,z) \right\} 
 $$

@@ -12,3 +12,4 @@ $f(t)$ and a time-reversed and shifted version of $g(t)$. It provides the accumu
 # Topics
 [[Convolution (Discrete)]]
 [[Convolution (Continuous)]]
+[[Convolution Algebra]]

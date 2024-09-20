@@ -465,7 +465,7 @@ $$
 也就是说，光栅缝数越多，其色分辨本领越强
 # Fourier光学
 ## 复习Fourier变换
-见[[Fourier Transformation|Fourier变换]]和[[Fourier Transformation in Optics|光学中的Fourier变换]]
+见[[Fourier Transform|Fourier变换]]和[[Fourier Transform in Optics|光学中的Fourier变换]]
 ## 衍射系统和屏函数
 凡是能使波前复振幅发生改变的物，统称为衍射屏
 ![[光学-Fourier衍射系统.png#invert_B]]
@@ -536,7 +536,7 @@ $$
 $$
 E(k_Y,k_Z) = \iint\mathscr A(y,z) e^{i(k_Yy+k_Zz) } \mathrm{d} y \mathrm{d} z
 $$
-这个形式和上文中的[[Fourier Transformation in Optics#二维变换|二维Fourier变换]]中的形式是一致的，所以可以被写成
+这个形式和上文中的[[Fourier Transform in Optics#二维变换|二维Fourier变换]]中的形式是一致的，所以可以被写成
 $$
 E(k_Y,k_Z) = \mathscr F\left\{ \mathscr A(y,z) \right\} 
 $$
@@ -567,7 +567,7 @@ $$
 
 Carl Zeiss$(1816-1888)$在19世纪中叶经营着Jena的一间小型显微镜工厂，他认识到当时显微镜发展过程中试错法的局限性. $1866$年，他邀请了当时在Jena大学任讲师的Ernst Abbe，共同探索一种更科学的显微镜设计方法. Abbe通过实验发现，即使入射光锥只占物镜的一小部分，较大的孔径也能带来更高的分辨率，周围的“暗空间”似乎对成像有所贡献. 因此，他提出了一种观点：在镜头边缘发生的衍射过程（对于点光源产生[[Fraunhofer Diffraction#Frauhofer圆孔衍射|Airy图案]]）并不像非相干照明的望远镜物镜那样起作用. 大小与$l$相当的标本显然是将光线散射到显微镜物镜的“暗空间”中. 观察图$b$，如果物镜的孔径不足以收集所有衍射光，则图像并不完全对应于原物体. 相反，它与一个虚构的物体有关，其完整的衍射图案与$L_t$收集的图案相匹配. 
 
-实际上，除非物镜具有无限大的孔径，否则它作为一个*低通滤波器*，会拒绝超过某一特定值的空间频率（也就是[[Fourier Transformation in Optics#截止频率|截止频率]]），并允许所有低于该值的频率通过（前者是那些超出镜头物理边界的频率）. 因此，**所有实际镜头系统在相干照明下复制实际物体的高空间频率内容的能力都将受限**
+实际上，除非物镜具有无限大的孔径，否则它作为一个*低通滤波器*，会拒绝超过某一特定值的空间频率（也就是[[Fourier Transform in Optics#截止频率|截止频率]]），并允许所有低于该值的频率通过（前者是那些超出镜头物理边界的频率）. 因此，**所有实际镜头系统在相干照明下复制实际物体的高空间频率内容的能力都将受限**
 
 在下面的系统中，我们将解释**Abbe成像原理将平行相干光照明透镜成像分成了两步**
 1. 物平面发生Fraunhofer衍射，在透镜像方焦面上形成的衍射图样是物平面的空间频谱
@@ -850,7 +850,7 @@ $$
 
 但是理想的单色波是不存在的，波列不会无限长. 一列有限长的波相当于许多单色波列的叠加，通常把由这样一群单色波组成的波列叫做*波包（wave packet）*. 当波包通过有色散的介质时，它的各个单色分量将以不同的相速前进，整个波包在向前传播的同时，其形状也会发生变化. 称波包中振幅最大的地方叫做它的*中心*，以波包中心为代表的前进速度叫做*群速（group velocity）*
 
-在介质中，$f$不变，而$\lambda = \dfrac{c}{nf}$，设$\omega = 2\pi f,\;k = \dfrac{2\pi}{\lambda} =\dfrac{2\pi nf}{c}$，我们有$v_p = \dfrac{c}{n} = \dfrac{\omega}{k}$，而通过[[Fourier Transformation in Optics|Fourier变换]]，可以推导得
+在介质中，$f$不变，而$\lambda = \dfrac{c}{nf}$，设$\omega = 2\pi f,\;k = \dfrac{2\pi}{\lambda} =\dfrac{2\pi nf}{c}$，我们有$v_p = \dfrac{c}{n} = \dfrac{\omega}{k}$，而通过[[Fourier Transform in Optics|Fourier变换]]，可以推导得
 $$
 v_g = \frac{ \mathrm{d} \omega }{ \mathrm{d} k } 
 $$

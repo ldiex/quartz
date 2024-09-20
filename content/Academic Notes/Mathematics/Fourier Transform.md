@@ -1,4 +1,4 @@
-	# Idea
+# Idea
 ## Towards Frequency Domain
 The *Fourier Transformation* is a mathematical technique that transforms a signal from its *original domain* (often time or space) into a representation in the *frequency domain*. It allows us to break down complex signals into simpler components—specifically, the different frequencies that make up the signal. In essence, the Fourier Transformation **provides a different perspective on the same information**, highlighting the underlying frequency components and their amplitudes.
 ## High Level Idea
@@ -102,5 +102,5 @@ $$
 is called the *inverse Fourier transform*
 
 # Applications of Fourier Transform
-[[Fourier Transformation in Optics|Applications of Fourier Transform in Optics]]
+[[Fourier Transform in Optics|Applications of Fourier Transform in Optics]]
 [[Fourier Optics|Fourier Optics]]

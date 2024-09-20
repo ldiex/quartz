@@ -11,3 +11,10 @@
 
 # Theorems
 [[Hoeffding's Inequality]]
+
+# Additional
+[[Maximum Likelihood Estimation (MLE)]]
+[[Maximum a Posteriori Probability (MAP)]]
+[[Evidence Lower Bound (ELBO)]]
+[[Variational Inference]]
+
