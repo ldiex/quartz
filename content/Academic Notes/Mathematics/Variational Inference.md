@@ -11,7 +11,7 @@ All these define a family of [[Joint Distributions|joint distribution]] $p_\thet
 
 In other words, we have a generative model for both the observable and the latent. We consider a distribution $p_\theta$ good, if it is a close approximation of $p^*$, namely $p_\theta(X) \approx p^*(X)$
 
- Since the $p^*(X)$ above is over $X$ only, so $p_\theta(X)$ must be derived by marginalizing the latent variable $Z$ away. **However, in general it's impossible to perform the integral $\displaystyle p_\theta(x) = \int p_\theta(x|z)p(z)\mathrm{d}z$, forcing us to perform another approximation**
+Since the $p^*(X)$ above is over $X$ only, so $p_\theta(X)$ must be derived by marginalizing the latent variable $Z$ away. **However, in general it's impossible to perform the integral $\displaystyle p_\theta(x) = \int p_\theta(x|z)p(z)\mathrm{d}z$, forcing us to perform another approximation**
 
 From [[Bayes' Theorem]] we can know $\displaystyle p_\theta(x) = \dfrac{p_\theta(x | z)p(z)}{p_\theta(z | x)}$. Here, we already know $p_\theta(x | z)$ and $p(z)$, so if we can find a good approximation of $p_\theta(z|x)$, then we can get $p_\theta(x)$. Therefore, we define another distribution family $q_\phi(z | x)$ and use it to approximate $p_\theta(z | x)$.
 

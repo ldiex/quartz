@@ -18,12 +18,12 @@ $$
 $$
 However, the ELBO above may not too useful because it involves $p(\boldsymbol x, \boldsymbol z)$, something we have no access to. So we need to do something more:
 $$
-\begin{aligned}
+\boxed{\begin{aligned}
 \mathrm{ELBO}(\boldsymbol \phi) &=  \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)} \left[ \log p(\boldsymbol x, \boldsymbol z) \right] - \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)} \log q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)  \\
 &= \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)}\left[ \log p(\boldsymbol x | \boldsymbol z) \right] + \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)} \left[ \log p(\boldsymbol z) \right]  - \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)} \log q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x) \\
 &= \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)}\left[ \log p(\boldsymbol x | \boldsymbol z) \right] + \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)} \left[ \log \dfrac{p(\boldsymbol z)}{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)} \right]  \\
 &= \underbrace{\mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x)} \left[ \log p_\theta(\boldsymbol x | \boldsymbol z) \right]}_{\text{how good your decoder is}} + \underbrace{\left[ -\mathbb{D}_{\mathrm{KL}} (q_{\boldsymbol \phi}(\boldsymbol z | \boldsymbol x) \Vert p(\boldsymbol z)) \right] }_{\text{how good your encoder is}}
-\end{aligned}
+\end{aligned}}
 $$
 where in the last line we replace $p(\boldsymbol x| \boldsymbol z)$ by its proxy $p_{\boldsymbol \theta }(\boldsymbol x | \boldsymbol z)$, and there are two terms:
 - **Reconstruction**. The first term is about the decoder. We want the decoder to produce a good image $\boldsymbol x$ if we feed a latent $\boldsymbol z$ into the decoder. So, we want to maximize $\log p_{\boldsymbol \theta}(\boldsymbol x | \boldsymbol z)$. (We sample $X, Z$ from real distribution $p(\boldsymbol x, \boldsymbol z)$, and the goal of decoder is to approximate $p_{\boldsymbol \theta}$ to $p$). The expectation here is taken with respect to the samples $\boldsymbol z$ conditioned on $\boldsymbol x$
@@ -51,7 +51,7 @@ Let's make one more assumption that the decoded image $\hat{\boldsymbol x}$ and 
 $$
 (\hat{\boldsymbol x} - \boldsymbol x) \sim \mathcal N(0, \sigma_{\mathrm{ dec}}^{2})
 $$
-Then, it follows that the distribution $p_{\boldsymbol \theta}(\boldsymbol x | \boldsymbol z)$ (marked to be Gaussian) i
+Then, it follows that the distribution $p_{\boldsymbol \theta}(\boldsymbol x | \boldsymbol z)$ (marked to be Gaussian)
 $$
 \begin{aligned}
 \log p_{\boldsymbol \theta}(\boldsymbol x | \boldsymbol z) &= \log \mathcal N(\boldsymbol x \mid \mathrm{decode}_{\boldsymbol \theta}(\boldsymbol z),\ \sigma^{2}_{\mathrm{dec}} \textbf{I} ) \\
