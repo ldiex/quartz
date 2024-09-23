@@ -70,8 +70,8 @@ $$
 \begin{aligned}
 \log p(\boldsymbol x) &= \log \mathbb{E}_{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \left[ \dfrac{p(\boldsymbol x_{0:T})}{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \right]  \\
 &\geq   \mathbb{E}_{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \left[ \log \dfrac{p(\boldsymbol x_{0:T})}{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \right]  \\
-&= \mathbb{E}_{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \left[ \log \dfrac{p(\boldsymbol x_T)p(\boldsymbol x_0 | \boldsymbol x_1) \prod_{t = 2}^T p(\boldsymbol x_{t-1}|\boldsymbol x_t)}{q_{\boldsymbol \phi}(\boldsymbol x_T | \boldsymbol x_{T-1})\prod_{t = 1}^{T-1}q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_{t-1})} \right] \hfill \quad(\text{by Markov property}) \\
-&= \mathbb{E}_{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \left[ \log \dfrac{p(\boldsymbol x_T)p(\boldsymbol x_0 | \boldsymbol x_1) \color{red}{\prod_{t = 1}^{T-1} p(\boldsymbol x_{t}|\boldsymbol x_{t + 1})}}{q_{\boldsymbol \phi}(\boldsymbol x_T | \boldsymbol x_{T-1})\prod_{t = 1}^{T-1}q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_{t-1})} \right] \hfill \quad(\text{shift} \ t \ \text{to} \ t+1)  \\
+&= \mathbb{E}_{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \left[ \log \dfrac{p(\boldsymbol x_T)p(\boldsymbol x_0 | \boldsymbol x_1) \prod_{t = 2}^T p(\boldsymbol x_{t-1}|\boldsymbol x_t)}{q_{\boldsymbol \phi}(\boldsymbol x_T | \boldsymbol x_{T-1})\prod_{t = 1}^{T-1}q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_{t-1})} \right] \quad \quad(\text{by Markov property}) \\
+&= \mathbb{E}_{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \left[ \log \dfrac{p(\boldsymbol x_T)p(\boldsymbol x_0 | \boldsymbol x_1) \color{red}{\prod_{t = 1}^{T-1} p(\boldsymbol x_{t}|\boldsymbol x_{t + 1})}}{q_{\boldsymbol \phi}(\boldsymbol x_T | \boldsymbol x_{T-1})\prod_{t = 1}^{T-1}q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_{t-1})} \right] \quad \quad(\text{shift} \ t \ \text{to} \ t+1)  \\
 &= \mathbb{E}_{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \left[ \log \dfrac{p(\boldsymbol x_T)p(\boldsymbol x_0 | \boldsymbol x_1)}{q_{\boldsymbol \phi}(\boldsymbol x_T | \boldsymbol x_{T-1})} \right] + \mathbb{E}_{q_{\boldsymbol \phi} (\boldsymbol x_{1:T}| \boldsymbol x_0)} \left[ \log \prod_{t = 1}^{T-1} \dfrac{p(\boldsymbol x_t | \boldsymbol x_{t + 1})}{q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_{t-1})} \right] 
 \end{aligned}
 $$
@@ -87,7 +87,7 @@ $$
 and the second term is
 $$
 \begin{aligned}
-\mathbb{E}_{q_\boldsymbol{\phi}(\boldsymbol{x}_{1:T}|\boldsymbol{x}_0)}\left[\log\prod_{t=1}^{T-1}\frac{p(\boldsymbol{x}_t|\boldsymbol{x}_{t+1})}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_t|\boldsymbol{x}_{t-1})}\right]& =\sum_{t=1}^{T-1}\mathbb{E}_{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{1:T}|\boldsymbol{x}_0)}\left[\log\frac{p(\boldsymbol{x}_t|\boldsymbol{x}_{t+1})}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_t|\boldsymbol{x}_{t-1})}\right] \\
+\mathbb{E}_{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{1:T}|\boldsymbol{x}_0)}\left[\log\prod_{t=1}^{T-1}\frac{p(\boldsymbol{x}_t|\boldsymbol{x}_{t+1})}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_t|\boldsymbol{x}_{t-1})}\right]& =\sum_{t=1}^{T-1}\mathbb{E}_{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{1:T}|\boldsymbol{x}_0)}\left[\log\frac{p(\boldsymbol{x}_t|\boldsymbol{x}_{t+1})}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_t|\boldsymbol{x}_{t-1})}\right] \\
 &=\sum_{t=1}^{T-1}\mathbb{E}_{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{t-1},\boldsymbol{x}_t,\boldsymbol{x}_{t+1}|\boldsymbol{x}_0)}\left[\log\frac{p(\boldsymbol{x}_t|\boldsymbol{x}_{t+1})}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_t|\boldsymbol{x}_{t-1})}\right]  \\
 &=-\underbrace{\sum_{t=1}^{T-1}\mathbb{E}_{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{t-1},\boldsymbol{x}_{t+1}|\boldsymbol{x}_0)}\left[\mathbb{D}_{\mathrm{KL}}\left(q_{\boldsymbol{\phi}}(\boldsymbol{x}_t|\boldsymbol{x}_{t-1})\|p(\boldsymbol{x}_t|\boldsymbol{x}_{t+1})\right)\right]}_{\text{Consistency}}
 \end{aligned}
@@ -97,7 +97,7 @@ $$
 \begin{aligned}
 q_{\boldsymbol{\phi}}(\boldsymbol{x}_{t-1},\boldsymbol{x}_t,\boldsymbol{x}_{t+1}|\boldsymbol{x}_0) &= q_{\boldsymbol \phi} (\boldsymbol x_{t - 1}, \boldsymbol x_t, \boldsymbol x_{t + 1} | \boldsymbol x_{t-1}, \boldsymbol x_{t + 1}, \boldsymbol x_0)\cdot q_{\boldsymbol \phi} (\boldsymbol x_{t - 1}, \boldsymbol x_{t + 1}|\boldsymbol x_0) \\
 &= q_{\boldsymbol \phi}(\boldsymbol x_t| \boldsymbol x_{t -1}, \boldsymbol x_{t + 1}, \boldsymbol x_0)\cdot q_{\boldsymbol \phi} (\boldsymbol x_{t - 1}, \boldsymbol x_{t + 1}|\boldsymbol x_0) \\
-&= q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_{t -1})\cdot q_{\boldsymbol \phi} (\boldsymbol x_{t - 1}, \boldsymbol x_{t + 1}|\boldsymbol x_0) \quad \hfill{\text{(by Markov properity)}}
+&= q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_{t -1})\cdot q_{\boldsymbol \phi} (\boldsymbol x_{t - 1}, \boldsymbol x_{t + 1}|\boldsymbol x_0) \quad \quad{\text{(by Markov properity)}}
 \end{aligned}
 $$
 # Rewrite the Consistency Term
@@ -124,7 +124,7 @@ $$
 
 &=\prod_{t=2}^T\frac{p(\boldsymbol{x}_{t-1}|\boldsymbol{x}_t)}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{t-1}|\boldsymbol{x}_t,\boldsymbol{x}_0)}\times\prod_{t=2}^T\frac{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{t-1}|\boldsymbol{x}_0)}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_t|\boldsymbol{x}_0)} \\
 
-&=\prod_{t=2}^T\frac{p(\boldsymbol{x}_{t-1}|\boldsymbol{x}_t)}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{t-1}|\boldsymbol{x}_t,\boldsymbol{x}_0)}\times\frac{q_\boldsymbol{\phi}(\boldsymbol{x}_1|\boldsymbol{x}_0)}{q_\boldsymbol{\phi}(\boldsymbol{x}_T|\boldsymbol{x}_0)}
+&=\prod_{t=2}^T\frac{p(\boldsymbol{x}_{t-1}|\boldsymbol{x}_t)}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_{t-1}|\boldsymbol{x}_t,\boldsymbol{x}_0)}\times\frac{q_{\boldsymbol{\phi}}(\boldsymbol{x}_1|\boldsymbol{x}_0)}{q_{\boldsymbol{\phi}}(\boldsymbol{x}_T|\boldsymbol{x}_0)}
 \end{aligned}
 $$
 Then we could continue the inequality
