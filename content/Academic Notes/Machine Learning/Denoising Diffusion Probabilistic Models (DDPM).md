@@ -2,7 +2,7 @@
 Diffusion models are **incremental** updates where the assembly of the whole gives us the encoder-decoder structure. The transition from one state to another is realized by a *denoiser*.
 
 ![[AI-DDPM-Arch.png]]
-The model whose structure is shown above is called the *variational diffusion model (VDM)*. The model has a sequence of states $\boldsymbol x_0, \boldsymbol x_1, \ldots , \boldsymbol x_T$
+The model whose structure is shown above is called the *variational diffusion model* *(VDM)*. The model has a sequence of states $\boldsymbol x_0, \boldsymbol x_1, \ldots , \boldsymbol x_T$
 - $\boldsymbol x_0$: the original image, which is the same as $\boldsymbol x$ in [[Variational Auto-Encoder (VAE)|VAE]]
 - $\boldsymbol x_T$: the latent variable, which is the same as $\boldsymbol z$ in VAE, and we want to make it [[Normal Distribution (Gaussian Distribution)|Gaussian]]: $\boldsymbol x_T \sim \mathcal N(0, \textbf{I})$
 - $\boldsymbol x_1, \ldots ,\boldsymbol x_{T-1}$: the intermediate states, which are also the latent variables, but not white Gaussian
