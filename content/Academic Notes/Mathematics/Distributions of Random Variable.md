@@ -1,4 +1,5 @@
 [[Bernoulli and Binomial Distributions]]
+[[Multinomial Distribution]]
 [[Geometric and Hypergeometric Distributions]]
 [[Uniform Distributions]]
 [[Poisson Distribution]]
