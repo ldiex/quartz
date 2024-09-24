@@ -214,7 +214,15 @@ Now we know the distribution of $q_{\boldsymbol \phi}(\boldsymbol x_{t-1}|\bolds
 $$
 q_{\boldsymbol \phi}(\boldsymbol x_{t-1}|\boldsymbol x_t, \boldsymbol x_0) = \mathcal N(\boldsymbol x_{t -1} \mid \boldsymbol \mu_q (\boldsymbol x_t, \boldsymbol x_0), \ \boldsymbol \Sigma_q(t))
 $$
-Therefore, we can calculate the ELBO of VDM! Through some boring algebraic calculation:
+Therefore, we can calculate the ELBO of VDM! Through some boring algebraic calculation (assuming $p_{\boldsymbol \theta}$ as Gaussian):
+$$
+\begin{aligned}
+&\mathbb{D}_{\mathrm{KL}} \left( q_{\boldsymbol \phi}(\boldsymbol x_{t - 1}| \boldsymbol x_t , \boldsymbol x_0) \ \Vert \ p_{\boldsymbol \theta}(\boldsymbol x_{t-1}| \boldsymbol{x}_t) \right)  \\
+&=\mathbb{D}_{\mathrm{KL}} \left( \mathcal N(\boldsymbol{x}_{t-1} \mid \boldsymbol \mu_q(\boldsymbol x_t, \boldsymbol x_0), \ \sigma^{2}_q(t)\textbf{I} \ \Vert \ \mathcal N(\boldsymbol{x}_{t-1} \mid \boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t),\ \sigma_q^{2}(t) \textbf{I})\right)  \\
+&= \dfrac{1}{2\sigma_q^{2}(t)} \Vert \boldsymbol {\mu}_q(\boldsymbol x_t, \boldsymbol x_0) - \boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t) \Vert 
+\end{aligned}
+$$
+So we get
 $$
 \begin{aligned}
 \mathrm{ELBO_{ \boldsymbol \theta}}(\boldsymbol x) &= \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol x_1 | \boldsymbol x_0)} \left[ \log {p_{\boldsymbol \theta}(\boldsymbol x_0 | \boldsymbol x_1)} \right] - \underbrace{\mathbb{D}_\mathrm{KL} \left( q_{\boldsymbol \phi}(\boldsymbol x_T|\boldsymbol x_0) \ \Vert \ p(\boldsymbol x_T) \right)}_{\text{Nothing to train}} \\
@@ -222,11 +230,127 @@ $$
 \end{aligned}
 $$
 We don't need to train the second term since each step of $q_{\boldsymbol \phi}(\boldsymbol x_{t-1}|\boldsymbol x_t, \boldsymbol x_0)$ is fixed so there is no parameters to learn (the $\alpha_t$s are typically **human-designed**), and the $p(\boldsymbol x_T)$ is also fixed as a Gaussian $\mathcal N(0, \textbf{I})$
+# Training and Inference
+![[AI-DDPM-Forward-Sampling.png]]
+In the ELBO we know
+$$
+\boldsymbol{\mu}_q(\boldsymbol{x}_t,\boldsymbol{x}_0)=\frac{(1-\overline{\alpha}_{t-1})\sqrt{\alpha_t}}{1-\overline{\alpha}_t}\boldsymbol{x}_t+\frac{(1-\alpha_t)\sqrt{\overline{\alpha}_{t-1}}}{1-\overline{\alpha}_t}\boldsymbol{x}_0
+$$
+But what about $\boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t)$? Like in [[Variational Auto-Encoder (VAE)#Encoder|VAE's encoder]], we could define it as
+$$
+\underbrace{\boldsymbol{\mu}_{\boldsymbol{\theta}}}_{\text{A Network}}(\boldsymbol{x}_t)\stackrel{\mathrm{def}}{=}\frac{(1-\overline{\alpha}_{t-1})\sqrt{\alpha_t}}{1-\overline{\alpha}_t}\boldsymbol{x}_t+\frac{(1-\alpha_t)\sqrt{\overline{\alpha}_{t-1}}}{1-\overline{\alpha}_t}\underbrace{\widehat{\boldsymbol{x}}_{\boldsymbol{\theta}}(\boldsymbol{x}_t)}_{\text{Another Network}}
+$$
+where $\boldsymbol {\hat{x}}_{\boldsymbol \theta}$ is a trainable network with parameter $\boldsymbol \theta$. Now we get
+$$
+\begin{aligned}
+\dfrac{1}{2\sigma_q^{2}(t)} \Vert \boldsymbol \mu_q(\boldsymbol x_t, \boldsymbol x_0) - \boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t) \Vert^{2} &= \dfrac{1}{2\sigma_q^{2}(t)} \left\Vert \dfrac{(1-\alpha_t)\sqrt{ \bar{\alpha}_{t-1} }}{1-\bar{\alpha}_t} \left( \boldsymbol {\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t) - \boldsymbol x_0 \right) \right\Vert^{2} \\
+&= \dfrac{1}{2\sigma_q^{2}(t)} \dfrac{(1-\alpha_t)^{2} \bar{\alpha}_{t-1}}{(1-\bar{\alpha}_t)^{2}} \Vert \boldsymbol {\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t) - \boldsymbol x_0 \Vert ^{2}
+\end{aligned}
+$$
+Therefore ELBO can be simplified into
+$$
+\mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol x_1 | \boldsymbol x_0)} \left[ \log {p_{\boldsymbol \theta}(\boldsymbol x_0 | \boldsymbol x_1)} \right] - \sum_{t = 2}^T \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0)} \left[ \dfrac{1}{2\sigma_q^{2}(t)} \dfrac{(1-\alpha_t)^{2} \bar{\alpha}_{t-1}}{(1-\bar{\alpha}_t)^{2}} \Vert \boldsymbol {\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t) - \boldsymbol x_0 \Vert ^{2} \right] 
+$$
+The first term is (using $\alpha_0 = 1$ and $\alpha_1 = \bar{\alpha}_1$)
+$$
+\begin{aligned}
+\log {p_{\boldsymbol \theta}(\boldsymbol x_0 | \boldsymbol x_1)} &= \log \mathcal N(\boldsymbol x_0 \mid \boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_1), \ \sigma_q^{2}(1)\textbf{I}) \propto -\dfrac{1}{2\sigma^{2}_q(q)} \Vert \boldsymbol\mu_{\boldsymbol \theta}(\boldsymbol x_1) - \boldsymbol x_0 \Vert^{2} \\
+&=  -\dfrac{1}{2\sigma^{2}_q(q)} \left \Vert \frac{(1-\overline{\alpha}_{0})\sqrt{\alpha_1}}{1-\overline{\alpha}_1}\boldsymbol{x}_1+\frac{(1-\alpha_1)\sqrt{\overline{\alpha}_{0}}}{1-\overline{\alpha}_1}\boldsymbol{\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_1) - \boldsymbol x_0  \right \Vert^{2} \\
+&=  -\dfrac{1}{2\sigma^{2}_q(q)} \left \Vert \frac{(1-\alpha_1)}{1-\overline{\alpha}_1}\boldsymbol{\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_1) - \boldsymbol x_0  \right \Vert^{2} \\
+&=  -\dfrac{1}{2\sigma^{2}_q(q)} \left \Vert \boldsymbol{\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_1) - \boldsymbol x_0  \right \Vert^{2} 
+\end{aligned}
+$$
+Now we get
+$$
+\mathrm{ELBO}_{\boldsymbol \theta} = -\sum_{t = 1}^T \mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0)} \left[ \dfrac{1}{2\sigma_q^{2}(t)} \dfrac{(1-\alpha_t)^{2} \bar{\alpha}_{t-1}}{(1-\bar{\alpha}_t)^{2}} \Vert \boldsymbol {\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t) - \boldsymbol x_0 \Vert ^{2} \right] 
+$$
+And therefore the loss function
+$$
+\boxed{
+\boldsymbol \theta^{*} = \underset{\boldsymbol \theta}{\arg \min}  \sum_{t = 1}^T \dfrac{1}{2\sigma_q^{2}(t)} \dfrac{(1-\alpha_t)^{2} \bar{\alpha}_{t-1}}{(1-\bar{\alpha}_t)^{2}}\mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0)} \left[  \Vert \boldsymbol {\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t) - \boldsymbol x_0 \Vert ^{2} \right] 
+}
+$$
+Ignoring the constants and expectations, the main subject of interest, for a particular $\boldsymbol x_t$, is
+$$
+\underset{\boldsymbol \theta}{\arg \min} \Vert \boldsymbol {\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t) - \boldsymbol x_0 \Vert^{2}
+$$
+So this is a **denoising problem**: we need to find a network $\boldsymbol {\hat{x}}_{\boldsymbol \theta}$ such that the denoised image $\boldsymbol{\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t)$ will be close to the ground truth $\boldsymbol x_0$. 
 
-# Training 
+## Training Process
+![[AI-DDPM-Training-Process.png]]
+For every image $\boldsymbol x_0$ in the training dataset:
+- Repeat the following steps until convergence
+- Pick a random time stamp $t \sim \mathrm{Uniform}[1,T]$
+- Draw a sample $\boldsymbol x_t \sim q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0) = \mathcal N(\boldsymbol x_t \mid \sqrt{ \bar{\alpha}_t \boldsymbol x_0 }, \ (1-\bar{\alpha}_t)\textbf{I})$, i.e.,
+$$
+\boldsymbol x_t = \bar{\alpha}_t \boldsymbol x_0 + \sqrt{ (1- \bar{\alpha}_t) } \boldsymbol z, \qquad \boldsymbol z \sim \mathcal N(0, \textbf{I})
+$$
+- Take gradient descent step on
+$$
+\nabla _{\boldsymbol \theta} \Vert \boldsymbol{\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t) - \boldsymbol x_0 \Vert ^{2}
+$$
+## Inference Process
 
+![[AI-DDPM-Inference-Process.png]]
+Once the denoiser $\boldsymbol{\hat{x}}_{\boldsymbol \theta}$ is trained, we can apply it to do the inference. The inference is about sampling images from the distributions $p_{\boldsymbol \theta}(\boldsymbol x_{t-1}|\boldsymbol x_t)$ over the sequence of states $\boldsymbol x_T, \boldsymbol x_{T-1}, \ldots , \boldsymbol x_1$. Since it is the reverse diffusion process, we need to do it recursively via:
+$$
+\begin{aligned}
+\boldsymbol x_{t - 1} \sim p_{\boldsymbol \theta}(\boldsymbol x_{t-1}| \boldsymbol x_t) &= \mathcal N(\boldsymbol x_{t - 1} \mid \boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t),\ \sigma_q^{2}(t)\textbf{I}) \\
+&= \boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t) + \sigma_q^{2}(t) \boldsymbol z, \qquad \boldsymbol z \sim \mathcal N(0, \textbf{I}) \\
+&= \frac{(1-\overline{\alpha}_{t-1})\sqrt{\alpha_t}}{1-\overline{\alpha}_t}\boldsymbol{x}_t+\frac{(1-\alpha_t)\sqrt{\overline{\alpha}_{t-1}}}{1-\overline{\alpha}_t} \boldsymbol {\hat{x}}_{\boldsymbol \theta} (\boldsymbol x_t) + \sigma_q(t) \boldsymbol z
+\end{aligned}
+$$
+This leads to the inferencing algorithm
+- Given a white noise vector $\boldsymbol x_T \sim \mathcal N(0, \textbf{I})$
+- Repeat the following for $t = T, T-1, \ldots ,1$
+	- Calculate $\boldsymbol {\hat{x}}_{\boldsymbol \theta}(\boldsymbol x_t)$ using the trained denoiser
+	- Update according to
+$$
+\boldsymbol x_{t - 1} = \frac{(1-\overline{\alpha}_{t-1})\sqrt{\alpha_t}}{1-\overline{\alpha}_t}\boldsymbol{x}_t+\frac{(1-\alpha_t)\sqrt{\overline{\alpha}_{t-1}}}{1-\overline{\alpha}_t} \boldsymbol {\hat{x}}_{\boldsymbol \theta} (\boldsymbol x_t) + \sigma_q(t) \boldsymbol z, \quad \boldsymbol z \sim \mathcal N(0, \textbf{I})
+$$
 
-
+# Inversion by Direct Denoising (InDI)
+If we look at the updating equation above, we could see the following form:
+$$
+\boldsymbol x_{t - 1} = \left( \text{something} \right)\cdot \boldsymbol x_t + \left( \text{something else} \right)\cdot\text{denoise}(\boldsymbol x_t) + \text{noise}
+$$
+The first term is easy to understand, but what is "denoise"? 
+## More about Denoise
+Denoising is a generic procedure that removes noise from a noisy image. Given the observation model
+$$
+\boldsymbol y = \boldsymbol x + \boldsymbol \epsilon, \quad \boldsymbol \epsilon \sim \mathcal N(0, \textbf{I})
+$$
+A classical solution to find an estimator $g(\cdot)$ such that the mean squared error is minimized is
+$$
+\begin{aligned}
+\mathrm{denoise}(\boldsymbol y) &= \underset{g}{\arg \min} \ \mathbb{E}_{\boldsymbol x, \boldsymbol y} \left[ \Vert g(\boldsymbol y)- \boldsymbol x \Vert ^{2} \right]  \\
+&= \text{some steps} \\
+&= \mathbb{E}[\boldsymbol x | \boldsymbol y]
+\end{aligned}
+$$
+So, if we assume that during the forward path
+$$
+\boldsymbol x_t = \boldsymbol x_{t - 1} + \boldsymbol \epsilon_{t-1}, \qquad  \boldsymbol\epsilon \sim \mathcal N(0, \textbf{I})
+$$
+we can find the solution of denoiser
+$$
+\mathrm{denoise}(\boldsymbol x_t) = \mathbb{E} \left[ \boldsymbol x_{t-1} | \boldsymbol x_t \right] 
+$$
+Such a denoiser is called the *minimum mean squared error (MMSE)* denoiser. MMSE denoiser is **not** the "best" denoiser; It is only the optimal denoiser with respect to the mean squared error. Since mean squared error is never a good metric for image quality, minimizing the MSE will not necessarily give us a better image.
+## Incremental Denoising Steps
+The previous section tells us that an MMSE denoiser is equivalent to the conditional expectation of the posterior distribution. Now we introduce **incremental denoising**. Suppose that we have a clean image $\boldsymbol x_0$ and a noise image $\boldsymbol y$. Our goal is to form a linear combination of $\boldsymbol x_0$ and $\boldsymbol y$ via a simple equation
+$$
+\boldsymbol x_t = (1-t){\boldsymbol x_0} + t \boldsymbol y, \qquad 0 \leq t \leq 1
+$$
+Now, consider a small step $\tau: \ 0 \leq \tau < t \leq 1$, then it holds that
+$$
+\mathbb{ E}[\boldsymbol x_{t -\tau} | \boldsymbol x_t] = \left( 1 - \dfrac{\tau}{t} \right) \underbrace{\boldsymbol x_t}_{\text{current estimate}} + \dfrac{\tau}{t} \underbrace{\mathbb{ E}[\boldsymbol x_0 | \boldsymbol x_t]}_{\text{denoised}}
+$$
+If we define $\boldsymbol{\hat{x}}_{t -\tau}$ as the left hand side, replace $\boldsymbol x_t$ by $\boldsymbol{\hat{x}}_t$, and write $\mathbb{E}[\boldsymbol x_0 | \boldsymbol x_t]$ as $\mathrm{denoise}(\boldsymbol{\hat{x}}_t)$, then the above equation will become
+$$
+\boldsymbol {\hat{x}}_{t -\tau} = \left( 1 - \dfrac{\tau}{t} \right)\cdot \boldsymbol {\hat{x}}_t + \dfrac{\tau}{t} \mathrm{denoise}(\boldsymbol {\hat{x}}_t)
+$$
+where $\tau$ is a small step in time. This equation gives us an **inference** step. If you tell us the denoiser and suppose that you start with a noisy image $\boldsymbol y$, then you can iteratively apply this equation to retrieve the images $\boldsymbol {\hat{x}}_{t - 1}, \boldsymbol {\hat{x}}_{t-2}, \ldots ,\boldsymbol {\hat{x}}_0$
 
 
 
