@@ -400,7 +400,8 @@ $$
 by [[Tweedie's Formula]], we have
 $$
 \mathbb{E}[\boldsymbol \mu_{\boldsymbol x_t} | \boldsymbol x_t] = \boldsymbol x_t + (1-\bar{\alpha}_t) \nabla_{\boldsymbol x_t} \log p(\boldsymbol x_t)
-$$And we know the best estimate for the true mean of $\boldsymbol x_t$ given $\boldsymbol x_0$ is $\sqrt{ \bar{\alpha}_t }\boldsymbol x_0$, now we get (write $\nabla_{\boldsymbol x_t}$ as $\nabla$ for convenience)
+$$
+And we know the best estimate for the true mean of $\boldsymbol x_t$ given $\boldsymbol x_0$ is $\sqrt{ \bar{\alpha}_t }\boldsymbol x_0$, now we get (write $\nabla_{\boldsymbol x_t}$ as $\nabla$ for convenience)
 $$
 \sqrt{ \bar{\alpha}_t } \boldsymbol x_0 = \boldsymbol x_t + (1-\bar{\alpha}_t) \nabla \log p(\boldsymbol x_t)
 $$
