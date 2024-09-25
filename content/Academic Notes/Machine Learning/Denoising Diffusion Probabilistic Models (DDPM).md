@@ -165,7 +165,7 @@ $$
 - **Reconstruction**. The new reconstruction term is the same as before. We are still maximizing the log-likelihood.
 - **Prior Matching**. The new prior matching is simplified to the KL divergence between $q_{\boldsymbol \phi}(\boldsymbol x_T | \boldsymbol x_0)$ and $p(\boldsymbol x_T)$. The change is due to the fact that we now condition upon $\boldsymbol x_0$. Thus, there is no need to draw samples from $q_{\boldsymbol \phi}(\boldsymbol x_{T-1}|\boldsymbol x_0)$ and take expectation.
 - **Consistency**. The new consistency term is different from the previous one in two ways. Firstly, the running index $t$ starts at $t = 2$ and ends at $t = T$ . Previously it was from $t = 1$ to $t = T − 1$. Accompanied with this is the distribution matching, which is now between $q_{\boldsymbol \phi}(\boldsymbol x_{t-1}|\boldsymbol x_t, \boldsymbol x_0)$ and $p_{\boldsymbol \theta}(\boldsymbol x_{t-1}|\boldsymbol x_t)$. So, instead of asking a forward transition to match with a reverse transition, we use $q_{\boldsymbol \phi}$ to construct a reverse transition and use it to match with $p_{\boldsymbol \theta}$
-# Derivation of $q_{\boldsymbol \phi}(\boldsymbol x_{t-1}|\boldsymbol x_t, \boldsymbol x_0)$
+# Derivation of the transition distribution given the initial state
 Recall the **definition** of $q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0)$
 $$
 q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_{t  -1}) = \mathcal N(\boldsymbol x_t \mid \sqrt{ \alpha_t }\boldsymbol x_{t - 1}, \ (1-\alpha_t) \textbf{I})
@@ -281,7 +281,7 @@ So this is a **denoising problem**: we need to find a network $\boldsymbol {\hat
 For every image $\boldsymbol x_0$ in the training dataset:
 - Repeat the following steps until convergence
 - Pick a random time stamp $t \sim \mathrm{Uniform}[1,T]$
-- Draw a sample $\boldsymbol x_t \sim q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0) = \mathcal N(\boldsymbol x_t \mid \sqrt{ \bar{\alpha}_t \boldsymbol x_0 }, \ (1-\bar{\alpha}_t)\textbf{I})$, i.e.,
+- Draw a sample $\boldsymbol x_t \sim q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0) = \mathcal N(\boldsymbol x_t \mid \sqrt{ \bar{\alpha}_t  }\boldsymbol x_0, \ (1-\bar{\alpha}_t)\textbf{I})$, i.e.,
 $$
 \boldsymbol x_t = \bar{\alpha}_t \boldsymbol x_0 + \sqrt{ (1- \bar{\alpha}_t) } \boldsymbol z, \qquad \boldsymbol z \sim \mathcal N(0, \textbf{I})
 $$
@@ -352,7 +352,92 @@ $$
 $$
 where $\tau$ is a small step in time. This equation gives us an **inference** step. If you tell us the denoiser and suppose that you start with a noisy image $\boldsymbol y$, then you can iteratively apply this equation to retrieve the images $\boldsymbol {\hat{x}}_{t - 1}, \boldsymbol {\hat{x}}_{t-2}, \ldots ,\boldsymbol {\hat{x}}_0$
 
+# Equivalent Interpretations
+## Predicting noises
+As discussed above, a Variational Diffusion Model can be trained by simply learning a neural network to predict the original natural image $\boldsymbol x_0$ form an arbitrary noised version $\boldsymbol x_t$ and its time index $t$. 
 
+This interpretation is from the parameterization of $\boldsymbol x_t$, that is
+$$
+\boldsymbol x_t = \sqrt{\bar{\alpha}_t} \boldsymbol x_0 + \sqrt{ (1- \bar{\alpha}_t) } \boldsymbol z, \qquad \boldsymbol z \sim \mathcal N(0, \textbf{I})
+$$
+And we can rewrite this to 
+$$
+\boldsymbol x_0 = \dfrac{\boldsymbol x_t - \sqrt{ 1- \bar{\alpha}_t }\boldsymbol z}{\sqrt{ \bar{\alpha}_t }}
+$$
+Now we can change $\boldsymbol \mu_{q}(\boldsymbol x_t, \boldsymbol x_0)$ to a function of $\boldsymbol x_t, \boldsymbol z$ rather than $\boldsymbol x_0, \boldsymbol z$, that is
+$$
+\begin{aligned}
+\boldsymbol{\mu}_q(\boldsymbol{x}_t,\boldsymbol{x}_0)& =\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})\boldsymbol{x}_t+\sqrt{\bar{\alpha}_{t-1}}(1-\alpha_t)\boldsymbol{x}_0}{1-\bar{\alpha}_t} \\
+&=\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})\boldsymbol{x}_t+\sqrt{\bar{\alpha}_{t-1}}(1-\alpha_t)\frac{\boldsymbol{x}_t-\sqrt{1-\bar{\alpha}_t}\boldsymbol{z}}{\sqrt{\bar{\alpha}_t}}}{1-\bar{\alpha}_t} \\
 
+&=\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})\boldsymbol{x}_t}{1-\bar{\alpha}_t}+\frac{(1-\alpha_t)\boldsymbol{x}_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}-\frac{(1-\alpha_t)\sqrt{1-\bar{\alpha}_t}\boldsymbol{z}}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}} \\
 
+&=\left(\frac{\alpha_t(1-\bar{\alpha}_{t-1})}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}+\frac{1-\alpha_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}\right)\boldsymbol{x}_t-\frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}_t}\sqrt{\alpha_t}}\boldsymbol{z} \\
+&=\frac{\alpha_t-\bar{\alpha}_t+1-\alpha_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}\boldsymbol{x}_t-\frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}_t}\sqrt{\alpha_t}}\boldsymbol{z} \\
 
+&=\frac1{\sqrt{\alpha_t}}\boldsymbol{x}_t-\frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}_t}\sqrt{\alpha_t}}\boldsymbol{z}
+\end{aligned}
+$$
+
+Therefore, now we could set our predicted transition mean as
+$$
+\boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t, t) = \dfrac{1}{\sqrt{ \alpha_t }} \boldsymbol x_t - \dfrac{1-\alpha_t}{\sqrt{ 1-\bar{\alpha}_t }\sqrt{ \alpha_t }} \boldsymbol{\hat{z}}_{\boldsymbol \theta}(\boldsymbol x_t, t)
+$$
+And after some calculations, we just need to optimize
+$$
+\boxed{
+\boldsymbol \theta^{*} = \underset{\boldsymbol \theta}{\arg \min}  \sum_{t = 1}^T \dfrac{1}{2\sigma_q^{2}(t)} \dfrac{(1-\alpha_t)^{2} }{(1-\bar{\alpha}_t)^{2}\alpha_t}\mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0)} \left[  \Vert \boldsymbol {\hat{z}}_{\boldsymbol \theta}(\boldsymbol x_t) - \boldsymbol z_0 \Vert ^{2} \right] 
+}
+$$
+
+We have therefore shown that learning a VDM by predicting the original image $\boldsymbol x_0$ **is equivalent to learning to predict the noise**; empirically, however, some works have found that predicting the noise resulted in better performance
+
+## Predicting scores
+As we have concluded
+$$
+q(\boldsymbol x_t|\boldsymbol x_0) = \mathcal N(\boldsymbol x_t \mid \sqrt{ \bar{\alpha}_t }\boldsymbol x_0,\ (1-\bar{\alpha}_t)\textbf{I})
+$$
+by [[Tweedie's Formula]], we have
+$$
+\mathbb{E}[\boldsymbol \mu_{\boldsymbol x_t} | \boldsymbol x_t] = \boldsymbol x_t + (1-\bar{\alpha}_t) \nabla_{\boldsymbol x_t} \log p(\boldsymbol x_t)
+$$And we know the best estimate for the true mean of $\boldsymbol x_t$ given $\boldsymbol x_0$ is $\sqrt{ \bar{\alpha}_t }\boldsymbol x_0$, now we get (write $\nabla_{\boldsymbol x_t}$ as $\nabla$ for convenience)
+$$
+\sqrt{ \bar{\alpha}_t } \boldsymbol x_0 = \boldsymbol x_t + (1-\bar{\alpha}_t) \nabla \log p(\boldsymbol x_t)
+$$
+Now we get another way to express $\boldsymbol \mu_q(\boldsymbol x_t, \boldsymbol x_0)$
+$$
+\begin{aligned}
+\boldsymbol{\mu}_q(\boldsymbol{x}_t,\boldsymbol{x}_0)& =\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})\boldsymbol{x}_t+\sqrt{\bar{\alpha}_{t-1}}(1-\alpha_t)\boldsymbol{x}_0}{1-\bar{\alpha}_t} \\
+&=\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})\boldsymbol{x}_t+\sqrt{\bar{\alpha}_{t-1}}(1-\alpha_t)\frac{\boldsymbol{x}_t+(1-\bar{\alpha}_t)\nabla\log p(\boldsymbol{x}_t)}{\sqrt{\bar{\alpha}_t}}}{1-\bar{\alpha}_t} \\
+&=\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})\boldsymbol{x}_t}{1-\bar{\alpha}_t}+\frac{(1-\alpha_t)\boldsymbol{x}_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}+\frac{(1-\alpha_t)(1-\bar{\alpha}_t)\nabla\log p(\boldsymbol{x}_t)}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}} \\
+&=\left(\frac{\alpha_t(1-\bar{\alpha}_{t-1})}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}+\frac{1-\alpha_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}\right)\boldsymbol{x}_t+\frac{1-\alpha_t}{\sqrt{\alpha_t}}\nabla\log p(\boldsymbol{x}_t) \\
+&=\frac{\alpha_t-\bar{\alpha}_t+1-\alpha_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}\boldsymbol{x}_t+\frac{1-\alpha_t}{\sqrt{\alpha_t}}\nabla\log p(\boldsymbol{x}_t) \\
+&=\frac1{\sqrt{\alpha_t}}\boldsymbol x_t+\frac{1-\alpha_t}{\sqrt{\alpha_t}}\nabla\log p(\boldsymbol{x}_t)
+\end{aligned}
+$$
+Therefore, we can also set our approximate denoising transition mean $\boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t)$ as
+$$
+\boldsymbol \mu_{\boldsymbol \theta}(\boldsymbol x_t) = \dfrac{1}{\sqrt{ \alpha_t }} \boldsymbol x_t + \dfrac{1 - \alpha_t}{\sqrt{ \alpha _t }} \boldsymbol s_{\boldsymbol \theta}(\boldsymbol x_t,t)
+$$
+And the corresponding optimization problem becomes
+$$
+\boxed{
+\boldsymbol \theta^{*} = \underset{\boldsymbol \theta}{\arg \min}  \sum_{t = 1}^T \dfrac{1}{2\sigma_q^{2}(t)} \dfrac{(1-\alpha_t)^{2} }{\alpha_t}\mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0)} \left[  \Vert \boldsymbol {s}_{\boldsymbol \theta}(\boldsymbol x_t) - \nabla \log p(\boldsymbol x_t)\Vert ^{2} \right] 
+}
+$$
+One more problem is how to calculate $\nabla \log p(\boldsymbol x)_t$, this would be easy if we apply the relationship used in [[Denoising Diffusion Probabilistic Models (DDPM)#Predicting noises|predicting noises]]
+$$
+\boldsymbol x_0 = \dfrac{\boldsymbol x_t - \sqrt{ 1- \bar{\alpha}_t }\boldsymbol z}{\sqrt{ \bar{\alpha}_t }}
+$$
+This is equal to
+$$
+\boldsymbol x_0= \dfrac{\boldsymbol x_t + (1-\bar{\alpha}_t) \nabla \log p(\boldsymbol x_t)}{\sqrt{ \bar{\alpha}_t }}
+$$
+Now we get
+$$
+\nabla \log p(\boldsymbol x_t) = - \dfrac{1}{\sqrt{ 1- \bar{\alpha}_t }} \boldsymbol z
+$$
+> [!Tip]
+> The score function measures how to move in data space to maximize the log probability; intuitively, since the source noise is added to a natural image to corrupt it, **moving in its opposite direction "denoises" the image and would be the best update to increase the subsequent log probability**.
+
+# Score-Matching Langevin Dynamics (SMLD)

@@ -21,7 +21,12 @@ A $k$-dimensional random vector $\textbf{X} = (X_1, \ldots ,X_k)$ is said to hav
 $$
 t_1X_1 + \cdots + t_k X_k
 $$
-to have a Normal distribution for any constants $t_1, \ldots ,t_k$. If $t_1X_1 + \cdots +t_kX_k$ is a constant, we also consider it to have a Normal distribution with variance $0$. An important special case is $k=2; this distribution is called the *Bivariate Normal (BVN)*
+to have a Normal distribution for any constants $t_1, \ldots ,t_k$. If $t_1X_1 + \cdots +t_kX_k$ is a constant, we also consider it to have a Normal distribution with variance $0$. An important special case is $k=2$; this distribution is called the *Bivariate Normal (BVN)*
 
-If $(X_1, \ldots ,X_k)$ is MVN, then the [[Joint Distributions#Marginal PDF|marginal distribution]] of $X_i$ is Normal, since we can take $t_i$ to be $1$ and all other $t_j$ to be $0$. However, the converse is false: it is possible to have Normally distributed r.v.s. $X_1, \ldots ,X_k$ such that $(X_1, \ldots ,X_k)$ is not Multivariate Normal.
+If $(X_1, \ldots ,X_k)$ is MVN, then the [[Joint Distributions#Marginal PDF|marginal distribution]] of $X_i$ is Normal, since we can take $t_i$ to be $1$ and all other $t_j$ to be $0$. However, **the converse is false**: it is possible to have Normally distributed r.v.s. $X_1, \ldots ,X_k$ such that $(X_1, \ldots ,X_k)$ is not Multivariate Normal.
 
+If $\textbf{X} = (X_1, \ldots ,X_n)$ and $\textbf{Y} = (Y_1, \ldots ,Y_m)$ are Multivariate Normal random vectors with $\textbf{X}$ independent of $\textbf{Y}$, then the concatenated random vector $\textbf{W}=(X_1, \ldots ,X_n,Y_1, \ldots ,Y_m)$ is Multivariate Normal
+
+To specify an MVN random vector $(X_1, \ldots ,X_k)$, we need the parameters as follows:
+- the mean vector $(\mu_1, \ldots ,\mu_k)$ where $\mathbb{ E}[X_j] = \mu_j$
+- the covariance matrix, which is the $k \times k$ matrix of covariances between components, arranged so that the $(i,j)$ entry is $\mathrm{Cov}(X_i,X_j)$

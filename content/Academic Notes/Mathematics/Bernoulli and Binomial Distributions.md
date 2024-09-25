@@ -18,6 +18,13 @@ Let $X \sim \mathrm{Bin}(n,p)$, and $q = 1-p$, then $n - X \sim \mathrm{Bin}(n,q
 
 Let $X \sim \mathrm{Bin}(n,p)$ with $p = \dfrac{1}{2}$ and $n$ even. Then the distribution of $X$ is symmetric about $\dfrac{n}{2}$, that is, $P(X = n/2 + j) = P(X = n/2 -j)$ for all nonnegative integers $j$
 
+# Regenerative Property
+Let $X_1 \sim \mathrm{Bin}(n,p)$ and $X_2 \sim \mathrm{Bin}(m, p)$, if $X_1$ and $X_2$ are independent, we have $X_1 + X_2 \sim \mathrm{Bin}(n+m, \ p)$. 
+
+To generalize, if $X_i \sim \mathrm{Bin}(n_i,p)$ and $X_1, \ldots ,X_k$ are independent, we can conclude
+$$
+\sum_{i = 1}^k X_i \sim \mathrm{Bin}\left( \sum_{i= 1}^k n_i,\ p \right) 
+$$
 # Negative Binomial Distribution (Pascal Distribution)
 This distribution models the number of **failures** in a sequence of independent and identically distributed Bernoulli trials **before a specified (non-random) number of successes (denoted $r$) occurs.** 
 $$

@@ -9,3 +9,8 @@ where the positive real number $\lambda$ is equal to the expected value of $X$ a
 $$
 \lambda = \mathrm{E}(X) = \mathrm{Var}(X)
 $$
+# Regenerative Property
+Let $X_1 \sim \mathrm{Pois}(\lambda_1), \ X_2 \sim \mathrm{Pois}(\lambda_2)$ and $X_1, X_2$ are independent, then we will have
+$$
+X_1 + X_2 = \mathrm{Pois}(\lambda_1 + \lambda_2)
+$$
