@@ -442,3 +442,50 @@ $$
 > The score function measures how to move in data space to maximize the log probability; intuitively, since the source noise is added to a natural image to corrupt it, **moving in its opposite direction "denoises" the image and would be the best update to increase the subsequent log probability**.
 
 # Score-Matching Langevin Dynamics (SMLD)
+In this section we dive into the intuition of the score-matching interpretation. 
+## Energy-based Models
+To begin to understand why optimizing a score function makes sense, we shall first introduce **energy-based models**. Remember the form of [[Boltzmann Distribution|Boltzmann Distribution]], we have
+$$
+p_{\boldsymbol \theta} (\boldsymbol x) = \dfrac{1}{Z_{\boldsymbol \theta}} \exp \left[ -f_{\boldsymbol \theta}(\boldsymbol x) \right] 
+$$
+where $f_{\boldsymbol \theta}$ is an arbitrarily flexible, parameterizable function called the *energy function*, and $Z_{\boldsymbol \theta}$ is a normalizing constant to ensure that $\int p_{\boldsymbol \theta}(\boldsymbol x) \mathrm{d}x=1$. One way to learn this distribution is [[Maximum Likelihood Estimation (MLE)|MLE]], but this requires tractably computing the normalizing constant $Z_{\boldsymbol \theta} = \int \exp \left[ -f_{\boldsymbol \theta}(\boldsymbol x) \right]$, which may not be possible for complex $f_{\boldsymbol \theta}(\boldsymbol x)$ functions.
+
+One way to avoid calculating or modeling the normalization constant is by using a neural network $\boldsymbol s_{\boldsymbol \theta}(\boldsymbol x)$ to learn the score function $\nabla \log p(\boldsymbol x)$ of distribution $p(\boldsymbol x)$ instead. This can be done by taking the derivative of the log of both sides of the equation above
+$$
+\begin{aligned}
+\nabla_{\boldsymbol x} \log p_{\boldsymbol \theta}(\boldsymbol x) &= \nabla_{\boldsymbol x} \log \left\{ \dfrac{1}{Z_{\boldsymbol \theta}}\exp \left[ -f_{\boldsymbol \theta}(\boldsymbol x) \right]  \right\}  \\
+&= \nabla_{\boldsymbol x} \log \dfrac{1}{Z_{\boldsymbol \theta}} + \nabla_{\boldsymbol x} \log \exp \left[ -f_{\boldsymbol \theta}(\boldsymbol x) \right]  \\
+&= - \nabla_{\boldsymbol x} f_{\boldsymbol \theta}(\boldsymbol x) \\
+&\approx \boldsymbol s_{\boldsymbol \theta}(\boldsymbol x)
+\end{aligned}
+$$
+which can be freely represented as a neural network without involving any normalization constants. The score model can be optimized by minimizing the *Fisher Divergence* with the ground truth score function
+$$
+\mathbb{E}_{p(\boldsymbol x)} \left[ \Vert \boldsymbol s_{\boldsymbol \theta}(\boldsymbol x) - \nabla \log p(\boldsymbol x) \Vert^{2} \right] 
+$$
+## Langevin Dynamics
+Imagine that we are given a distribution $p(\boldsymbol x)$ and suppose that we want to draw samples from $p(\boldsymbol x)$. *Langevin dynamics* is an iterative procedure that allows us to draw samples according to the following equation
+$$
+\boldsymbol x_{t + 1} = \boldsymbol x_t + \tau \nabla_{\boldsymbol x} \log p(\boldsymbol x_t) + \sqrt{ 2\tau } \boldsymbol z, \quad \boldsymbol z \sim \mathcal N(0, \textbf{I})
+$$
+where $\tau$ is the step size which users can control, and $\boldsymbol x_0$ is white noise.
+
+Note that if we ignore the noise term $\sqrt{ 2\tau }\boldsymbol z$ at the end, the Langevin dynamics equation is **literally [[Gradient Descent|gradient descent]]**. The descent $\nabla_{\boldsymbol x} \log p(\boldsymbol x)$ is carefully chosen that $\boldsymbol x_t$ will converge to the distribution $p(\boldsymbol x)$.
+
+The goal of this descent sampling process is to find a $\boldsymbol x$ where the probability is the highest, which is equivalent to solving the optimization
+$$
+\boldsymbol x^* = \underset{\boldsymbol x}{\arg \max} \ \log p(\boldsymbol x)
+$$
+> [!Warning]
+> Note that this is not [[Maximum Likelihood Estimation (MLE)|MLE]]. In maximum likelihood, the data point $\boldsymbol x$ is fixed but the model parameters are changing. Here, the model parameters are fixed but the data point is changing.
+
+And now we can understand the noise term $\sqrt{ 2\tau }\boldsymbol z$, which **literally changes the gradient descent to [[Stochastic Gradient Descent (SGD)|stochastic gradient descent]]**. Instead of shooting for the deterministic optimum, the stochastic gradient descent climbs up the hill randomly, so that there would be a lower probability to stuck into a local maximum
+
+However, we actually do not care about the maximum of $p(\boldsymbol x)$, which is the final goal of the descent process. Instead, **we care about the sampling process itself**. As well as our descent algorithm is good at find peaks, then by **repeatedly initialize the algorithm at a uniformly distributed location, we will eventually collects samples that will follow the distribution we want to match**.
+
+> [!Info]
+> Suppose we initialize $10000$ uniformly distributed samples $x_0 \sim \mathrm{Uniform}[-3,3]$. We run Langevin updates for $t = 100$ steps. The histograms of generated samples are shown in the figures below
+> ![[AI-DDPM-Langevin-Dynamics.png]]
+
+In summary, Langevin dynamics gives us a more intuitive vision into the score-matching problem in energy-based models. In energy-based models, we learn the distribution of $p_{\boldsymbol \theta}$ by matching a score function $\boldsymbol s_{\boldsymbol\theta}$ with $\nabla \log p(\boldsymbol x)$. On the other hand, if we find a good estimation $\boldsymbol s_{\boldsymbol \theta}$ of the descent term $\nabla \log p(\boldsymbol x)$ in Langevin dynamics, the sampling process would do better in finding a peak in the neighborhood of its initial state $\boldsymbol x_0$, so that by initialize the $\boldsymbol x_0$ uniformly in the interval we interested with, the sampling would follow the $p(\boldsymbol x)$ we want to approximate.
+
