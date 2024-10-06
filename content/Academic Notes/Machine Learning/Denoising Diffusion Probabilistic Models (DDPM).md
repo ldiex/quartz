@@ -204,11 +204,11 @@ $$
 $$
 Similarly, since
 $$
-f''(y)=\frac{1-ab}{(1-a)(1-b)}=\frac{1-\overline{\alpha}_t}{(1-\alpha_t)(1-\sqrt{\overline{\alpha}_{t-1}})}
+f''(y)=\frac{1-ab}{(1-a)(1-b)}=\frac{1-\overline{\alpha}_t}{(1-\alpha_t)(1-{\overline{\alpha}_{t-1}})}
 $$
 And this gives us
 $$
-\boldsymbol{\Sigma}_q(t)=\frac{(1-\alpha_t)(1-\sqrt{\overline{\alpha}_{t-1}})}{1-\overline{\alpha}_t}\mathbf{I}
+\boldsymbol{\Sigma}_q(t)=\frac{(1-\alpha_t)(1-{\overline{\alpha}_{t-1}})}{1-\overline{\alpha}_t}\mathbf{I}
 $$
 Now we know the distribution of $q_{\boldsymbol \phi}(\boldsymbol x_{t-1}|\boldsymbol x_t, \boldsymbol x_0)$
 $$
