@@ -30,3 +30,47 @@ If $\textbf{X} = (X_1, \ldots ,X_n)$ and $\textbf{Y} = (Y_1, \ldots ,Y_m)$ are M
 To specify an MVN random vector $(X_1, \ldots ,X_k)$, we need the parameters as follows:
 - the mean vector $(\mu_1, \ldots ,\mu_k)$ where $\mathbb{ E}[X_j] = \mu_j$
 - the covariance matrix, which is the $k \times k$ matrix of covariances between components, arranged so that the $(i,j)$ entry is $\mathrm{Cov}(X_i,X_j)$
+
+## Bivariate Normal
+Let $(Z,W)$ be BVN with $\mathcal N(0, 1)$ marginals and $\mathrm{Corr}(Z,W) = \rho$. By the definition of Multivariate Normal, any $(Z,W)$ of the form
+$$
+\begin{aligned}
+Z &= aX + bY \\
+W &= cX + dY
+\end{aligned}
+$$
+will be Bivariate Normal, where $X,Y$ i.i.d. $\mathcal N(0,1)$. The means are already $0$. Setting the variance qual to $1$ gives
+$$
+a^{2} + b^{2} = 1, \ c^{2} + d^{2} = 1
+$$
+Setting the [[Covariance and Correlation#Covariance|covariance]] of $Z$ and $W$ equal to $\rho$ gives $ac + bd = \rho$. There are more unknowns than equations here, and we just need one solution. To simplify, let’s look for a solution with $b = 0$, then we have
+$$
+\begin{aligned}
+Z &= X \\
+W &= \rho X + \sqrt{ 1-\rho^{2} } Y
+\end{aligned}
+$$
+Let $\tau = \sqrt{ 1-\rho^{2} }$, we get
+$$
+\begin{aligned}
+X &= Z \\
+Y &= -\dfrac{\rho}{\tau} Z + \dfrac{1}{\tau} W
+\end{aligned}
+$$
+By the [[Transformations of Random Variables#Change of Variables|changes of variables]], we have the Jacobian
+$$
+\frac{ \partial (x,y) }{ \partial (z,w) }  = \begin{pmatrix}
+1 & 0 \\
+-\dfrac{\rho}{\tau} & \dfrac{1}{\tau}
+\end{pmatrix}
+$$
+which has absolute determinant $\dfrac{1}{\tau}$, therfore
+$$
+\begin{aligned}
+f_{Z,W} (z,w) &= f_{X,Y}(x,y) \cdot \left|\left| \frac{ \partial (x,y) }{ \partial (z,w) } \right|\right| \\
+&= \dfrac{1}{\tau} f_X(x) f_Y(y) \\
+&= \dfrac{1}{2\pi \tau} \exp \left[ - \dfrac{1}{2} (x^{2}+y^{2}) \right]  \\
+&= \dfrac{1}{2\pi \tau} \exp \left\{ -\dfrac{1}{2} \left[ z^{2} + \left( -\dfrac{\rho}{\tau} z + \dfrac{1}{\tau} w \right) ^{2} \right]  \right\}  \\
+&= \dfrac{1}{2\pi \tau} \exp \left[ -\dfrac{1}{2\tau^{2}} \left( z^{2} + w^{2} - 2\rho zw \right)  \right] 
+\end{aligned}
+$$

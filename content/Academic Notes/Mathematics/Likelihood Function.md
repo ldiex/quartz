@@ -1,4 +1,4 @@
-The *likelihood function*, parameterized by a (possibly multivariate) parameter $\theta$, is usually defined differently for discrete and continuous probability [[Distributions of Random Variable|distributions]]
+The *likelihood function*, parameterized by a (possibly multivariate) parameter $\theta$, is usually defined differently for discrete and continuous probability [[Distributions of Random Variables|distributions]]
 # Discrete Case
 Let $X$ be a discrete [[Random Variables|random variable]] with [[Random Variables#Probability Mass Function|PMF]] $p$ depending on a parameter $\theta$. Then the function
 $$

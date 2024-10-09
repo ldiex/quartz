@@ -59,11 +59,6 @@ $$
 > We can prove this by converting the CDF of $F(X)$ to the CDF of $X$, that is, $P(F(X) \leq y) = P(X \leq F^{-1}(y)) = F(F^{-1}(y))=y$
 > Here $F^{-1}(y)$ exists since $F(x)$ is continuous and strictly increasing (the property of CDF)
 > See [[Uniform Distributions#Universality of the Uniform|the universality of the uniform]]
-## Formula of transform for monotone functions
-Let $X$ be a continuous r.v. with PDF $f_X(X)$. Consider a monotonic function $y=g(x)$ defined on the support of $X$, for which the derivative of $g^{-1}(y)$ exists and is continuous. Then $Y = g(X)$ is a continuous r.v. with PDF given by
-$$
-f_Y(y) = f_X(g^{-1}(y))\left|\left( g^{-1} \right)'(y) \right|
-$$
 # Independence of Random Variables
 Random variables $X$ and $Y$ are said to be *independent* if 
 $$
@@ -80,7 +75,7 @@ Random variables $X_1, \ldots ,X_n$ are *independent* if
 $$
 P(X_1\leq x_1, \ldots ,X_n \leq x_n) = P(X \leq x_1) \cdots P(X_n \leq x_n)
 $$
-for all $x_1, \ldots ,x_n\in \mathbb{R}$. For infinitely many r.v.s, we say that they are independent if every finite subset of the r.b.s is independent.
+for all $x_1, \ldots ,x_n\in \mathbb{R}$. For infinitely many r.v.s, we say that they are independent if every finite subset of the r.v.s is independent.
 
 > [!Tip]
 > Note that this criteria is different from that for [[Conditional Probability#Independence of $n$ events|independence]] of $n$ events. But in fact, if $X_1, \ldots ,X_n$ are independent, then they are also pairwise independent, i.e., $X_i$ is independent of $X_j$ for $i \neq j$. The idea behind proving that $X_i$ and $X_j$ are independent is to let all the $x_k$ other than $x_i,x_j$ go to $\infty$ in the definition of independence, since we already know $X_k < \infty$ is true. But pairwise independence does **not** imply independence in general.

@@ -5,10 +5,11 @@
 [[General Definition of Probability]]
 [[Conditional Probability]]
 [[Random Variables]]
-[[Distributions of Random Variable]]
+[[Distributions of Random Variables]]
 [[Continuous Random Variables]]
 [[Joint Distributions]]
-
+[[Covariance and Correlation]]
+[[Transformations of Random Variables]]
 # Theorems
 [[Hoeffding's Inequality]]
 

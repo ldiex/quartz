@@ -426,7 +426,7 @@ $$
 \boldsymbol \theta^{*} = \underset{\boldsymbol \theta}{\arg \min}  \sum_{t = 1}^T \dfrac{1}{2\sigma_q^{2}(t)} \dfrac{(1-\alpha_t)^{2} }{\alpha_t}\mathbb{E}_{q_{\boldsymbol \phi}(\boldsymbol x_t | \boldsymbol x_0)} \left[  \Vert \boldsymbol {s}_{\boldsymbol \theta}(\boldsymbol x_t) - \nabla \log p(\boldsymbol x_t)\Vert ^{2} \right] 
 }
 $$
-One more problem is how to calculate $\nabla \log p(\boldsymbol x)_t$, this would be easy if we apply the relationship used in [[Denoising Diffusion Probabilistic Models (DDPM)#Predicting noises|predicting noises]]
+One more problem is how to calculate $\nabla \log p(\boldsymbol x_t)$, this would be easy if we apply the relationship used in [[Denoising Diffusion Probabilistic Models (DDPM)#Predicting noises|predicting noises]]
 $$
 \boldsymbol x_0 = \dfrac{\boldsymbol x_t - \sqrt{ 1- \bar{\alpha}_t }\boldsymbol z}{\sqrt{ \bar{\alpha}_t }}
 $$
