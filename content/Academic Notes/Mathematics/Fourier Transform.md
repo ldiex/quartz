@@ -32,75 +32,94 @@ where
 $$
 F(n) = \left< \boldsymbol f,\boldsymbol{d}_n \right>= \int_{-\infty}^{\infty} f(t)d_n(t) \mathrm{d}t
 $$
-
 In particular, the Fourier transform projects these functions onto an orthogonal basis of complex exponentials $e^{i \omega x}$. These exponentials are eigenfunctions of the Fourier transform operator and form a complete orthonormal set in $L^2(\mathbb{R})$.
-# Derive from Fourier Series
-## Fourier Series
-See [[Fourier Series]] for details, we will directly give its form:
-The Fourier series expansion of the function $f$ is
+# Fourier Series as Special Case of Fourier Transform
+We define the Forward Fourier Transform as
 $$
-f(x) \sim \dfrac{a_0}{2} + \sum_{n = 1}^{\infty} \left(a_n \cos \dfrac{n\pi x}{l} + b_n \sin \dfrac{n\pi x}{l}\right)
+X(\omega) = \mathcal F\left\{ x(t)  \right\}  = \int_{-\infty}^{\infty} x(t) \exp(-j\omega t) \mathrm{d}t
 $$
-where
+and the Inverse Fourier Transform as
 $$
-\begin{aligned}
-a_n &= \dfrac{1}{l}\int_{-l}^l f(x) \cos \dfrac{n\pi x}{l} \mathrm{d} x, \quad n = 0, 1, 2, \cdots \\
-b_n &= \dfrac{1}{l}\int_{-l}^l f(x) \sin \dfrac{n\pi x}{l} \mathrm{d} x, \quad n = 1, 2, \cdots
-\end{aligned}
+x(t) = \mathcal F^{-1} \left\{ X(\omega) \right\} = \dfrac{1}{2\pi}\int_{-\infty}^{\infty} X(\omega) \exp(j\omega t) \mathrm{d}\omega
 $$
-## Complex Form of Fourier Series
-Using [[Euler's Formula|Euler's formula]], we can derive
+For periodic $x(t)$, assuming $x(t + T) = x(t)$, we can break this integral into a sum of integrals over each period:
 $$
-\cos \theta = \dfrac{\mathrm{e}^{\mathrm{i}\theta}+\mathrm{e}^{-\mathrm{i}\theta}}{2}, \quad \sin \theta = -\mathrm{i}\left( \dfrac{\mathrm{e}^{\mathrm{i}\theta}-\mathrm{e}^{-\mathrm{i}\theta}}{2} \right) 
+X(\omega) = \sum_{k=-\infty}^{\infty} \int_{kT}^{(k+1)T} x(t) \exp(-j\omega t) \mathrm{d}t
 $$
-Substituting them into the above series expression, assuming the series converges, let $\omega = \dfrac{2\pi}{T} = \dfrac{2\pi}{2l} = \dfrac{\pi}{l}$, we have
+Because $x(t)$ is the same over each period, we can factor out the integral over a single period $[0, T]$ or any interval of length $T$:
 $$
 \begin{aligned}
-f(x) & = \dfrac{a_0}{2} + \sum_{n = 1}^\infty \left( a_n \dfrac{\mathrm{e}^{\mathrm{i}n\omega_0x}+\mathrm{e}^{-\mathrm{i}n\omega_0x}}{2}-\mathrm{{i}}b_n\dfrac{\mathrm{e}^{\mathrm{i}n\omega_0x}-\mathrm{e}^{-\mathrm{i}n\omega_0x}}{2}\right) \\
- & =\dfrac{a_0}{2} + \sum_{n = 1}^\infty \dfrac{1}{2}(a_n - \mathrm{i}b_n) \mathrm{e}^{\mathrm{i}n\omega_0x} + \sum_{n = 1}^\infty \dfrac{1}{2}(a_n + \mathrm{i}b_n)\mathrm{e}^{\mathrm{i}n\omega_0x} \\
- & =\dfrac{a_0}{2} + \sum_{n = 1}^\infty \dfrac{1}{2}(a_n - \mathrm{i}b_n) \mathrm{e}^{\mathrm{i}n\omega_0x} + \sum_{n = -\infty}^{-1} \dfrac{1}{2}(a_{-n} + \mathrm{i}b_{-n})\mathrm{e}^{\mathrm{i}n\omega_0x} \\
- & = \sum_{-\infty}^\infty d_n \mathrm{e}^{\mathrm{i}n\omega_0x}
+X(\omega) &= \sum_{k = -\infty}^{\infty} \left( \exp(-j\omega kT) \int_{0}^{T} x(t) \exp(-j\omega t) \mathrm{d}t \right)  \\
+ &= \left( \int_0^T x(t) \exp(-j\omega t) \mathrm{d}t \right) \sum_{k=-\infty}^{\infty} \exp(-j\omega k T)
 \end{aligned}
 $$
-where
+where the second term is a [[Dirac Comb#Geometric Series of Exponentials|Dirac comb]] $\displaystyle\dfrac{2\pi}{T} \sum_{n=-\infty}^{\infty} \delta\left( \omega - n\frac{2\pi}{T} \right)$. Therefore
 $$
-d_n = \begin{cases}
-\dfrac{1}{2}(a_n - \mathrm{i}b_{-n}),  & n>0 \\
-\dfrac{1}{2}a_0,  & n = 0 \\
-\dfrac{1}{2}(a_{-n}-\mathrm{i} b_{-n}), & n < 0
-\end{cases}
+X(\omega) = \dfrac{2\pi}{T} \left( \int_{0}^T x(t) \exp(-j \omega t) \mathrm{d} t \right) \sum_{n = -\infty}^{\infty} \delta \left( \omega - n \dfrac{2\pi}{T} \right) 
 $$
-It can be verified that for any value of $n$, $d_n$ can be expressed as
+Substitute it to the inverse transform
 $$
-d_n = \dfrac{1}{2l}\int_0^{2l}\mathrm{e}^{-in\omega_0x} f(x) \mathrm{d} x = \dfrac{1}{T}\int_0^{T}\mathrm{e}^{-in\omega_0x} f(x) \mathrm{d} x
+x(t) = \frac{1}{T} \int_{-\infty}^{\infty} \left( \int_{0}^{T} x(\tau) e^{-j\omega \tau} \, d\tau \right) \sum_{n=-\infty}^{\infty} \delta\left(\omega - n\frac{2\pi}{T}\right) e^{j\omega t} \, d\omega
 $$
-where $\omega_0=\dfrac{2\pi}{T}$ is called the *fundamental frequency*, and thus we obtain the complete expression of the complex exponential form Fourier series expansion
+ Since the Dirac delta functions select specific frequencies, we can interchange the sum and the integral
 $$
-f(x) = \sum_{n =-\infty}^{+\infty} \left[ \dfrac{1}{T} \int_0^{T}\mathrm{e}^{-in\omega_0x} f(x) \mathrm{d} x\right] \mathrm{e}^{\mathrm{i}n\omega_0x}
-$$
-# Fourier Transform
-Fourier series expansion is for **periodic functions**, but in reality, most signals are non-periodic. Non-periodic functions can be viewed as periodic functions with $T\to +\infty$, and when $T = +\infty$, the fundamental frequency $\omega_0$ becomes the differential $\mathrm{d} \omega$, so the summation needs to be converted to an integral
-$$
-\begin{aligned}
-f(x) & = \sum_{n =-\infty}^{+\infty} \left[ \dfrac{1}{T} \int_0^{T}\mathrm{e}^{-in\omega_0x} f(x) \mathrm{d} x\right] \mathrm{e}^{\mathrm{i}n\omega_0x} \\
- & =  \sum_{n =-\infty}^{+\infty} \left[ \dfrac{\omega_0}{2\pi} \int_0^{T}\mathrm{e}^{-in\omega_0x} f(x) \mathrm{d} x\right] \mathrm{e}^{\mathrm{i}n\omega_0x} \\
- & = \sum_{n =-\infty}^{+\infty} \left[ \omega \int_0^{T}\mathrm{e}^{-in\omega_0x} f(x) \mathrm{d} x\right] \mathrm{e}^{\mathrm{i}n\omega_0x} 
+ \begin{aligned}
+   x(t) &= \frac{1}{T} \sum_{n=-\infty}^{\infty} \int_{0}^{T} x(\tau) e^{-j n \frac{2\pi}{T} \tau} e^{j n \frac{2\pi}{T} t} \, d\tau \\
+   &=\frac{1}{T} \sum_{n=-\infty}^{\infty} e^{j n \frac{2\pi}{T} t} \int_{0}^{T} x(\tau) e^{-j n \frac{2\pi}{T} \tau} \, d\tau
 \end{aligned}
 $$
-Here we take $\omega = \dfrac{\omega_0}{2\pi}$, let $\omega = \mathrm{d} \omega\to 0$ then we have
-$$
-f(x)=\frac1{2\pi}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-i2\pi\omega x}\cdot f(x)\mathrm{~}\mathrm{d} x\cdot e^{i2\pi\omega x}\mathrm{~}\mathrm{d} \omega 
-$$
-where
-$$
-F(\omega) = \int_{-\infty}^{+\infty}e^{-i2\pi\omega x}\cdot f(x)\mathrm{~}\mathrm{d} x
-$$
-is called the *Fourier transform*, and
-$$
-f(x)=\frac1{2\pi}\int_{-\infty}^{+\infty}F(\omega)\cdot e^{i2\pi\omega x}\mathrm{~}\mathrm{d} \omega 
-$$
-is called the *inverse Fourier transform*
+ Let's define the coefficients $a_n$ as:
 
-# Applications of Fourier Transform
+$$
+   a_n = \frac{1}{T} \int_{0}^{T} x(\tau) e^{-j n \omega_0 \tau} \, d\tau \quad \text{where} \quad \omega_0 = \frac{2\pi}{T}
+$$
+Then we get the Fourier Series as a special case of Fourier Transform (we replace $n$ by $k$ here)
+$$
+x(t)  = \sum_{k = -\infty}^{\infty} a_k \exp \left( jk \omega_0 t \right),\quad \text{where} \ a_k = \dfrac{1}{T} \int_{0}^T x(t)\exp(-jk\omega_0t) \mathrm{d}t
+$$
+
+# From Continuous to Discrete
+## Non-periodic Discrete Function
+Assuming we sampling the function $x(t)$ with a time interval of $\Delta t$, let $t = n \Delta t$. Then the $\mathrm{d}t$ in continuous Fourier transform becomes $\Delta t$, and the new formula will be
+$$
+X(\omega) = \sum_{n = -\infty}^{\infty} x(n\Delta t) \exp \left( -j\omega n\Delta t \right) \Delta t
+$$
+This is called discrete-time Fourier transform (DTFT). 
+
+If we set $\Delta t$ to be $1$, we have
+$$
+X(\omega) =  \sum_{n = -\infty}^\infty x(n) \exp(-j\omega n)
+$$
+where we can notice that $X(\omega)$ is a periodic since $X(\omega) = X(\omega + 2\pi)$.
+
+Note that $\exp(-j\omega n\Delta t)$ is the Fourier transform of $\delta(t - n \Delta t)$, so we can also define DTFT as
+$$
+X(\omega) = \mathcal F \left\{  \sum_{n = -\infty}^{\infty} x(n \Delta t) \delta(t - n\Delta t) \right\} 
+$$
+When $\Delta t = 1$, this is
+$$
+X(\omega) = \mathcal F \left\{  \sum_{n = -\infty}^{\infty} x(n) \delta(t - n) \right\} 
+$$
+From this we can get the formula for inverse DFDT when $\Delta t = 1$. Performing the inverse Fourier transform at both sides gives 
+$$
+\sum_{n = -\infty}^{\infty} x(n) \delta(t - n) = \mathcal F^{-1} \left\{ X(\omega) \right\} = \dfrac{1}{2\pi} \int_{-\infty}^\infty X(\omega) \exp(j\omega t) \mathrm{d} \omega
+$$
+Sampling from $t = n$, we could have (Nothing that DTFT converts a non-periodic discrete function in time domain to a periodic continuous function in frequency domain, which happens to be the inverse of Fourier series, therefore the inverse of DTFT can be seen as the calculation of Fourier Series)
+$$
+x[n] = \dfrac{1}{2\pi} \int_0^{2\pi} X(\omega)\exp(j\omega n) \mathrm{d}\omega
+$$
+## Periodic Discrete Function
+If we have $x(t) = x(t + T)$, we can sample $x(t)$ from $[0, T)$ with $N$ points, that is, $T = N \cdot \Delta t$. If we set $\Delta t = 1$, then it gives $T = N$ and $t = n\Delta t = n$. In this way, $t\in[0, T) \implies n\in \left\{ 0,1, \ldots ,N-1 \right\}$. Now we can rewrite the formula of continuous Fourier series (since Fourier series is a special case of Fourier transform for periodic functions) as
+$$
+a_k = \dfrac{1}{N}  \sum_{n = 0}^{N-1} x(n) \exp \left( -j  k \omega_0 n\right) 
+$$
+where $\omega_0 = \dfrac{2\pi}{T} = \dfrac{2\pi}{N}$. Similarly, $a_k$ is also periodic since $a_{k + N} = a_k$. This is know as discrete Fourier series (DFS)
+$$
+x[n] = \dfrac{1}{N}\sum_{k = 0}^{N-1} a_k\exp(jk\omega_0 n)
+$$
+# See Also
+[[Derive Fourier Transform from Fourier Series]]
+
+[[Fourier Analysis in Signals]]
 [[Fourier Transform in Optics|Applications of Fourier Transform in Optics]]
 [[Fourier Optics|Fourier Optics]]

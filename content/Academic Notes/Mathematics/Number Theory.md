@@ -4,3 +4,4 @@
 [[Euler's Totient Function]]
 [[Fermat's Little Theorem]]
 [[Exgcd - Extended Euclidean Algorithm]]
+[[Chinese Remainder Theorem (CRT)]]

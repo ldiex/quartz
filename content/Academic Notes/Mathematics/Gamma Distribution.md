@@ -5,3 +5,5 @@ $$
 f(y) = \frac{1}{\Gamma(a)}(\lambda y)^a e^{-\lambda y} \frac{1}{y}, \quad y>0
 $$
 where $\Gamma(\cdot)$ is the [[Euler Integral#Gamma函数|Gamma Function]]. And we write $Y \sim \mathrm{Gamma}(a,\lambda)$
+
+The [[Mathematical Expectation|expectation]] of Gamma distribution if $\mathrm{E}[Y] = \dfrac{a}{\lambda}$

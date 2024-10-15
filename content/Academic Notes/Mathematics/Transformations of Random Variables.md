@@ -47,3 +47,47 @@ $$
 Therefore, $Z \sim \mathrm{Bin} (m + n,p)$. This is a [[Convolution (Discrete)|discrete convolution]]
 ## Regenerative Property of Poisson Distribution
 For [[Poisson Distribution]], let $X \sim \mathrm{Pois}(\lambda_1), \ Y \sim \mathrm{Posi}(\lambda_2)$, then if $X,Y$ are independent, we have $X + Y = \mathrm{Pois}(\lambda_1 + \lambda_2)$
+
+> [!Tip]
+> By replacing $Y$ by $-Y$, the convolution formula can also be used for $Z = X -Y$
+
+# Product
+Let the PDF of $(X,Y)^T$ be $f(x,y)$, then the PDF of $Z = XY$ is
+$$
+g(z) = \int_{-\infty}^{\infty} \dfrac{1}{\left|x\right|} f\left( x, \dfrac{z}{x} \right) \mathrm{d}x
+$$
+This is by
+$$
+\begin{aligned}
+P(Z \leq z) &= P\left(   XY \leq z\right)  \\
+&= P \left( Y \leq \dfrac{z}{X}, \ X \geq 0 \right)  + P\left( Y\geq \dfrac{z}{X}, \ X \leq0 \right)  \\
+&= \int_{0}^{\infty} \int_{-\infty}^{z/x} f(x,y) \mathrm{d}y \mathrm{d}x + \int_{-\infty}^{0} \int_{z/x}^{\infty} f(x,y) \mathrm{d}y \mathrm{d}x
+\end{aligned}
+$$
+Therefore
+$$
+\begin{aligned}
+g(z) = \frac{ \partial  }{ \partial z } P(Z\leq z) &= \int_{0}^{\infty} \dfrac{1}{x}f\left( x, \dfrac{z}{x} \right) \mathrm{d}x - \int_{-\infty}^{0} \dfrac{1}{x} f\left( x, \dfrac{z}{x} \right)  \mathrm{d}x \\
+&= \int_{-\infty}^{\infty} \dfrac{1}{\left|x\right|} f\left( x, \dfrac{z}{x} \right)  \mathrm{d}x
+\end{aligned}
+$$
+# Division
+Let the PDF of $(X,Y)^T$ be $f(x,y)$, then the PDF of $Z = \dfrac{X}{Y}$ is
+$$
+g(z) = \int_{-\infty}^{\infty} \left|u\right| f(zu,u) \mathrm{d}u
+$$
+This is by
+$$
+\begin{aligned}
+P(Z \leq z) &= P\left(  \dfrac{X}{Y} \leq z\right)  \\
+&= P(X\leq Yz, \ Y >0) + P(X > Yz, Y <0) \\
+&= \int_{0}^{\infty} \int_{-\infty}^{yz} f(x,y) \mathrm{d}x \mathrm{d}y + \int_{-\infty}^{0} \int_{yz}^{\infty} f(x,y) \mathrm{d}x \mathrm{d}y
+\end{aligned}
+$$
+Therefore
+$$
+\begin{aligned}
+g(z) = \frac{ \partial  }{ \partial z } P(Z\leq z) &= \int_{0}^{\infty} y f(yz,y) \mathrm{d}y + \int_{-\infty}^{0} (-y) f(yz, y) \mathrm{d}y \\
+&= \int_{-\infty}^{\infty} \left|y\right| f(yz, y) \mathrm{d}y
+\end{aligned}
+$$

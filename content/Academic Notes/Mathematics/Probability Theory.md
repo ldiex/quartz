@@ -2,14 +2,23 @@
 20% + 30% + 50%
 
 # Contents
+## Random Variables
 [[General Definition of Probability]]
 [[Conditional Probability]]
 [[Random Variables]]
-[[Distributions of Random Variables]]
 [[Continuous Random Variables]]
+
 [[Joint Distributions]]
-[[Covariance and Correlation]]
+
 [[Transformations of Random Variables]]
+## Distributions
+[[Distributions of Random Variables]]
+
+## Characteristics
+[[Mathematical Expectation]]
+[[Covariance and Correlation]]
+
+[[Law of the Unconscious Statistician (LOTUS)]]
 # Theorems
 [[Hoeffding's Inequality]]
 

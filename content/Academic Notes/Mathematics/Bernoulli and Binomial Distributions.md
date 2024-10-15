@@ -12,7 +12,7 @@ If $X \sim \mathrm{Bin}(n,p)$, then the [[Random Variables#Probability Mass Func
 $$
 P(X = k) = \binom{n}{k}p^k(1-p)^{n - k}
 $$
-for $k = 0,1, \ldots ,n$
+for $k = 0,1, \ldots ,n$, and $\mathrm{E}[X] = np$
 
 Let $X \sim \mathrm{Bin}(n,p)$, and $q = 1-p$, then $n - X \sim \mathrm{Bin}(n,q)$
 
@@ -35,3 +35,4 @@ The [[Random Variables#Probability Mass function|PMF]] of the negative binomial 
 $$
 P(X = k) = \binom{k + r - 1}{k} (1-p)^k p^r
 $$
+and $\mathrm{E}[X]=\dfrac{r}{p} - 1$

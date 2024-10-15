@@ -9,3 +9,6 @@ $$
 \beta(a,b) = \int_0^1 x^{a-1}(1-x)^{b-1} \mathrm{d}x
 $$
 which is the [[Euler Integral#Beta函数|beta function]]
+
+The [[Mathematical Expectation|expectation]] of beta distribution is $\mathrm{E}[X]= \dfrac{a}{a+b}$
+

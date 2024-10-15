@@ -16,7 +16,7 @@ In contrast, a *continuous* r.v. can take on any real value in an interval (poss
 > It is also possible to have an r.v. that is **a hybrid of discrete and continuous**, such as by flipping a coin and then generating a discrete r.v. if the coin lands Heads and generating a continuous r.v. if the coin lands on Tails.
 
 ## Indicator Random Variable
-The *indicator random variable* of an event $A$ is the r.v. which equals $1$ if $A$ occurs and $0$ otherwise. We will denote the indicator r.v. of $A$ by $I_A$ or $I(A)$
+The *indicator random variable* of an event $A$ is the r.v. which equals $1$ if $A$ occurs and $0$ otherwise. We will denote the indicator r.v. of $A$ by $I_A$ or $I(A)$. See [[Indicator Random Variables]]
 # Probability Mass Function
 The *Probability Mass Function* (PMF) of a **discrete** r.v. $X$ is the function $p_X$ given by $p_X(x) = P(X = x)$. Note that this is positive if $x$ is in the support of $X$, and $0$ otherwise
 

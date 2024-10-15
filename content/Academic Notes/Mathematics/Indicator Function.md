@@ -4,5 +4,4 @@ $$
 0, & \text{if }condition\text{ is false}
 \end{cases}
 $$
-
-
+See also [[Indicator Random Variables]]

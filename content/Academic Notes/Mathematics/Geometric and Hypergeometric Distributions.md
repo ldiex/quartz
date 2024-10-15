@@ -5,6 +5,7 @@ The [[Random Variables#Probability Mass Function|PMF]] of geometric distribution
 $$
 P(X = k) = (1-p)^{k-1}p
 $$
+and $\mathrm{E}[X] = \dfrac{1}{p}$
 # Hypergeometric Distribution
 The *hypergeometric distribution* describes the probability of $k$ success in $n$ draws, **without** replacement, from a finite population of size $N$ that contains exactly $K$ objects with that feature, wherein each draw is either a success or a failure.
 > [!Tip]
@@ -14,6 +15,6 @@ The PMF of hypergeometric distribution is
 $$
 P(X = k) = \dfrac{\binom{N}{k}\binom{N-K}{n-k}}{\binom{N}{n}}
 $$
-
+and $\mathrm{E}[X] = n \cdot \dfrac{K}{N}$
 
 
