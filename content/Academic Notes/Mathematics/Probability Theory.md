@@ -16,6 +16,7 @@
 
 ## Characteristics
 [[Mathematical Expectation]]
+[[Variance]]
 [[Covariance and Correlation]]
 
 [[Law of the Unconscious Statistician (LOTUS)]]

@@ -5,6 +5,10 @@ $$
 $$
 We write this as $Z \sim \mathcal N(0,1)$ since, as we could obtain $Z$ has mean $0$ and variance $1$
 
+The corresponding [[Random Variables#CDF|CDF]] is 
+$$
+\Phi(x) = \dfrac{1}{\sqrt{ 2\pi }} \int_{-\infty}^x \exp \left( -\dfrac{t^{2}}{2} \right)  \mathrm{d}t
+$$
 # Normal Distribution
 If $Z \sim \mathcal N(0,1)$, then
 $$
@@ -15,6 +19,15 @@ is said to have the *normal distribution* with mean $\mu$ and variance $\sigma^{
 And the PDF of Normal distribution is
 $$
 f(x) = \frac{1}{\sqrt{ 2\pi } \sigma} \exp \left[ - \dfrac{(x-\mu)^{2}}{2\sigma^{2}} \right] 
+$$
+# Log Normal
+Let $Z$ be a standard normal variable, and let $\mu$ and $\sigma$ be two real numbers, with $\sigma>0$. Then, the distribution of the random variable 
+$$
+X = \exp (\mu + \sigma Z)
+$$
+is called the log-normal distribution with parameters $\mu$ and $\sigma$. We can also write
+$$
+\ln (X) \sim \mathcal N(\mu, \sigma^{2}) \iff X \sim \mathrm{LN}(\mu, \sigma^{2})
 $$
 # Multivariate Normal
 A $k$-dimensional random vector $\textbf{X} = (X_1, \ldots ,X_k)$ is said to have a *Multivariate Normal (MVN)* distribution if every linear combination of the $X_j$ has a Normal distribution. That is, we require

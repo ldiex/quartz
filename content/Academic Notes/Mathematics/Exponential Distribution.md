@@ -11,6 +11,7 @@ The corresponding [[Random Variables#Cumulative Distribution Function|CDF]] is
 $$
 F(x) = 1-e^{-\lambda x}, \quad x>0
 $$
+The mean of exponential distribution is $\dfrac{1}{\lambda}$ and the variance is $\dfrac{1}{\lambda^{2}}$
 # Memoryless Property
 A continuous distribution is said to have the *memoryless property* if a random variable $X$ from that distribution satisfies
 $$

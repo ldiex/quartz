@@ -69,7 +69,6 @@ $$
 \end{aligned}
 $$
  Let's define the coefficients $a_n$ as:
-
 $$
    a_n = \frac{1}{T} \int_{0}^{T} x(\tau) e^{-j n \omega_0 \tau} \, d\tau \quad \text{where} \quad \omega_0 = \frac{2\pi}{T}
 $$
@@ -100,7 +99,7 @@ When $\Delta t = 1$, this is
 $$
 X(\omega) = \mathcal F \left\{  \sum_{n = -\infty}^{\infty} x(n) \delta(t - n) \right\} 
 $$
-From this we can get the formula for inverse DFDT when $\Delta t = 1$. Performing the inverse Fourier transform at both sides gives 
+From this we can get the formula for inverse DTFT when $\Delta t = 1$. Performing the inverse Fourier transform at both sides gives 
 $$
 \sum_{n = -\infty}^{\infty} x(n) \delta(t - n) = \mathcal F^{-1} \left\{ X(\omega) \right\} = \dfrac{1}{2\pi} \int_{-\infty}^\infty X(\omega) \exp(j\omega t) \mathrm{d} \omega
 $$
@@ -109,13 +108,22 @@ $$
 x[n] = \dfrac{1}{2\pi} \int_0^{2\pi} X(\omega)\exp(j\omega n) \mathrm{d}\omega
 $$
 ## Periodic Discrete Function
+### Discrete Fourier Series (DFS)
 If we have $x(t) = x(t + T)$, we can sample $x(t)$ from $[0, T)$ with $N$ points, that is, $T = N \cdot \Delta t$. If we set $\Delta t = 1$, then it gives $T = N$ and $t = n\Delta t = n$. In this way, $t\in[0, T) \implies n\in \left\{ 0,1, \ldots ,N-1 \right\}$. Now we can rewrite the formula of continuous Fourier series (since Fourier series is a special case of Fourier transform for periodic functions) as
 $$
 a_k = \dfrac{1}{N}  \sum_{n = 0}^{N-1} x(n) \exp \left( -j  k \omega_0 n\right) 
 $$
-where $\omega_0 = \dfrac{2\pi}{T} = \dfrac{2\pi}{N}$. Similarly, $a_k$ is also periodic since $a_{k + N} = a_k$. This is know as discrete Fourier series (DFS)
+where $\omega_0 = \dfrac{2\pi}{T} = \dfrac{2\pi}{N}$. Similarly, $a_k$ is also periodic since $a_{k + N} = a_k$. This is know as *discrete Fourier series (DFS)*
 $$
-x[n] = \dfrac{1}{N}\sum_{k = 0}^{N-1} a_k\exp(jk\omega_0 n)
+x[n] = \sum_{k = 0}^{N-1} a_k\exp(jk\omega_0 n)
+$$
+### Discrete Fourier Transform (DFT)
+$$
+X(\omega) = \sum_{n= 0}^{N-1} x(n) \exp (-j\omega n)
+$$
+where $\omega = k\omega_0,\ k = 0, 1, \ldots ,N-1$
+$$
+x[n] = \dfrac{1}{N} \sum_{k = 0}^{N-1} X(k\omega_0) \exp(jk\omega_0n)
 $$
 # See Also
 [[Derive Fourier Transform from Fourier Series]]
