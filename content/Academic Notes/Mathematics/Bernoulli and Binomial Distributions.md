@@ -12,7 +12,7 @@ If $X \sim \mathrm{Bin}(n,p)$, then the [[Random Variables#Probability Mass Func
 $$
 P(X = k) = \binom{n}{k}p^k(1-p)^{n - k}
 $$
-for $k = 0,1, \ldots ,n$, and $\mathrm{E}[X] = np$
+for $k = 0,1, \ldots ,n$, with $\mathrm{E}[X] = np$  and $\mathrm{Var}(X) = np(1-p)$
 
 Let $X \sim \mathrm{Bin}(n,p)$, and $q = 1-p$, then $n - X \sim \mathrm{Bin}(n,q)$
 

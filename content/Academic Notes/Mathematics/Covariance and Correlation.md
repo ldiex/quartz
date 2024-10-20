@@ -29,8 +29,7 @@ If $X, T, W, V$ are real-valued random variables and $a, b, c, d$ are real-value
 5. 
 $$
 \begin{aligned}
-
-\mathrm{Cov}(aX + bY, cW + dV) &= ac\ \mathrm{Cov}(X, W+ ad\ \mathrm{Cov}(X, V)  \\
+\mathrm{Cov}(aX + bY, cW + dV) &= ac\ \mathrm{Cov}(X, W)+ ad\ \mathrm{Cov}(X, V)  \\
 &\quad+ bc\ \mathrm{Cov}(Y, W) + bd \ \mathrm{Cov}(Y,V)
 \end{aligned}
 $$

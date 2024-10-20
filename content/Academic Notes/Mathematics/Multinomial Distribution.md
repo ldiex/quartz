@@ -6,3 +6,8 @@ Then the joint [[Random Variables#Probability Mass Function|PMF]] of $\textbf{X}
 $$
 P(X_1=n_1, \ldots ,X_k = n_k) = \dfrac{n!}{n_1!n_2! \cdots n_k!}\cdot p_1^{n_1} p_2^{n_2} \cdots p_k^{n_k}
 $$
+where $n_1 + n_2 + \cdots + n_k = n$
+## Property
+- [[Mathematical Expectation|Mean]]: $\mathrm{E}[X_i] = np_i$
+- [[Variance]]: $\mathrm{Var}(X_i) = np_i(1-p_i)$
+- [[Covariance and Correlation|Covariance]]: $\mathrm{Cov}(X_i, X_j) = -np_ip_j \ (i \neq j)$

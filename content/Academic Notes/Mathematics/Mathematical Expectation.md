@@ -81,4 +81,4 @@ and
 $$
 \mathrm{E}\left[ \mathrm{Var}[Y|X] \right] = \mathrm{E}[\mathrm{E}[Y^{2}|X] - \mathrm{E}^{2}[Y|X]] = \mathrm{E}[Y^{2}] - \mathrm{E}^{2}\left[ \mathrm{E}[Y|X] \right] 
 $$
-Adding the two formulas above get the result.
+Adding the two formulas above gets the result.
