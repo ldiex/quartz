@@ -87,3 +87,8 @@ f_{Z,W} (z,w) &= f_{X,Y}(x,y) \cdot \left|\left| \frac{ \partial (x,y) }{ \parti
 &= \dfrac{1}{2\pi \tau} \exp \left[ -\dfrac{1}{2\tau^{2}} \left( z^{2} + w^{2} - 2\rho zw \right)  \right] 
 \end{aligned}
 $$
+## Properties
+### Any Linear Transformation of Multi-variate Normal is Multi-variate Normal
+$$
+\boldsymbol X \sim \mathcal N(\boldsymbol \mu, \boldsymbol \Sigma), \ \boldsymbol Y = \textbf{A}\boldsymbol X + \boldsymbol b \implies \boldsymbol Y \sim \mathcal N(\textbf{A} \boldsymbol \mu + \boldsymbol{b}, \textbf{A} \boldsymbol \Sigma \textbf{A}^{-1})
+$$

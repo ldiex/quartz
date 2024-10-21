@@ -5,3 +5,4 @@
 [[Fermat's Little Theorem]]
 [[Exgcd - Extended Euclidean Algorithm]]
 [[Chinese Remainder Theorem (CRT)]]
+[[Primitive Roots and Discrete Logarithms]]

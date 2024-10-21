@@ -33,6 +33,15 @@ $$
 &\quad+ bc\ \mathrm{Cov}(Y, W) + bd \ \mathrm{Cov}(Y,V)
 \end{aligned}
 $$
+6. Cauchy-Schwarz Inequality
+$$
+\mathrm{Cov}(X, Y) \leq \sqrt{ \mathrm{Var}(X) } \sqrt{ \mathrm{Var}(Y) }
+$$
+this can be proved by
+$$
+\cos \left< X, Y \right> = \dfrac{\mathrm{E}[XY]}{\sqrt{ \mathrm{E}[X^{2}] }\sqrt{ \mathrm{E}[Y^{2}] }} \leq 1
+$$
+where we define $\left< X, Y \right> = \mathrm{E}[XY]$ as the [[Euclidean Space#内积的定义|inner product]]
 # Correlation
 The *correlation* between r.v.s $X$ and $Y$ is
 $$

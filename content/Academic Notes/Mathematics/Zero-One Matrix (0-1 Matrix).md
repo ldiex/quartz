@@ -10,6 +10,9 @@ A \odot B = (c_{ij})_{m \times n}, \ \text{where}\ c_{ij} = (a_{i1} \land b_{1j}
 $$
 which is called the *Boolean Product* of $A$ and $B$
 
+> [!Tip]
+> We can see Boolean Product as a normal matrix multiplication with $+$ replaced by $\lor$ and $\times$ replaced by $\land$
+
 Based on this, we can also define the $r$-th *Boolean power* of $A$ as
 $$
 A^{[r]} = \underbrace{A \odot A \odot \cdots \odot A}_{A \text{ occurs } r \text{ times}}
