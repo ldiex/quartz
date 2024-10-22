@@ -57,7 +57,7 @@ $$
 $$
 \nu = \frac{\sqrt{1-\beta^2}}{1-\beta \cos \phi} \nu_0
 $$
-其中$\phi$是光源-观察者连线和光源速度之间的夹角，$\beta = \dfrac{v_\text{source}}{c}$（在观察者的参考系中）
+其中$\phi$是光源-观察者连线和光源速度之间的夹角, $\beta = \dfrac{v_\text{source}}{c}$（在观察者的参考系中）
 # 4-动量
 $$
 \boldsymbol P = \begin{pmatrix}

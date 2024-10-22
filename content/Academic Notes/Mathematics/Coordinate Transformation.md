@@ -1,12 +1,12 @@
 # 坐标
-设$\boldsymbol v_1, \cdots, \boldsymbol v_n$是$V$的一组基，对任意的$\boldsymbol x \in V$，存在唯一的$x_1, \cdots, x_n \in F$使得
+设$\boldsymbol v_1, \cdots, \boldsymbol v_n$是$V$的一组基, 对任意的$\boldsymbol x \in V$, 存在唯一的$x_1, \cdots, x_n \in F$使得
 $$
 \boldsymbol x = x_1 \boldsymbol v_1 + \cdots + x_n \boldsymbol v_n
 $$
 则称$(x_1, \cdots, x_n)^t$是$x$在基底$\boldsymbol v_1, \cdots, \boldsymbol v_n$的*坐标*
 
 # 坐标变换
-设$\boldsymbol e_1, \cdots, \boldsymbol e_n$是$V$的一组基，$\boldsymbol e_1' , \cdots , \boldsymbol e_n' \in V.$ 则$\boldsymbol e_1', \cdots, \boldsymbol e_n'$是$V$的一组基当且仅当存在唯一的$P \in \mathrm{GL}_n(F)$使得
+设$\boldsymbol e_1, \cdots, \boldsymbol e_n$是$V$的一组基, $\boldsymbol e_1' , \cdots , \boldsymbol e_n' \in V.$ 则$\boldsymbol e_1', \cdots, \boldsymbol e_n'$是$V$的一组基当且仅当存在唯一的$P \in \mathrm{GL}_n(F)$使得
 $$
 (\boldsymbol e_1', \cdots, \boldsymbol e_n') = (\boldsymbol e_1, \cdots, \boldsymbol e_n) P
 $$

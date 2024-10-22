@@ -7,9 +7,9 @@ $$
 $$
 \Gamma(s) = \int_0^1 x^{s-1}e^{-x} \mathrm{d} x + \int_1^{+\infty} x^{s-1}e^{-x} \mathrm{d} x = \Phi(s) + \Psi(s)
 $$
-其中$\Phi(s)$在$s\ge 1$时是正常积分，在$0<s<1$时是收敛的无界函数的反常积分（由[[Improper Integrals#比较原则|Cauchy判据]]）
+其中$\Phi(s)$在$s\ge 1$时是正常积分, 在$0<s<1$时是收敛的无界函数的反常积分（由[[Improper Integrals#比较原则|Cauchy判据]]）
 $\Psi(s)$当$s>0$时也是收敛的无穷限反常积分（由[[Improper Integrals#比较原则|Cauchy判据]]）
-所以$\Gamma(s)$在$\mathbb{R}^+$上收敛，规定其定义域为$s>0$
+所以$\Gamma(s)$在$\mathbb{R}^+$上收敛, 规定其定义域为$s>0$
 ## Gamma函数的性质
 1. $\Gamma(s)$在$(0,+\infty)$上连续可导
 $$
@@ -22,7 +22,7 @@ $$
 $$
 \Gamma(s+1) = s\Gamma(s)
 $$
-特别地，当$s = n \in \mathbb{N}^*$时，有$\Gamma(n + 1) = n!$
+特别地, 当$s = n \in \mathbb{N}^*$时, 有$\Gamma(n + 1) = n!$
 3. 图像（利用递推公式延拓定义域后）
 ![[数学-Gamma函数图像.png]]
 # Beta函数
@@ -30,7 +30,7 @@ $$
 $$
 B(p,q) = \int_0^1x^{p-1}(1-x)^{q-1}\mathrm{d} x
 $$
-同样由函数的收敛性，规定定义域为$p,q>0$
+同样由函数的收敛性, 规定定义域为$p,q>0$
 ## Beta函数的性质
 1. $B(p,q)$在$\mathbb{R}^+ \times \mathbb{R}^+$上连续
 2. 对称性$B(p,q) = B(q,p)$
@@ -43,15 +43,15 @@ B(p,q)  & =\dfrac{p-1}{p+q-1}B(p-1,q) \\
 \end{aligned}
 $$
 4. 常见的其他形式
-令$x = \cos^2 \phi$，就有
+令$x = \cos^2 \phi$, 就有
 $$
 B(p,q) = 2\int_0^{\pi/2} \sin^{2q-1}\phi \cos^{2p-1}\phi\mathrm{d} \phi
 $$
-令$x = \dfrac{y}{1+y}$，就有
+令$x = \dfrac{y}{1+y}$, 就有
 $$
 B(p,q) = \int_0^{+\infty} \dfrac{y^{p-1}}{(1+y)^{p+q}} \mathrm{d} y
 $$
-设$y = \dfrac{1}{t}$，我们有
+设$y = \dfrac{1}{t}$, 我们有
 $$
 \int_1^{+\infty} \dfrac{y^{p-1}}{(1+y)^{p+q}} \mathrm{d} y + \int_1^0 \dfrac{t^{q-1}}{(1+t)^{p+q} }=0
 $$
@@ -66,7 +66,7 @@ B(p,q) = \dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}
 $$
 
 
-## 应用：计算$\Gamma(1/2)$
+## 应用: 计算$\Gamma(1/2)$
 考虑
 $$
 B(a,1-a) = \dfrac{\Gamma(a)\Gamma(1-a)}{\Gamma(1)} = \Gamma(a)\Gamma(1-a)
@@ -88,7 +88,7 @@ $$
 \boxed{\int_0^{+\infty} e^{-x^2}\mathrm{d} x = \dfrac{\sqrt{ \pi }}{2}}
 $$
 
-## 应用：计算Wallis积分
+## 应用: 计算Wallis积分
 回忆[[Mathematical Analysis 23 Fall Final#Wallis 积分|Wallis积分]]
 $$
 \int_0^{\pi/2} \sin^n x \mathrm{d} x= \begin{cases}
@@ -106,5 +106,5 @@ $$
  & =\dfrac{1}{2}\dfrac{n!\cdot 2^{n+1}}{(2n+1)!!} = \dfrac{(2n)!!}{(2n+1)!!}
 \end{aligned}
 $$
-得到奇数的情况，同理也可以计算出偶数的情况
+得到奇数的情况, 同理也可以计算出偶数的情况
 

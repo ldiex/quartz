@@ -7,4 +7,4 @@ $$
 -\left(\frac{\partial S}{\partial p}\right)_T=\left(\frac{\partial V}{\partial T}\right)_p =\frac{\partial^2G}{\partial T\partial p} 
 \end{gathered}
 $$
-其中$U$为[[The First Law of Thermodynamics#内能|内能]]，$H$为[[The First Law of Thermodynamics#焓|焓]]，$A$为[[Free Energy#自由能|Helmholtz自由能]]，$G$为[[Free Energy#自由焓|Gibbs自由能]]
+其中$U$为[[The First Law of Thermodynamics#内能|内能]], $H$为[[The First Law of Thermodynamics#焓|焓]], $A$为[[Free Energy#自由能|Helmholtz自由能]], $G$为[[Free Energy#自由焓|Gibbs自由能]]

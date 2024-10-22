@@ -1,14 +1,14 @@
-**记号**：设$D$是[[Integral Domain | 整环]]. 则$D^* = D \backslash \{0\}$ 且$U_D$是$D$中所有可逆元的集合.
+**记号**: 设$D$是[[Integral Domain | 整环]]. 则$D^* = D \backslash \{0\}$ 且$U_D$是$D$中所有可逆元的集合.
 # 重数
-设$D$是UFD, $a, p \in D^*$是不可约元. 若非负整数$m \text{ s.t. } p^m | a , p^{m + 1} \nmid a$，则称$m$是$p$在$a$中的*重数(multiplicity)*
+设$D$是UFD, $a, p \in D^*$是不可约元. 若非负整数$m \text{ s.t. } p^m | a , p^{m + 1} \nmid a$, 则称$m$是$p$在$a$中的*重数(multiplicity)*
 
-这里的$m$是良定义的，也就是说$m$一定存在且有限
+这里的$m$是良定义的, 也就是说$m$一定存在且有限
 
 ## 不可约分解
-设$a \in D^*$和$p_1, \cdots, p_k \in D^*$是两两互不相伴的不可约元，设$p_1, \cdots, p_k$在$a$中的重数分别是$m_1, \cdots, m_k$, 则$p_1^{m_1} \cdots p_k^{m_k} | a$
+设$a \in D^*$和$p_1, \cdots, p_k \in D^*$是两两互不相伴的不可约元, 设$p_1, \cdots, p_k$在$a$中的重数分别是$m_1, \cdots, m_k$, 则$p_1^{m_1} \cdots p_k^{m_k} | a$
 
 ## 多项式重根
-设$f \in F[x]^*, x - \alpha \in F[x]$. 设$x - \alpha$在$f$中的重数$m$为正，则称$\alpha$是$f$中的$m$重根. 当$m = 1$时称为*单根*, $m > 1$时称为*重根*
+设$f \in F[x]^*, x - \alpha \in F[x]$. 设$x - \alpha$在$f$中的重数$m$为正, 则称$\alpha$是$f$中的$m$重根. 当$m = 1$时称为*单根*, $m > 1$时称为*重根*
 
 设$f \in F[x] \backslash F$, $\alpha_1, \cdots, \alpha_s \in F$是$f$互不相同的根, 其重数分别是$m_1, \cdots, m_s$. 则
 $$
@@ -35,19 +35,19 @@ $$
 
 **引理**: 设$D$是UFD, $f \in D[x]^*$. 再设$a \in D^*, g \in D[x]^*$是本原多项式. 如果$ag = \operatorname{cont}(f)\operatorname{pp}(f)$, 则$a \approx \operatorname{cont}(f), g \approx \operatorname{pp}(f)$
 ## Gauss 引理
-设D是UFD， $f, g \in D[x]^*$都是本原多项式，则$fg$也是本原多项式
+设D是UFD,  $f, g \in D[x]^*$都是本原多项式, 则$fg$也是本原多项式
 
-**推论**: 设D是UFD，$f,g \in D[x]^*$. 则
+**推论**: 设D是UFD, $f,g \in D[x]^*$. 则
 $$
 \operatorname{cont} (fg) \approx \operatorname{cont}(f) \operatorname{cont} (g), \; \operatorname{pp}(fg) \approx \operatorname{pp}(f) \operatorname{pp} (g)
 $$
 
 # Eisenstein 不可约性判别法
-设$D$是UFD， $F$是$D$的分式域. 设$f \in F[x]$且$\operatorname{deg}(f) > 0$. 如果$f$不能写成两个$D[x]$中正次数的多项式之积，则$f$在$F[x]$不可约
+设$D$是UFD,  $F$是$D$的分式域. 设$f \in F[x]$且$\operatorname{deg}(f) > 0$. 如果$f$不能写成两个$D[x]$中正次数的多项式之积, 则$f$在$F[x]$不可约
 
 例子: $\mathbb{Z}$ 中不可约$\to \mathbb{Q}$中也不可约
 
-设$D$是UFD，$F$是$D$的分式域. 
+设$D$是UFD, $F$是$D$的分式域. 
 $$
 f =f_n x^n + f_{n - 1}x^{n - 1} + \cdots + f_0
 $$

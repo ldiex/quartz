@@ -7,7 +7,7 @@ $$
 \cdots &= \cdots
 \end{aligned}
 $$
-*基本对称多项式（Elementary Symmetric Polynomial）* 之所以重要，是因为由代数基本定理可以得到任意一个域$F$上的$n$阶多项式（不妨设首项系数为$1$, 化成[[Multivariate Polynomial Ring#首一多项式| 首一多项式]]）都有$n$个零点，故可以分解为
+*基本对称多项式（Elementary Symmetric Polynomial）* 之所以重要, 是因为由代数基本定理可以得到任意一个域$F$上的$n$阶多项式（不妨设首项系数为$1$, 化成[[Multivariate Polynomial Ring#首一多项式| 首一多项式]]）都有$n$个零点, 故可以分解为
 $$
 f(x) = (x - x_1)(x - x_2) \cdots (x - x_n)
 $$

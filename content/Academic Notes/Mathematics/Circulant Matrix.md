@@ -46,7 +46,7 @@ V = \begin{pmatrix}
  
 \end{pmatrix}
 $$
-则$V\operatorname{diag}(f(\epsilon_0), \cdots, f(\epsilon_{n-1})) = AV$. 由Vandermonde行列式知$V$可逆，于是
+则$V\operatorname{diag}(f(\epsilon_0), \cdots, f(\epsilon_{n-1})) = AV$. 由Vandermonde行列式知$V$可逆, 于是
 $$
 A = V\operatorname{diag}(f(\epsilon_0), \cdots, f(\epsilon_{n-1}) )V^{-1}
 $$

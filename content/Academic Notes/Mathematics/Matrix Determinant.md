@@ -1,5 +1,5 @@
 # 行列式的几何意义
-在[[Euclidean Space|Euclidean空间]]$\mathbb{R}^n$中，设$A\in \mathrm{GL}_n(\mathbb{R})$为[[General Linear Group|可逆矩阵]]，则$\left|\det{(A)}\right|$表示由$A$的列向量张成的$2n$面体的体积
+在[[Euclidean Space|Euclidean空间]]$\mathbb{R}^n$中, 设$A\in \mathrm{GL}_n(\mathbb{R})$为[[General Linear Group|可逆矩阵]], 则$\left|\det{(A)}\right|$表示由$A$的列向量张成的$2n$面体的体积
 # 行列式的性质
 一个矩阵的行列式是它所有[[Eigenvectors and Characteristic Polynomial#特征值|特征值]]的乘积(包括相同的特征值), 这是因为我们知道一个矩阵$A\in \mathrm{M}_n(F)$的[[Characteristic Polynomial|特征多项式]]是
 $$
@@ -14,7 +14,7 @@ $$
 \det \left( \begin{array}{cccc} A_1 \hspace{-5pt} &&& \\ & A_2 \hspace{-5pt} && \\[-3pt] && \ddots \hspace{-5pt} & \\ &&& A_k \end{array} \right) = \det (A_1) \det (A_2) \cdots \det (A_k)
 $$
 ## 2阶分块矩阵的行列式
-如果$A$可逆，则有
+如果$A$可逆, 则有
 $$
 \begin{aligned}
 \det{\begin{pmatrix}

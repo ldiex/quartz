@@ -4,28 +4,28 @@
 $$
 F(x,y) = 0
 $$
-如果存在集合$I,J\in \mathbb{R}$使得对任意的$x \in I$, 有唯一确定的$y\in J$满足$(x,y) \in E$和上述方程，则该方程确定了一个$I\to J$的*隐函数*.
+如果存在集合$I,J\in \mathbb{R}$使得对任意的$x \in I$, 有唯一确定的$y\in J$满足$(x,y) \in E$和上述方程, 则该方程确定了一个$I\to J$的*隐函数*.
 
 例如方程
 $$
 xy + y -1 = 0
 $$
-确定了一个定义在$(-\infty,-1)\cup(-1,+\infty)$的隐函数$y = f(x)$，且可以写成*显函数*的形式
+确定了一个定义在$(-\infty,-1)\cup(-1,+\infty)$的隐函数$y = f(x)$, 且可以写成*显函数*的形式
 $$
 y = \dfrac{1}{1+x}
 $$
 ## 隐函数存在唯一性定理
-若函数$F(x,y)$满足以下条件：
+若函数$F(x,y)$满足以下条件: 
 1. $F$在以$P_0(x_0,y_0)$为内点的某一区域$D\subset \mathbb{R}^2$上连续
 2. $F(x_0, y_0)=0$ （通常称为初始条件）
 3. $F$在$D$上存在连续的偏导数$F_y(x,y)$
 4. $F_y(x_0, y_0) \neq 0$
 则
-1. 存在点$P_0$的某个邻域$U(P_0)\subset D$，在$U(P_0)$上$F(x,y) = 0$唯一确定了一个定义在某区间$(x_0 - \alpha, x_0 + \alpha)$上的隐函数$y = f(x)$，使得当$x \in (x_0 - \alpha, x_0 + \alpha)$时，$(x,f(x)) \in U(P_0)$且$F(x, f(x)) \equiv 0, f(x_0) = y_0$
+1. 存在点$P_0$的某个邻域$U(P_0)\subset D$, 在$U(P_0)$上$F(x,y) = 0$唯一确定了一个定义在某区间$(x_0 - \alpha, x_0 + \alpha)$上的隐函数$y = f(x)$, 使得当$x \in (x_0 - \alpha, x_0 + \alpha)$时, $(x,f(x)) \in U(P_0)$且$F(x, f(x)) \equiv 0, f(x_0) = y_0$
 2. $f(x)$在$(x_0 -\alpha, x_0+\alpha)$上连续
 
 ## 隐函数可微性定理
-设$F(x,y)$**满足隐函数存在唯一性定理**，且在$D$上还存在连续的偏导数$F_x(x,y)$, 则由方程$F(x,y) = 0$确定的隐函数$y = f(x)$在其定义域$(x_0 -\alpha, x_0 +\alpha)$上有连续导函数，且
+设$F(x,y)$**满足隐函数存在唯一性定理**, 且在$D$上还存在连续的偏导数$F_x(x,y)$, 则由方程$F(x,y) = 0$确定的隐函数$y = f(x)$在其定义域$(x_0 -\alpha, x_0 +\alpha)$上有连续导函数, 且
 $$
 f'(x) = - \dfrac{F_x(x, y)}{F_y(x, y)}
 $$
@@ -40,8 +40,8 @@ F(x,y) = 0  \\
 \end{gather}
 $$
 ## 隐函数极值问题
-1. 求$y'$为$0$的点，即方程组$\displaystyle \begin{cases}F(x,y) = 0 \\ F_x(x,y) = 0\end{cases}$的解$A(x,y)$, 注意需满足$F_y(x,y) \neq 0$
-2. 对于每一个$A$, 计算$y'' |_A = - \dfrac{F_{xx}}{F_y} \bigg\vert_A$，并由此判断是极大值还是极小值
+1. 求$y'$为$0$的点, 即方程组$\displaystyle \begin{cases}F(x,y) = 0 \\ F_x(x,y) = 0\end{cases}$的解$A(x,y)$, 注意需满足$F_y(x,y) \neq 0$
+2. 对于每一个$A$, 计算$y'' |_A = - \dfrac{F_{xx}}{F_y} \bigg\vert_A$, 并由此判断是极大值还是极小值
 # 隐函数组和隐映射
 如由这样的方程组
 $$
@@ -67,18 +67,18 @@ $$
 y = g(x), \quad x\in D
 $$
 ## 隐映射定理
-设$W$为$\mathbb{R}^{n + m}$中的[[Planar Point Set#开集|开集]]，$W$中的点用$(x,y)$来表示，其中$x = (x_1, \ldots, x_n),\; y = (y_1, \ldots, y_m)$. $f:W\to \mathbb{R}^m$为$C^k$映射:
+设$W$为$\mathbb{R}^{n + m}$中的[[Planar Point Set#开集|开集]], $W$中的点用$(x,y)$来表示, 其中$x = (x_1, \ldots, x_n),\; y = (y_1, \ldots, y_m)$. $f:W\to \mathbb{R}^m$为$C^k$映射:
 $$
 f(x, y) = (f_1(x, y), f_2(x,y), \ldots,f_m(x,y))
 $$
-设$(x^0, y^0)\in W, f(x^0, y^0)=0$且$\det Jf_y(x^0, y^0)\neq0$，其中
+设$(x^0, y^0)\in W, f(x^0, y^0)=0$且$\det Jf_y(x^0, y^0)\neq0$, 其中
 $$
 Jf_y(x, y) = \left( \dfrac{\partial {f_i}}{\partial {y_j}}(x,y) \right)_{m \times m}
 $$
 则存在$x^0$的开邻域$V \subset \mathbb{R}^n$以及唯一的$C^k$映射$g:V\to \mathbb{R}^m$使得
 1. $y^0 = g(x^0), f(x,g(x)) = 0, \forall x \in V$
 2. $Jg(x) = -\left[ Jf_y(x,g(x)) \right]^{-1}Jf_x(x, g(x))$
-特别地，当$n = m = 2$时，利用[[Adjugate Matrix|伴随矩阵]]可以直接解得
+特别地, 当$n = m = 2$时, 利用[[Adjugate Matrix|伴随矩阵]]可以直接解得
 $$
 \begin{aligned} \\
 (y_1, y_2)  & = g(x_1,x_2) \\
@@ -100,16 +100,16 @@ Jg = -(Jf_y)^{-1} Jf_x &= -\dfrac{1}{\det(Jf_y)} (Jf_y)^* Jf_x\\
 \end{aligned}
 $$
 > [!Note] 符号说明
->若需要明确指出$f;x,y$的每一个分量的具体的符号，也可以把上面的$Jf_x,Jf_y$写成$\dfrac{D(f_1, \ldots, f_m)}{D(x_1,\ldots, x_n)},\dfrac{D(f_1,\ldots,f_m)}{D(y_1,\ldots,y_m)}$
+>若需要明确指出$f;x,y$的每一个分量的具体的符号, 也可以把上面的$Jf_x,Jf_y$写成$\dfrac{D(f_1, \ldots, f_m)}{D(x_1,\ldots, x_n)},\dfrac{D(f_1,\ldots,f_m)}{D(y_1,\ldots,y_m)}$
 > 并定义$\dfrac{\partial(f_1, \ldots, f_m)}{\partial(x_1,\ldots, x_m)}= \left|{\dfrac{D(f_1, \ldots, f_m)}{D(x_1,\ldots, x_m)}}\right|,\; \dfrac{\partial(f_1,\ldots,f_m)}{\partial(y_1,\ldots,y_m)} = \left|{\dfrac{D(f_1,\ldots,f_m)}{D(y_1,\ldots,y_m)}}\right|$
-> 注意在需要求[[Determinant|行列式]]的时候上面得取$m = n$，也就是Jacobian矩阵应当为一方阵
+> 注意在需要求[[Determinant|行列式]]的时候上面得取$m = n$, 也就是Jacobian矩阵应当为一方阵
 
 # 逆映射和变量代换
 若上面的确定的隐映射
 $$
 y = g(x)
 $$
-是[[Injective, Surjective and Bijective#Bijective (One-to-One Correspondence)|双射]]，那么就有*逆映射*
+是[[Injective, Surjective and Bijective#Bijective (One-to-One Correspondence)|双射]], 那么就有*逆映射*
 $$
 x = g^{-1}(y)
 $$
@@ -117,11 +117,11 @@ $$
 $$
 \det Jy_x = \left|{\dfrac{D(y_1,\ldots,y_m)}{D(x_1,\ldots,x_m)}}\right| \neq0
 $$
-特别地，我们有
+特别地, 我们有
 $$
 \det Jy_x \cdot \det Jx_y  = \left|{\dfrac{D(y_1,\ldots,y_m)}{D(x_1,\ldots,x_m)}}\right| \left|{\dfrac{D(x_1,\ldots,x_m)}{D(y_1,\ldots,y_m)}}\right| = 1
 $$
-这个工具可以用于分析变量代换，如直角坐标和球坐标之间的变换
+这个工具可以用于分析变量代换, 如直角坐标和球坐标之间的变换
 $$
 \begin{cases}
 x = r\sin\varphi\cos\theta \\
@@ -133,9 +133,9 @@ $$
 $$
 \begin{aligned}\frac{\partial\left(x,y,z\right)}{\partial\left(r,\varphi,\theta\right)}&=\begin{vmatrix}\sin\varphi\cos\theta&r\cos\varphi\cos\theta&-r\sin\varphi\sin\theta\\\sin\varphi\sin\theta&r\cos\varphi\sin\theta&r\sin\varphi\cos\theta\\\cos\varphi&-r\sin\varphi&0\end{vmatrix}\\&=r^{2}\sin\varphi,\end{aligned}
 $$
-所以在$r^2\sin\varphi\neq0$即除去$z$轴上的一切点，都可以给出$r,\varphi,\theta$为$x,y,z$的函数
+所以在$r^2\sin\varphi\neq0$即除去$z$轴上的一切点, 都可以给出$r,\varphi,\theta$为$x,y,z$的函数
 
-如果我们要求（比如说需要在一个关于$u=u(x,y,z)$微分方程中变换变量为$r,\varphi,\theta$）给出$u_r,u_\varphi,u_\theta$，则由链式法则
+如果我们要求（比如说需要在一个关于$u=u(x,y,z)$微分方程中变换变量为$r,\varphi,\theta$）给出$u_r,u_\varphi,u_\theta$, 则由链式法则
 $$
 \begin{aligned}
 \begin{pmatrix}u_x\\u_y\\u_z\end{pmatrix}& \left.=\left(\begin{array}{ccc}{{r_{x}}}&{{\theta_{x}}}&{{\varphi_{x}}}\\{{r_{y}}}&{{\theta_{y}}}&{{\varphi_{y}}}\\{{r_{z}}}&{{\theta_{z}}}&{{\varphi_{z}}}\end{array}\right.\right)\left(\begin{array}{c}{{u_{r}}}\\{{u_{\theta}}}\\{{u_{\varphi}}}\end{array}\right)=\left(\begin{array}{ccc}{{x_{r}}}&{{y_{r}}}&{{z_{r}}}\\{{x_{\theta}}}&{{y_{\theta}}}&{{z_{\theta}}}\\{{x_{\varphi}}}&{{y_{\varphi}}}&{{z_{\varphi}}}\end{array}\right)^{-1}\left(\begin{array}{c}{{u_{r}}}\\{{u_{\theta}}}\\{{u_{\varphi}}}\end{array}\right)  \\
@@ -158,7 +158,7 @@ $$
 \end{gather}
 
 $$
-对矩阵积的对角线元素成立，和
+对矩阵积的对角线元素成立, 和
 $$
 \begin{gather} \\
 \dfrac{\partial {r}}{\partial {x}} \dfrac{\partial {x}}{\partial {\theta}} + \dfrac{\partial {r}}{\partial {y}}\dfrac{\partial {y}}{\partial {\theta}}+ \dfrac{\partial {r}}{\partial {z}}\dfrac{\partial {z}}{\partial {\theta}} = \dfrac{\partial {r}}{\partial {\theta}} = 0 \\
@@ -173,7 +173,7 @@ $$
 $$
 F(x, y) = 0
 $$
-如果在$(x_0, y_0)$附近**满足隐函数定理的条件**，那么由
+如果在$(x_0, y_0)$附近**满足隐函数定理的条件**, 那么由
 $$
 f'(x) = -\dfrac{F_x}{F_y}
 $$
@@ -190,7 +190,7 @@ $$
 $$
 L:x=x(t),\;y=y(t),\;z =z(t), \quad\alpha \le t \le \beta
 $$
-由[[Analytical Geometry in Space#对称式方程|对称式方程]]，可以得到$L$在$(x_0, y_0,  z_0)$的切线方程为
+由[[Analytical Geometry in Space#对称式方程|对称式方程]], 可以得到$L$在$(x_0, y_0,  z_0)$的切线方程为
 $$
 \dfrac{x-x_0}{x'(t_0)} = \dfrac{y - y_0}{y'(t_0)} = \dfrac{z - z_0}{z'(t_0)}
 $$
@@ -207,7 +207,7 @@ $$
 L:f(x,y,z) = (f_1(x,y,z),f_2(x,y,z)) = (0,0)
 $$
 且在$(x_0,y_0,z_0)$的某邻域满足隐映射定理
-要求$\dfrac{\mathrm{d} {x}}{\mathrm{d} {z}}$和$\dfrac{\mathrm{d} {y}}{\mathrm{d} {z}}$，则可取自变量$X = (z)$，因变量$Y = (x,y)$，满足$(x,y) = g(z)$有
+要求$\dfrac{\mathrm{d} {x}}{\mathrm{d} {z}}$和$\dfrac{\mathrm{d} {y}}{\mathrm{d} {z}}$, 则可取自变量$X = (z)$, 因变量$Y = (x,y)$, 满足$(x,y) = g(z)$有
 $$
 \begin{aligned}
 Jg(z)  & = -(Jf_Y(x,y))^{-1} (Jf_X(x,y))  \\
@@ -242,7 +242,7 @@ $$
 F(x,y,z) = 0
 $$
 在$(x_0,y_0,z_0)$的某邻域满足隐映射定理
-结合[[Differential of Multivariable Functions#可微性几何意义|可微性的几何意义]]，要先确定隐函数$z = f(x,y)$才能写出法向量
+结合[[Differential of Multivariable Functions#可微性几何意义|可微性的几何意义]], 要先确定隐函数$z = f(x,y)$才能写出法向量
 $$
 \boldsymbol n = (f_x(x_0,y_0),\;f_y(x_0,y_0),\; -1)
 $$

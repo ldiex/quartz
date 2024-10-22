@@ -1,9 +1,9 @@
 # 定义
-设$A$为给定的$n \times n$矩阵，$A$的**特征多项式**定义为
+设$A$为给定的$n \times n$矩阵, $A$的**特征多项式**定义为
 $$
 \chi_A(\lambda) = \det(\lambda E_n-A)
 $$
-那么，*Cayley–Hamilton定理*断言
+那么, *Cayley–Hamilton定理*断言
 $$
 \chi_A(A) = O
 $$
