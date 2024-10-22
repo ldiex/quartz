@@ -98,6 +98,3 @@ Events $A$ and $B$ are said to be *conditional independence* given $E$ if $P(A \
 
 # Coherency of Bayes' rule
 An important property of Bayes' rule is that it is *coherent*: if we receive multiple pieces of information and wish to update our probabilities to incorporate all the information, it does not matter whether we update sequentially, taking each piece of evidence into account one at time, or simultaneously, using all the evidence at once.
-
-
-

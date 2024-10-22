@@ -1,6 +1,10 @@
+---
+tags:
+  - CoursePage
+---
 # Course
-20% + 30% + 50%
-
+Scores: 20% + 30% + 50%
+[[Probability Theory Midterm]]
 # Contents
 ## Random Variables
 [[General Definition of Probability]]

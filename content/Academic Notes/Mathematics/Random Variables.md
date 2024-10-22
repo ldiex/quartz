@@ -86,7 +86,3 @@ If $X$ and $Y$ are independent r.v.s, then any function of $X$ is independent of
 We often work with random variables that are independent and have the same distribution. We call such r.v. *independent and identically distributed*, or *i.i.d.* for short.
 
 If some r.v.s. are i.i.d., they provide no information about each other and have the same [[Random Variables#Probability Mass Function|PMF]] and [[Random Variables#Cumulative Distribution Function|CDF]]
-
-
-
-

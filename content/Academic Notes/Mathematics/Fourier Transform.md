@@ -14,7 +14,7 @@ $$
 ### Coordinate Transformation
 The Fourier transform can be viewed as changing the "basis" in this function space from the time (or spatial) domain to the frequency domain. 
 
-In $L^2(\mathbb{R})$, functions are often represented in terms of the **standard basis**, which consists of functions like Dirac delta functions that are localized in space. To simplify this, you could view a function as
+In $L^2(\mathbb{R})$, functions are often represented in terms of the **standard basis**, which consists of functions like [[Dirac Delta Function|Dirac delta functions]] that are localized in space. To simplify this, you could view a function as
 $$
 \boldsymbol f = \sum_{n = -\infty}^{\infty} f(n) \boldsymbol e_n
 $$
