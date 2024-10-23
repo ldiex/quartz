@@ -37,14 +37,14 @@ $$
 P(X_1=n_1, \ldots ,X_k = n_k) = \dfrac{n!}{n_1!n_2! \cdots n_k!}\cdot p_1^{n_1} p_2^{n_2} \cdots p_k^{n_k}
 $$
 where $n_1 + n_2 + \cdots + n_k = n$, 
-with $\mathrm{E}[X_i] = np_i$,$\mathrm{Var}(X_i) = np_i(1-p_i)$,$\mathrm{Cov}(X_i, X_j) = -np_ip_j \ (i \neq j)$
+with $\mathrm{E}[X_i] = np_i$, $\mathrm{Var}(X_i) = np_i(1-p_i)$, $\mathrm{Cov}(X_i, X_j) = -np_ip_j \ (i \neq j)$
 ## 几何分布
 $$
 P(X = k) = (1-p)^{k-1}p
 $$
-with $\mathrm{E}[X] = \dfrac{1}{p}$,$\mathrm{Var}(X)=\dfrac{1-p}{p^{2}}$
+with $\mathrm{E}[X] = \dfrac{1}{p}$, $\mathrm{Var}(X)=\dfrac{1-p}{p^{2}}$
 ## 负二项分布
-$X$for all trials until$r$success
+$X$for all trials until $r$ success
 $$
 P(X = k) = \binom{k -1}{r -1} p^r (1-p)^{k - r}
 $$
@@ -59,7 +59,7 @@ $X$ be the waiting time until the first arrival of a success which arrives at a 
 $$
 f(x)  = \lambda \exp(-\lambda x)
 $$
-with $\mathrm{E}[X] = \dfrac{1}{\lambda}$and$\mathrm{Var}(X) = \dfrac{1}{\lambda^{2}}$
+with $\mathrm{E}[X] = \dfrac{1}{\lambda}$and $\mathrm{Var}(X) = \dfrac{1}{\lambda^{2}}$
 ## Poisson分布
 Under a Poisson distribution with the expectation of $\lambda$ events in a given interval, the probability of $k$ events in the same interval is
 $$
@@ -70,6 +70,18 @@ with $\mathrm{E}[X]= \lambda, \ \mathrm{Var}(X) = \lambda$
 Let $X_1 \sim \mathrm{Pois}(\lambda_1), \ X_2 \sim \mathrm{Pois}(\lambda_2)$ and $X_1, X_2$ are independent, then we will have
 $$
 X_1 + X_2 = \mathrm{Pois}(\lambda_1 + \lambda_2)
+$$
+
+## Normal Distribution
+If $Z \sim \mathcal N(0,1)$, then
+$$
+X = \mu + \sigma Z
+$$
+is said to have the *normal distribution* with mean $\mu$ and variance $\sigma^{2}$, for any real $\mu$ and $\sigma^{2}$ with $\sigma > 0$. We denote this by $X \sim \mathcal N(\mu, \sigma^{2})$
+
+And the PDF of Normal distribution is
+$$
+f(x) = \frac{1}{\sqrt{ 2\pi } \sigma} \exp \left[ - \dfrac{(x-\mu)^{2}}{2\sigma^{2}} \right] 
 $$
 ## Beta分布
 $$
@@ -130,10 +142,10 @@ $$
 $$
 > While independence implies a zero covariance,$X$and$Y$are uncorrelated does not mean they are independent. 
 
-1.$\mathrm{Cov}(X, a) = 0$
-2.$\mathrm{Cov}(X,X) = \mathrm{Var}(X)$
-3.$\mathrm{Cov}(X,Y) = \mathrm{Cov}(Y, X)$
-4.$\mathrm{Cov}(X+ a, Y + b) = \mathrm{Cov}(X, Y)$
+1. $\mathrm{Cov}(X, a) = 0$
+2. $\mathrm{Cov}(X,X) = \mathrm{Var}(X)$
+3. $\mathrm{Cov}(X,Y) = \mathrm{Cov}(Y, X)$
+4. $\mathrm{Cov}(X+ a, Y + b) = \mathrm{Cov}(X, Y)$
 5. 
 $$
 \begin{aligned}
@@ -359,5 +371,41 @@ $$
 $$
 P(A) = P(A_1A_2 \cdots A_k) = \dfrac{1}{2n-1} \cdot \dfrac{1}{2n-3} \cdots \dfrac{1}{1} = \dfrac{1}{(2n-1)!!}
 $$
+## T9
+> 设随机变量$X,Y$的联合概率密度函数为$f_{X,Y} (x,y) = \dfrac{1 + xy(x^{2}-y^{2})}{4}, \quad \left|x\right| \leq1, \left|y\right| \leq 1$
+> 求$X + Y$的概率分布函数$F_{X+Y}$
 
+由卷积公式, 我们直接有
+$$
+\begin{aligned}
+f_{X+Y}(z) &= \int_{-\infty}^{\infty} f_{X,Y}(x, z-x) \mathrm{d}x 
+\end{aligned}
+$$
+考虑定义域约束
+$$
+-1 \leq x \leq 1,\  -1 \leq z-x \leq 1 \implies \max\left\{ -1,z- 1 \right\}  \leq x \leq \min \left\{ z + 1, 1 \right\} 
+$$
+因此要分类讨论$z \leq -2, \ -2 < z \leq 0, \ 0 < z \leq 2, \ z >2$来讨论. 我们先解一般情况下的积分
+$$
+\begin{aligned}
+\int_a^b \dfrac{1 + x(z-x)\left[ x^{2} - (z-x)^{2} \right] }{4} \mathrm{d}x &= \dfrac{1}{4} \int_a^b \left( -2zx^3 + 3z^{2}x^{2} - z^3 x + 1 \right) \mathrm{d}x \\
+&= \left( -\dfrac{1}{8} z x^4 + \dfrac{1}{4} z^{2} x^3 - \dfrac{1}{8} z^3 x^{2} + \dfrac{1}{4}x \right)  \bigg|_a^b \\
+\end{aligned}
+$$
+当$z \leq -2$或者$z > 2$时, 显然$f_{X+Y}(z) = 0$
+当$-2 < z \leq 0$时, 积分区间为$[-1, z + 1]$, 于是有$f_{X+Y}(z) = \dfrac{2 + z}{4}$
+当$0 < z \leq 2$时, 积分区间为$[z - 1, 1]$, 于是有$f_{X+Y}(z) = \dfrac{2 -x}{4}$
 
+## T10
+> 袋中装有$n$个黑球和$m$个白球, 每次从袋中取出一个球, 不放回, 再取, 直到取得白球时停止. 记$X$表示取出的黑球的总数, 求$\mathrm{E}[X]$.
+
+当$X = k$时, 一共取了$k + 1$次, 其中前$k$次取得黑球, 第$k+1$次取得白球, 从而
+$$
+\begin{aligned}
+P(X = k) = P(\text{前$k$黑, 第$k+1$白}) &= P(\text{第$k+1$白}\mid \text{前$k$黑}) P(\text{前$k$黑}) \\
+&= \dfrac{m}{m + n -k} \cdot \dfrac{\binom{n}{k}}{\binom{n + m}{k}}3 \\
+\end{aligned}
+$$
+可以猜出$\mathrm{E}[X] = \dfrac{n}{m+ 1}$
+## T11
+> $X, Y \sim \mathrm{Expo}(\lambda)$, 求$Z = \begin{cases}3X +1 & X \geq Y \\ 6Y, & X < Y\end{cases}$ 的数学期望.

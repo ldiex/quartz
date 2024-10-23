@@ -77,7 +77,7 @@ $$
 -\dfrac{\rho}{\tau} & \dfrac{1}{\tau}
 \end{pmatrix}
 $$
-which has absolute determinant $\dfrac{1}{\tau}$, therfore
+which has absolute determinant $\dfrac{1}{\tau}$, therefore
 $$
 \begin{aligned}
 f_{Z,W} (z,w) &= f_{X,Y}(x,y) \cdot \left|\left| \frac{ \partial (x,y) }{ \partial (z,w) } \right|\right| \\

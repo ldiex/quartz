@@ -51,4 +51,34 @@ Therefore, for any r.v.s $X$ and $Y$
 $$
 -1 \leq \mathrm{Corr}(X,Y) \leq 1
 $$
+# Covariance Matrix
+## Definition
+For multi-variate r.v.s, for example, $\boldsymbol{X} = (X_1, \ldots ,X_n)$, $\boldsymbol{Y} = (Y_1, \ldots ,Y_n)$, we can define the *covariance matrix*
+$$
+\begin{aligned}
+\mathrm{Cov}(\boldsymbol{X}, \boldsymbol{Y}) &= \mathrm{E}  \left[ (\boldsymbol{X} - \mathrm{E}[\boldsymbol{X}])(\boldsymbol{Y} - \mathrm{E}[\boldsymbol{Y}]) \right]  \\
+&= \begin{pmatrix}
+\mathrm{Cov}(X_1,Y_1) & \cdots & \mathrm{Cov}(X_1,Y_n) \\
+\vdots & \ddots & \vdots \\
+\mathrm{Cov}(X_n, Y_1) & \cdots & \mathrm{Cov}(X_n, Y_n)
+\end{pmatrix}
+\end{aligned}
+$$
+In particular, if $\boldsymbol{Y} = \boldsymbol{X}$, we call $\mathrm{Var}(\boldsymbol{X}) =\mathrm{Cov}(\boldsymbol{X}, \boldsymbol{X})$ the variance matrix of $\boldsymbol{X}$.
+## Properties
+1. 
+$$
+\boldsymbol{Z} =  \textbf{A}\boldsymbol{X} + \boldsymbol{Y} \implies \mathrm{E}\left[ \boldsymbol{Z} \right] = \textbf{A} \mathrm{E}\left[ \boldsymbol{X} \right] + \mathrm{E} \left[ \boldsymbol{Y} \right] 
+$$
+2. 
+$$
+\mathrm{Cov}( \textbf{A} \boldsymbol{X}, \textbf{B}\boldsymbol{Y}) = \textbf{A} \mathrm{Cov}(\boldsymbol X, \boldsymbol Y) \textbf{B}^T
+$$
+3. $\mathrm{Var}(\boldsymbol X)$ is [[Real Quadratic Forms#（半）正定二次型|positive definite]]
+4. If $\textbf{A}\in \mathrm{SM}_n(\mathbb{R})$ is a symmetric matrix, we call $\boldsymbol X^T \textbf{A} \boldsymbol X$ a [[Quadratic Forms|quadratic form]] of $\boldsymbol X$. And we have
+$$
+\mathrm{E}\left[ \boldsymbol X^T \textbf{A} \boldsymbol X \right]  = \mathrm{E}\left[ \boldsymbol X \right] ^T \textbf{A} \mathrm{E}\left[ \boldsymbol X \right] + \mathrm{tr} \left( \textbf{A} \mathrm{Var}(\boldsymbol X) \right) 
+$$
+
+
 
