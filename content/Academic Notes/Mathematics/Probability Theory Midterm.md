@@ -406,6 +406,53 @@ P(X = k) = P(\text{前$k$黑, 第$k+1$白}) &= P(\text{第$k+1$白}\mid \text{�
 &= \dfrac{m}{m + n -k} \cdot \dfrac{\binom{n}{k}}{\binom{n + m}{k}}3 \\
 \end{aligned}
 $$
-可以猜出$\mathrm{E}[X] = \dfrac{n}{m+ 1}$
+可以猜出$\mathrm{E}[X] = \dfrac{n}{m+ 1}$(利用数学归纳法)
 ## T11
-> $X, Y \sim \mathrm{Expo}(\lambda)$, 求$Z = \begin{cases}3X +1 & X \geq Y \\ 6Y, & X < Y\end{cases}$ 的数学期望.
+> 设$X,Y$的联合概率密度函数$f(x,y) = cxy \ (0 \leq x \leq y \leq2)$
+> 1. 计算常数$c$的值
+> 2. 分别求出$X,Y$的边缘概率密度函数
+> 3. 判断$X,Y$是否独立
+> 4. 对$0 < y < 2$, 求已知$Y = y$的条件下, $X$的条件概率密度函数, 以及条件数学期望$\mathrm{E}[X | Y = y]$
+> 5. 求$\mathrm{E}[X], \mathrm{E}[Y], \mathrm{Var}(X), \mathrm{Cov}(X,Y), \mathrm{Corr}(X, Y)$
+
+1. 先计算$X$的边缘[[Continuous Random Variables#Probability Density Function|PDF]]为
+$$
+f_X(x) = \int_x^2 f_{X,Y}(x, y) \mathrm{d}y = cx\int_x^2 y \mathrm{d}y = \dfrac{cx}{2} \left( 4 - x^{2} \right), \quad 0 \leq x \leq 2
+$$
+有归一化条件, 有
+$$
+1 = \int_0^2 f_X(x) \mathrm{d}x = \int_0^2  \left( 2cx - \dfrac{c}{2} x^3 \right) \mathrm{d}x = 2c \implies c = \dfrac{1}{2}
+$$
+2. 在1.中我们已经求出$f_X(x) = \dfrac{x}{4}\left( 4 - x^{2} \right), \ 0\leq x \leq 2$. 现在求$Y$的边缘PDF为
+$$
+f_Y(y) = \int_0^y f_{X,Y}(x,y) \mathrm{d}x = \dfrac{1}{2}y \int_0^y x \mathrm{d}x = \dfrac{1}{4}y^3
+$$
+3. 显然$f_{X,Y}(x,y) \neq f_X(x) f_Y(y)$, 所以$X,Y$不相互独立
+4. 由定义可知
+$$
+f_{X|Y} (x|y)= \dfrac{f_{X,Y}(x,y)}{f_Y(y)} = \dfrac{\dfrac{1}{2}xy}{\dfrac{1}{4}y^3} = \dfrac{2x}{y^{2}},\quad 0 \leq x \leq y \leq 2
+$$
+从而有条件期望
+$$
+\mathrm{E}[X|Y = y] = \int_{0}^y x f_{X|Y}(x|y) \mathrm{d}x = \int_0^y \dfrac{2x^{2}}{y^{2}} \mathrm{d}x = \dfrac{2y}{3}, \quad 0 \leq y \leq 2
+$$
+5. 由定义可以求得$\mathrm{E}[X] = \dfrac{16}{15}, \mathrm{E}[Y] = \dfrac{8}{5}$, 而
+$$
+\mathrm{E}[X^{2}] = \int_0^2 x^{2} \cdot \dfrac{x}{4} \left(  4- x^{2}  \right) \mathrm{d}x = \dfrac{4}{3}
+$$
+于是$\mathrm{Var}(X) = \mathrm{E}[X^{2}] - \mathrm{E}^{2}[X] = \dfrac{4}{3}- \dfrac{256}{225} = \dfrac{44}{225}$. 另一方面
+$$
+\mathrm{E}[Y^{2}] = \int_0^2 y^{2} \cdot \dfrac{1}{4}y^3 = \dfrac{8}{3}
+$$
+于是$\mathrm{Var}(Y) = \mathrm{E}[Y^{2}] - \mathrm{E^{2}}[Y] = \dfrac{8}{3} -\dfrac{64}{25} =\dfrac{8}{75}$, 再计算
+$$
+\mathrm{E}[XY] = \mathrm{E} \left[ \mathrm{E}[XY|Y] \right] = \mathrm{E}\left[ Y \mathrm{E} \left[ X | Y \right]  \right]  = \mathrm{E}\left[ \dfrac{2}{3}Y^{2} \right] = \dfrac{2}{3} \mathrm{E}[Y^{2}] = \dfrac{16}{9}
+$$
+于是就有
+$$
+\mathrm{Cov}(X,Y) = \mathrm{E}[XY] - \mathrm{E}[X] \mathrm{E}[Y] = \dfrac{16}{9} - \dfrac{16}{15} \cdot \dfrac{8}{5} = \dfrac{16}{225}
+$$
+和
+$$
+\mathrm{Corr} (X,Y) = \dfrac{\mathrm{Cov}(X,Y)}{\sqrt{ \mathrm{Var}(X) }\sqrt{ \mathrm{Var}(Y) }}  = \dfrac{\dfrac{16}{225}}{\sqrt{ \dfrac{44}{225} } \sqrt{ \dfrac{8}{75} }} = \dfrac{4}{\sqrt{ 66 }}
+$$
